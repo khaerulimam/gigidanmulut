@@ -813,7 +813,7 @@ ul.breadcome-menu li a:hover{
 /*----------------------------------------*/
 .sparkline-hd, .smart-sparkline-hd, .sparkline7-hd, .sparkline8-hd, .sparkline9-hd, .sparkline10-hd, .sparkline11-hd, .sparkline12-hd, .sparkline13-hd, .sparkline14-hd, .sparkline15-hd, .sparkline16-hd{
 	background:#f9f9f9;
-	border-bottom:1px solid #fff;
+	border-bottom:1px solid #000;
 }
 .sparkline-hd, .smart-sparkline-hd, .sparkline7-hd, .sparkline8-hd, .sparkline9-hd, .sparkline10-hd, .sparkline11-hd, .sparkline12-hd, .sparkline13-hd, .sparkline14-hd, .sparkline15-hd, .sparkline16-hd{
 	padding: 15px 20px;
@@ -854,13 +854,13 @@ ul.breadcome-menu li a:hover{
 }
 .sparkline-content a{
 	color:#fff;
-	background:linear-gradient(to bottom, #ff9966 0%, #d75151 100%);
+	background:linear-gradient(to bottom, #00AAAA 0%, #00AAAA 100%);
 	padding:10px 20px;
 	display:inline-block;
 }
 .sparkline-content a:hover{
 	color:#fff;
-	background:linear-gradient(to bottom, #ff9966 0%, #d75151 100%);
+	background:linear-gradient(to bottom, #00AAAA 0%, #00AAAA 100%);
 }
 .table.table-adminpro{
 	margin-bottom:0px;
@@ -936,7 +936,7 @@ ul.message-list-menu li .message-serial {
     padding: 2px 0px;
 }
 ul.message-list-menu li .message-serial.message-cl-one {
-    background: linear-gradient(to bottom, #ff9966 0%, #d75151 100%);
+    background: linear-gradient(to bottom, #00AAAA 0%, #00AAAA 100%);
 }
 ul.message-list-menu li .message-serial.message-cl-two {
     background: linear-gradient(to bottom, #ad6c7c 0%, rgb(216, 0, 255) 100%);
@@ -949,7 +949,7 @@ ul.message-list-menu li .message-serial.message-cl-four {
 	color:#fff;
 }
 ul.message-list-menu li .message-serial.message-cl-five {
-    background: linear-gradient(to bottom, #ff9966 0%, #d75151 100%);
+    background: linear-gradient(to bottom, #00AAAA 0%, #00AAAA 100%);
 }
 ul.message-list-menu li .message-serial.message-cl-six {
     background: linear-gradient(to bottom, #b96f77 0%, #ca0e0e 100%);
@@ -1299,8 +1299,8 @@ ul.comment-action-st li a{
 	padding-left:10px;
 }
 .custom-datatable-overright .pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover{
-	background: linear-gradient(to bottom, #ff9966 0%, #d75151 100%);
-    border-color: #ff9966;
+	background: linear-gradient(to bottom, #00AAAA 0%, #00AAAA 100%);
+    border-color: #00AAAA;
 }
 .custom-datatable-overright .fixed-table-toolbar .bs-bars, .fixed-table-toolbar .search, .fixed-table-toolbar .columns{
 	margin-top: 0px;
@@ -1524,7 +1524,7 @@ ul.comment-action-st li a{
 	width:100%
 }
 .custom-datatable-overright.dashtwo-project-list-data table tbody tr td.complete-project-dashtwo{
-	background:linear-gradient(to bottom, #ff9966 0%, #d75151 100%);
+	background:linear-gradient(to bottom, #00AAAA 0%, #00AAAA 100%);
 }
 .custom-datatable-overright.dashtwo-project-list-data table tbody tr td.canceled-project-dashtwo{
 	background:#ed5565;
@@ -1568,7 +1568,7 @@ ul.comment-action-st li a{
     position: absolute;
     left: 10px;
     border-radius: 3px;
-    background: linear-gradient(to bottom, #ff9966 0%, #d75151 100%);
+    background: linear-gradient(to bottom, #00AAAA 0%, #00AAAA 100%);
     padding: 3px;
     color: white;
     cursor: pointer;
@@ -1684,8 +1684,8 @@ ul.comment-action-st li a{
 }
 .chat-send button[type="submit"]{
 	padding: 5px 10px;
-	border:1px solid #ff9966;
-	background:linear-gradient(to bottom, #ff9966 0%, #d75151 100%) !important;
+	border:1px solid #00AAAA;
+	background:linear-gradient(to bottom, #00AAAA 0%, #00AAAA 100%) !important;
 	display: inline-block;
     width: 60px;
 	color:#fff;
@@ -1707,13 +1707,13 @@ ul.comment-action-st li a{
     padding: 10px 15px;
     display: block;
     margin-bottom: 15px;
-    background: linear-gradient(to bottom, #ff9966 0%, #d75151 100%);
+    background: linear-gradient(to bottom, #00AAAA 0%, #00AAAA 100%);
     color: #fff;
     text-align: center;
 	font-size:14px;
 }
 .inbox-email-menu-list .compose-email a:hover{
-    background: linear-gradient(to bottom, #ff9966 0%, #d75151 100%);
+    background: linear-gradient(to bottom, #00AAAA 0%, #00AAAA 100%);
     color: #fff;
 }
 .custom-inbox-message, .inbox-email-menu-list{
@@ -1733,7 +1733,7 @@ ul.comment-action-st li a{
 }
 .inbox-email-menu-list .nav-tabs li .count-inbox{
 	margin-left: 105px;
-    background: linear-gradient(to bottom, #ff9966 0%, #d75151 100%);
+    background: linear-gradient(to bottom, #00AAAA 0%, #00AAAA 100%);
     color: #fff;
     height: 20px;
     width: 20px;
@@ -2014,7 +2014,7 @@ li.multipleInput-email {
 	background: linear-gradient(to right, #ff00ff 0%, #660033 100%) !important;
 }
 .analytics-adminpro4 .skill .progress-bar{
-	background: linear-gradient(to right, #99ff99 0%, #ff9966 100%) !important;
+	background: linear-gradient(to right, #99ff99 0%, #00AAAA 100%) !important;
 }
 
 .analytics-sparkle-line, .analytics-rounded, .analysis-progrebar{
@@ -2141,13 +2141,13 @@ li.multipleInput-email {
     margin-top: -5px;
 }
 .conversation-list .odd .ctext-wrap {
-    background: linear-gradient(to bottom, #ff9966 0%, #d75151 100%) !important;
+    background: linear-gradient(to bottom, #00AAAA 0%, #00AAAA 100%) !important;
 }
 .conversation-list .odd .chat-avatar {
     float: right !important;
 }
 .conversation-list .odd .ctext-wrap:after {
-    border-left-color: #ff9966 !important;
+    border-left-color: #00AAAA !important;
     left: 100% !important;
     top: 20% !important;
 }
@@ -2202,8 +2202,8 @@ li.multipleInput-email {
     font-size: 14px;
 }
 .checkbox-primary input[type="checkbox"]:checked + label::before {
-    background: linear-gradient(to bottom, #ff9966 0%, #d75151 100%);
-    border-color: #ff9966;
+    background: linear-gradient(to bottom, #00AAAA 0%, #00AAAA 100%);
+    border-color: #00AAAA;
 }
 .checkbox label::before {
     -o-transition: 0.3s ease-in-out;
@@ -2257,8 +2257,8 @@ li.multipleInput-email {
 }
 .btn-primary.todo-achive-ad {
     color: #fff;
-    background: linear-gradient(to bottom, #ff9966 0%, #d75151 100%);
-    border-color: #ff9966;
+    background: linear-gradient(to bottom, #00AAAA 0%, #00AAAA 100%);
+    border-color: #00AAAA;
 }
 .btn-sm.todo-achive-ad{
 	font-size:14px;
@@ -2371,8 +2371,8 @@ li.multipleInput-email {
 	}
 }
 .like-love-list .btn-primary{
-	background: linear-gradient(to bottom, #ff9966 0%, #d75151 100%);
-    border-color: #ff9966;
+	background: linear-gradient(to bottom, #00AAAA 0%, #00AAAA 100%);
+    border-color: #00AAAA;
 }
 .like-love-list .btn-white{
 	color: #03a9f4;
@@ -2571,8 +2571,8 @@ li.multipleInput-email {
     color: #fff;
     font-size: 13px;
     font-weight: 400;
-    border: 1px solid #ff9966;
-	background:linear-gradient(to bottom, #ff9966 0%, #d75151 100%);
+    border: 1px solid #00AAAA;
+	background:linear-gradient(to bottom, #00AAAA 0%, #00AAAA 100%);
 }
 /*----------------------------------------*/
 /*  26.  profile css
@@ -2639,7 +2639,7 @@ li.multipleInput-email {
     float: right;
     padding: 18px 0px;
     font-size: 10px;
-    color: #ff9966;
+    color: #00AAAA;
     margin-right: 15px;
 }
 .user-profile-contact ul.profile-contact-menu li:last-child {
@@ -2699,7 +2699,7 @@ ul.profile-contact-menu {
 	margin-top:20px;
 }
 .comment-replay-profile .btn-white{
-	background: linear-gradient(to bottom, #ff9966 0%, #d75151 100%);
+	background: linear-gradient(to bottom, #00AAAA 0%, #00AAAA 100%);
 	color:#fff;
 	margin-right:5px;
 	outline:none;
@@ -2753,7 +2753,7 @@ ul.profile-contact-menu {
 	color:#fff;
 }
 .btn-group-xs>.btn, .btn-xs{
-	background:linear-gradient(to bottom, #ff9966 0%, #d75151 100%);
+	background:linear-gradient(to bottom, #00AAAA 0%, #00AAAA 100%);
 	color:#fff;
 }
 .btn-group-xs>.btn:focus, .btn-xs:focus{
@@ -2761,7 +2761,7 @@ ul.profile-contact-menu {
 }
 .btn.focus, .btn:focus, .btn:hover, .btn:active{
 	color:#fff;
-	background:linear-gradient(to bottom, #ff9966 0%, #d75151 100%);
+	background:linear-gradient(to bottom, #00AAAA 0%, #00AAAA 100%);
 	outline:none;
 }
 .project-list-ad-bl .btn:focus{
@@ -3006,7 +3006,7 @@ ul.profile-contact-menu {
 	box-shadow: none;
 }
 .form-group-inner input[type="email"]:focus, .form-group-inner input[type="password"]:focus, .form-group-inner input[type="text"]:focus, .form-select-list .custom-select-value:focus{
-	border:1px solid #ff9966;
+	border:1px solid #00AAAA;
 	outline:none;
 	border-radius:0px;
 	box-shadow: none;
@@ -3040,15 +3040,15 @@ ul.profile-contact-menu {
 	padding-top:5px;
 }
 .login-btn-inner .login-submit-cs{
-	background: linear-gradient(to bottom, #ff9966 0%, #d75151 100%);
-    border-color: #ff9966;
+	background: linear-gradient(to bottom, #00AAAA 0%, #00AAAA 100%);
+    border-color: #00AAAA;
 	font-size:14px;
 	font-weight:400;
 	border-radius:0px;
 }
 .login-btn-inner .btn-primary.active.focus, .login-btn-inner .btn-primary.active:focus, .login-btn-inner .btn-primary.active:hover, .login-btn-inner .btn-primary:active.focus, .login-btn-inner .btn-primary:active:focus, .login-btn-inner .btn-primary:active:hover, .login-btn-inner .btn-primary:hover, .login-btn-inner .btn-primary:active, .login-btn-inner .btn-primary:focus{
-	background: linear-gradient(to bottom, #ff9966 0%, #d75151 100%);
-    border-color: #ff9966;
+	background: linear-gradient(to bottom, #00AAAA 0%, #00AAAA 100%);
+    border-color: #00AAAA;
 	border-radius:0px;
 	outline: 0px auto -webkit-focus-ring-color;
     outline-offset: 0px;
@@ -3177,7 +3177,7 @@ ul.profile-contact-menu {
 }
 .modal-bootstrap.modal-login-form {
     padding: 7px 20px;
-	background: linear-gradient(to bottom, #ff9966 0%, #d75151 100%);
+	background: linear-gradient(to bottom, #00AAAA 0%, #00AAAA 100%);
 	display:inline-block;
 	text-align:center;
 }
@@ -3282,8 +3282,8 @@ ul.profile-contact-menu {
     width: 100%;
 }
 .custom-go-button .btn-primary, .custom-dropdowns-button .dropdown-toggle, .dropdown-segmented .dropdown-toggle, .dropdown-segmented .btn-white {
-    background: linear-gradient(to bottom, #ff9966 0%, #d75151 100%);
-    border-color: #ff9966;
+    background: linear-gradient(to bottom, #00AAAA 0%, #00AAAA 100%);
+    border-color: #00AAAA;
     color: #FFFFFF;
 	border-top-left-radius: 0;
     border-bottom-left-radius: 0;
@@ -3291,25 +3291,25 @@ ul.profile-contact-menu {
 .custom-go-button .btn-primary, .custom-go-button .btn-primary:active, .custom-go-button .btn-primary:focus, .custom-dropdowns-button .dropdown-toggle, .custom-dropdowns-button .dropdown-toggle:active, .custom-dropdowns-button .dropdown-toggle:focus, .dropdown-segmented .dropdown-toggle, .dropdown-segmented .dropdown-toggle:active, .dropdown-segmented .dropdown-toggle:focus{
 	border-top-right-radius: 0;
     border-bottom-right-radius: 0;
-	background: linear-gradient(to bottom, #ff9966 0%, #d75151 100%);
-    border-color: #ff9966;
+	background: linear-gradient(to bottom, #00AAAA 0%, #00AAAA 100%);
+    border-color: #00AAAA;
 }
 .dropdown-segmented .dropdown-toggle, .dropdown-segmented .dropdown-toggle:active, .dropdown-segmented .dropdown-toggle:focus{
-	border-left:1px solid #d75151;
+	border-left:1px solid #00AAAA;
 }
 .cancel-wp .btn-white, .cancel-wp .btn-white:active, .cancel-wp .btn-white:focus{
 	border-radius:0px;
 	outline:none;
 }
 .file-upload-inner.ts-forms input[type="text"]:hover, .file-upload-inner.ts-forms input[type="text"]:focus, .file-upload-inner.ts-forms input[type="text"]:active, .file-upload-inner.ts-forms .file-button:hover + input{
-	border: 1px solid #ff9966;
+	border: 1px solid #00AAAA;
 	height: 35px;
 }
 .file-upload-inner.ts-forms input[type="text"]{
 	height: 35px;
 }
 .file-upload-inner.ts-forms .file-button, .file-upload-inner.ts-forms .file-button:active, .file-upload-inner.ts-forms .file-button:focus{
-	background: linear-gradient(to bottom, #ff9966 0%, #d75151 100%);
+	background: linear-gradient(to bottom, #00AAAA 0%, #00AAAA 100%);
 	border-radius:0px;
 	width:70px;
 	height: 35px;
@@ -3492,20 +3492,20 @@ ul.profile-contact-menu {
 	margin-top:15px;
 }
 .images-cropper-pro .btn-primary{
-	background: linear-gradient(to bottom, #ff9966 0%, #d75151 100%);
-    border-color: #ff9966;
+	background: linear-gradient(to bottom, #00AAAA 0%, #00AAAA 100%);
+    border-color: #00AAAA;
 }
 .images-cropper-pro .btn-primary:active:focus, .images-cropper-pro .btn-primary:active:hover{
-	background-color: linear-gradient(to bottom, #ff9966 0%, #d75151 100%);
-    border-color: #ff9966;
+	background-color: linear-gradient(to bottom, #00AAAA 0%, #00AAAA 100%);
+    border-color: #00AAAA;
 }
 .images-action-pro .btn-warning{
-	background: linear-gradient(to bottom, #ff9966 0%, #d75151 100%);
-    border-color: #ff9966;
+	background: linear-gradient(to bottom, #00AAAA 0%, #00AAAA 100%);
+    border-color: #00AAAA;
 }
 .images-action-pro .btn-warning:active, .images-action-pro .btn-warning:focus, .images-action-pro .btn-warning:hover{
-	background: linear-gradient(to bottom, #ff9966 0%, #d75151 100%);
-    border-color: #ff9966;
+	background: linear-gradient(to bottom, #00AAAA 0%, #00AAAA 100%);
+    border-color: #00AAAA;
 	outline:none;
 }
 .inbox-email-menu-list .nav-tabs>li>a{
@@ -3958,7 +3958,7 @@ ul.breadcome-menu {
 }
 .darklayout .contact-client-footer .btn-group a{
 	border: 1px #303030 solid;
-	background: linear-gradient(to bottom, #ff9966 0%, #d75151 100%);
+	background: linear-gradient(to bottom, #00AAAA 0%, #00AAAA 100%);
 	color: #fff;
 }
 .darklayout .admin-check-sucess, .darklayout .admin-check-pro, .darklayout .alert-success-style1:before, .darklayout .alert-success-style2:before, .darklayout .alert-success-style3:before, .darklayout .alert-success-style4:before{
@@ -3995,7 +3995,7 @@ ul.breadcome-menu {
 	margin:0px;
 }
 .materialdesign #sidebar .sidebar-header{
-	background: linear-gradient(to bottom, #ff9966 0%, #ffffff 100%);
+	background: linear-gradient(to bottom, #00AAAA 0%, #ffffff 100%);
 }
 .materialdesign .footer-copyright-area{
 	background: #fff;
@@ -4015,20 +4015,20 @@ ul.breadcome-menu {
 	color: #303030;
 }
 .materialdesign .header-top-area, .materialdesign .fixed-header-top{
-	background: linear-gradient(to right, #ff9966 0%, #ff66cc 100%);
+	background: linear-gradient(to right, #00AAAA 0%, #00AAAA 100%);
 }
 .materialdesign .header-top-menu .navbar-nav>li .dropdown-menu, .materialdesign .header-right-info ul.header-right-menu li .author-message-top, .materialdesign .header-right-info ul.header-right-menu li .notification-author, .materialdesign .header-right-info ul.header-right-menu li .author-log, .materialdesign .header-right-info ul.header-right-menu li .admintab-wrap.menu-setting-wrap.menu-setting-wrap-bg.dropdown-menu{
-	background: linear-gradient(to bottom, #ff9966 0%, #ff66cc 100%);
+	background: linear-gradient(to bottom, #00AAAA 0%, #00AAAA 100%);
 }
 .materialdesign .header-right-info .author-message-top:before, .materialdesign .header-right-info .notification-author:before{
-	border-bottom: 10px solid #ff9966;
+	border-bottom: 10px solid #00AAAA;
 }
 .materialdesign .header-top-menu .navbar-nav>li .dropdown-menu a:hover, .materialdesign .header-right-info ul.header-right-menu li .dropdown-header-top.author-log li a:hover, .materialdesign  .header-right-info ul.header-right-menu li .dropdown-header-top.author-log li a:focus, .materialdesign  .header-drl-controller-btn.btn-info:active:focus, .btn-info:active:hover{
     background: #172054;
 }
 .materialdesign .header-drl-controller-btn.btn-info {
-    background-color: #ff9966;
-    border-color: #ff9966;
+    background-color: #00AAAA;
+    border-color: #00AAAA;
 }
 .materialdesign .left-custom-menu-adp-wrap ul.left-sidebar-menu-pro li a:hover, .materialdesign .left-custom-menu-adp-wrap ul.left-sidebar-menu-pro li a:focus, .materialdesign .left-custom-menu-adp-wrap ul.left-sidebar-menu-pro li a:active, .materialdesign .left-custom-menu-adp-wrap ul.left-sidebar-menu-pro li a:visited{
 	background: #ebebeb;
@@ -4046,7 +4046,7 @@ ul.breadcome-menu {
 	border-top: 1px solid #eb166f;
 }
 .materialdesign .menu-setting-wrap.menu-setting-wrap-bg .nav-tabs>li.active>a, .materialdesign .menu-setting-wrap.menu-setting-wrap-bg .nav-tabs>li.active>a:focus, .materialdesign .menu-setting-wrap.menu-setting-wrap-bg .nav-tabs>li.active>a:hover .notes-img{
-	background: #ff9966;
+	background: #00AAAA;
 }
 .materialdesign .breadcome-heading .form-control, .breadcome-heading .form-control:focus {
     border: 1px solid #ececec;
@@ -4055,7 +4055,7 @@ ul.breadcome-menu {
     color: #fff;
     padding-left: 20px;
     padding-right: 40px;
-    background: linear-gradient(to bottom, #ff9966 0%, #d75151 100%);
+    background: linear-gradient(to bottom, #00AAAA 0%, #00AAAA 100%);
     box-shadow: none;
     border-radius: 30px;
     width: 200px;
