@@ -172,4 +172,14 @@ class M_admincrud extends CI_Model
       WHERE tb_relasi.kd_diagnosa LIKE '%$cari%'");
       return $query->result();
     }
+
+    //tampil data psien
+    public function data_pasien(){
+        $this->db->select('tb_pasien.nama_pasien,tb_pasien.umur,tb_pasien.no_hp,tb_pasien.jenis_kelamin,tb_pasien.alamat, tb_riwayat_pasien.gejala,tb_riwayat_pasien.penyakit,tb_riwayat_pasien.CF');
+        $this->db->from('tb_pasien');
+        $this->db->join('tb_riwayat_pasien','tb_pasien.id_pasien= tb_riwayat_pasien.id_pasien');
+        $this->db->order_by('tb_pasien.id_pasien','ASC');
+        $query = $this->db->get();
+        return $query->result();
+    }
 }

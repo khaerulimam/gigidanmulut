@@ -36,6 +36,7 @@ public function halaman_konsultasi()
 public function inputpasien(){
 	    $this->m_konsultasi->inputpasien($data);
         redirect(base_url('index.php/c_user/halaman_konsultasi'));
-}
+		}
+
 	}
 	

@@ -17,93 +17,29 @@
                                     <tr>
                                         <th>No</th>
                                         <th>Nama Pasien</th>
-                                        <th>Tempat Tanggal Lahir</th>
-                                        <th>Asal</th>
-                                        <th>Penyakit</th>
+                                        <th>Umur</th>
+                                        <th>Nomor Telepon</th>
+                                        <th>Jenis Kelamin</th>
+                                        <th>Alamat</th>
+                                        <th>Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <?php foreach($pasien as $row){
+                                        $no=1;?>
                                     <tr>
-                                        <td>1</td>
-                                        <td>Anton</td>
-                                        <td></td>
-                                        <td></td>
+                                        <td><?php echo $no++;?></td>
+                                        <td><?php echo $row->nama_pasien;?> </td>
+                                        <td><?php echo $row->umur;?> </td>
+                                        <td><?php echo $row->no_hp;?> </td>
+                                        <td><?php echo $row->jenis_kelamin;?> </td>
+                                        <td><?php echo $row->alamat;?> </td>
                                         <!-- <td><center><img style="border-radius:100px;width:100px;height:100px" src="<?php echo base_url('assets/img/student/'),$achievement_item['photo']?>"/></center></td> -->
+                                      
                                         <td><a data-toggle="modal" data-target="#myModal"><img src="./img/edit.png" height="20px;" width="20px;"/>    </a>   |   <a href="#">    <img src="./img/delete.png" height="20px;" width="20px;"/></a></td>
                                     </tr>
-
-                                    <tr>
-                                        <td>2</td>
-                                        <td>Budi</td>
-                                        <td></td>
-                                        <td></td>
-                                        <!-- <td><center><img style="border-radius:100px;width:100px;height:100px" src="<?php echo base_url('assets/img/student/'),$achievement_item['photo']?>"/></center></td> -->
-                                        <td><a data-toggle="modal" data-target="#myModal"><img src="./img/edit.png" height="20px;" width="20px;"/>    </a>   |   <a href="#">    <img src="./img/delete.png" height="20px;" width="20px;"/></a></td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>3</td>
-                                        <td>Dodi</td>
-                                        <td></td>
-                                        <td></td>
-                                        <!-- <td><center><img style="border-radius:100px;width:100px;height:100px" src="<?php echo base_url('assets/img/student/'),$achievement_item['photo']?>"/></center></td> -->
-                                        <td><a data-toggle="modal" data-target="#myModal"><img src="./img/edit.png" height="20px;" width="20px;"/>    </a>   |   <a href="#">    <img src="./img/delete.png" height="20px;" width="20px;"/></a></td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>4</td>
-                                        <td>Joni</td>
-                                        <td></td>
-                                        <td></td>
-                                        <!-- <td><center><img style="border-radius:100px;width:100px;height:100px" src="<?php echo base_url('assets/img/student/'),$achievement_item['photo']?>"/></center></td> -->
-                                        <td><a data-toggle="modal" data-target="#myModal"><img src="./img/edit.png" height="20px;" width="20px;"/>    </a>   |   <a href="#">    <img src="./img/delete.png" height="20px;" width="20px;"/></a></td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>5</td>
-                                        <td>Iqbal</td>
-                                        <td></td>
-                                        <td></td>
-                                        <!-- <td><center><img style="border-radius:100px;width:100px;height:100px" src="<?php echo base_url('assets/img/student/'),$achievement_item['photo']?>"/></center></td> -->
-                                        <td><a data-toggle="modal" data-target="#myModal"><img src="./img/edit.png" height="20px;" width="20px;"/>    </a>   |   <a href="#">    <img src="./img/delete.png" height="20px;" width="20px;"/></a></td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>6</td>
-                                        <td>Bagus</td>
-                                        <td></td>
-                                        <td></td>
-                                        <!-- <td><center><img style="border-radius:100px;width:100px;height:100px" src="<?php echo base_url('assets/img/student/'),$achievement_item['photo']?>"/></center></td> -->
-                                        <td><a data-toggle="modal" data-target="#myModal"><img src="./img/edit.png" height="20px;" width="20px;"/>    </a>   |   <a href="#">    <img src="./img/delete.png" height="20px;" width="20px;"/></a></td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>7</td>
-                                        <td>Fajar</td>
-                                        <td></td>
-                                        <td></td>
-                                        <!-- <td><center><img style="border-radius:100px;width:100px;height:100px" src="<?php echo base_url('assets/img/student/'),$achievement_item['photo']?>"/></center></td> -->
-                                        <td><a data-toggle="modal" data-target="#myModal"><img src="./img/edit.png" height="20px;" width="20px;"/>    </a>   |   <a href="#">    <img src="./img/delete.png" height="20px;" width="20px;"/></a></td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>8</td>
-                                        <td>Fahmi</td>
-                                        <td></td>
-                                        <td></td>
-                                        <!-- <td><center><img style="border-radius:100px;width:100px;height:100px" src="<?php echo base_url('assets/img/student/'),$achievement_item['photo']?>"/></center></td> -->
-                                        <td><a data-toggle="modal" data-target="#myModal"><img src="./img/edit.png" height="20px;" width="20px;"/>    </a>   |   <a href="#">    <img src="./img/delete.png" height="20px;" width="20px;"/></a></td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>9</td>
-                                        <td>Alif</td>
-                                        <td></td>
-                                        <td></td>
-                                        <!-- <td><center><img style="border-radius:100px;width:100px;height:100px" src="<?php echo base_url('assets/img/student/'),$achievement_item['photo']?>"/></center></td> -->
-                                        <td><a data-toggle="modal" data-target="#myModal"><img src="./img/edit.png" height="20px;" width="20px;"/>    </a>   |   <a href="#">    <img src="./img/delete.png" height="20px;" width="20px;"/></a></td>
-                                    </tr>
-
+                                    <?php
+                                     } ?>
                                     </tbody>
                                 <tfoot>
                                     </tfoot>

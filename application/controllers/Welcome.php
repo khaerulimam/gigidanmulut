@@ -24,6 +24,7 @@ class Welcome extends CI_Controller {
 		if($this->session->userdata('status') != "login"){
 			redirect(base_url("index.php/c_akses"));
 		}
+
 		$this->load->model('m_admincrud');
 	} 
 	public function index()
@@ -76,7 +77,9 @@ class Welcome extends CI_Controller {
 		}
 	public function riwayatpasien()
 		{
-			$this->load->view('v_riwayatpasien');
+			$data['pasien']=$this->m_admincrud->data_pasien();
+			$this->load->view('v_riwayatpasien', $data);
+
 		}
 
 	public function change_password()
