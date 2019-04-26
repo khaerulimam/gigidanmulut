@@ -114,4 +114,11 @@ class C_admincrud extends CI_Controller {
       $this->m_admincrud->delrelasi($id);
       redirect('welcome/datagabungan');
       }
+
+       //delete riwayat pasien
+     public function delriwayat_pasien($id){
+      $this->session->set_flashdata('success', 'Data berhasil dihapus');
+      $this->m_admincrud->delriwayat_pasien($id);
+      redirect('welcome/riwayatpasien');
+      }
 }

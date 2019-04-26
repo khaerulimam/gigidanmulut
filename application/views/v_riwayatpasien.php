@@ -25,18 +25,21 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php foreach($pasien as $row){
-                                        $no=1;?>
+                                    <?php 
+                                     $no=1;
+                                    foreach($pasien as $row){
+                                       ?>
                                     <tr>
                                         <td><?php echo $no++;?></td>
                                         <td><?php echo $row->nama_pasien;?> </td>
                                         <td><?php echo $row->umur;?> </td>
                                         <td><?php echo $row->no_hp;?> </td>
-                                        <td><?php echo $row->jenis_kelamin;?> </td>
+                                        <td><?php if($row->jenis_kelamin == "l"){ echo "Laki-laki";}
+                                                  else{ echo "Perempuan";}?> </td>
                                         <td><?php echo $row->alamat;?> </td>
                                         <!-- <td><center><img style="border-radius:100px;width:100px;height:100px" src="<?php echo base_url('assets/img/student/'),$achievement_item['photo']?>"/></center></td> -->
-                                      
-                                        <td><a data-toggle="modal" data-target="#myModal"><img src="./img/edit.png" height="20px;" width="20px;"/>    </a>   |   <a href="#">    <img src="./img/delete.png" height="20px;" width="20px;"/></a></td>
+                                        
+                                        <td><a data-toggle="modal" data-target="#myModal"><img src="./img/edit.png" height="20px;" width="20px;"/>    </a>   |   <a href="<?php echo base_url('index.php/c_admincrud/delriwayat_pasien/'.$row->id_pasien); ?>" method="post">    <img src="./img/delete.png" height="20px;" width="20px;"/></a></td>
                                     </tr>
                                     <?php
                                      } ?>
