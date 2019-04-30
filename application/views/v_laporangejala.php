@@ -10,6 +10,7 @@
                                 <div class="sparkline8-hd">
                                     <div class="main-sparkline8-hd">
                                         <p><b>Gejala per Penyakit</b></p>
+                                        <div style="padding:0.5px; background-color:#000; margin-bottom:20px;"></div>
                                                             <form action="<?php echo base_url() ?>index.php/c_admincrud/search_gejala">
                                                                 <div class="form-group-inner">
                                                                     <div class="row">

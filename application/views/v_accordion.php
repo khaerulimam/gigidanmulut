@@ -18,7 +18,7 @@
                                                                             <label class="">Kode</label>
                                                                         </div>
                                                                         <div class="col-lg-9">
-                                                                            <?php 
+                                                                             <?php 
                                                                             foreach ($codepenyakit as $key) {
                                                                             $ht = substr($key->kd_diagnosa, 1) + 1;  
                                                                             ?>
@@ -26,7 +26,7 @@
                                                                             <?php
                                                                             }
                                                                             ?>
-                                                                        </div>
+                                                                         </div>   
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group-inner">

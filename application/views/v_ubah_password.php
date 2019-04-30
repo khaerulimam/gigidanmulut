@@ -31,7 +31,7 @@
             </div>
             <!-- Breadcome End-->
             <!-- Data table area Start-->
-            <div class="admin-dashone-data-table-area">
+            <div class="admin-dashone-data-table-area" style = "margin-top:55px;">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-12">
@@ -39,7 +39,8 @@
                                 <div class="sparkline8-hd">
                                     <div class="main-sparkline8-hd">
                                         <p style="font-size:20px;"><b>Ubah Password</b></p>
-                                        <?php if ($this->session->flashdata('success')): ?>
+                                        
+                                             <?php if ($this->session->flashdata('success')): ?>
 			                                 <div class="alert alert-success wow fadeInLeft" data-wow-duration="2s" role="alert">
 			                                 <?php echo $this->session->flashdata('success'); ?>
                                         </div>

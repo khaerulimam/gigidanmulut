@@ -41,6 +41,7 @@
                                         <center>
                                         <p><b>Daftar Semua Gejala</b></p>
                                         </center>
+                                        <div style="padding:0.5px; background-color:#000; margin-bottom:20px;"></div>
                                         <div class="table-responsive bootstrap">
                                         <?php if ($this->session->flashdata('success')): ?>
 			                                 <div class="alert alert-success wow fadeInLeft" data-wow-duration="2s" role="alert">
