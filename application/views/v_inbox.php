@@ -17,7 +17,7 @@
                                                                         </div>
                                                                         <div class="col-lg-9">
                                                                            
-                                                                            <input type="text" name="kode" class="form-control" value="<?php if ($codegejala==null){
+                                                                            <input type="text" name="kode" class="form-control" value=" <?php if ($codegejala!="G1"){
                                                                                 echo "G1";
                                                                             }
                                                                             else{

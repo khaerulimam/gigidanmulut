@@ -29,7 +29,7 @@ class C_akses extends CI_Controller {
  
 			$this->session->set_userdata($data_session);
  
-			redirect(base_url());
+			redirect(base_url('index.php/welcome'));
  
 		}else{
 			$data['error'] = '<div class="alert alert-danger" style="margin-top: 3px">
