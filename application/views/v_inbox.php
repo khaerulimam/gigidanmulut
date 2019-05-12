@@ -16,17 +16,21 @@
                                                                             <label class="">Kode</label>
                                                                         </div>
                                                                         <div class="col-lg-9">
-                                                                           
-                                                                            <input type="text" name="kode" class="form-control" value=" <?php if ($codegejala!="G1"){
-                                                                                echo "G1";
+                                                                             <?php if ($codegejala==null){
+                                                                                ?>
+                                                                                 <input type="text" name="kode" readonly="readonly" class="form-control" value="G1">
+                                                                                <?php
                                                                             }
                                                                             else{
-                                                                                foreach ($codegejala as $key) {
-                                                                                    $ht = substr($key->kd_gejala, 1) + 1; echo "G",$ht;
-                                                                                } 
-                                                                            }?>" readonly="readonly">
-                                                                           
-                                                                        </div>
+                                                                            foreach ($codegejala as $key) {
+                                                                            $ht = substr($key->kd_gejala, 1) + 1;  
+                                                                            }
+                                                                            ?>
+                                                                            <input type="text" name="kode" readonly="readonly" class="form-control" value="<?php echo "G",$ht;?>">
+                                                                            <?php
+                                                                            }
+                                                                            ?>
+                                                                         </div>   
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group-inner">
