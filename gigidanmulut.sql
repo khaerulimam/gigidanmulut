@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 20 Bulan Mei 2019 pada 03.22
+-- Waktu pembuatan: 20 Bulan Mei 2019 pada 04.02
 -- Versi server: 10.1.31-MariaDB
 -- Versi PHP: 7.2.4
 
@@ -183,6 +183,12 @@ ALTER TABLE `tb_admin`
   MODIFY `id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT untuk tabel `tb_gejala`
+--
+ALTER TABLE `tb_gejala`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT untuk tabel `tb_pasien`
 --
 ALTER TABLE `tb_pasien`
@@ -192,7 +198,7 @@ ALTER TABLE `tb_pasien`
 -- AUTO_INCREMENT untuk tabel `tb_penyakit`
 --
 ALTER TABLE `tb_penyakit`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_relasi`
