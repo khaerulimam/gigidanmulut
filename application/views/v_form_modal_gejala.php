@@ -29,6 +29,7 @@
             <!-- Breadcome End-->
             <!-- Data table area Start-->
             <div class="admin-dashone-data-table-area">
+            <div class="admin-dashone-data-table-area" style = "margin-top:60px;">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-12">

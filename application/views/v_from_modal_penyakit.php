@@ -1,6 +1,7 @@
 <?php $this->load->view('template_admin/header_menusamping'); ?>
            
             <!-- Breadcome start-->
+            <div class="admin-dashone-data-table-area" style = "margin-top:60px;">
             <div class="breadcome-area des-none">
                 <div class="container-fluid">
                     <div class="row">

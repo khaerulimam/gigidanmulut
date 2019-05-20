@@ -19,7 +19,9 @@ class C_admincrud extends CI_Controller {
     }
 
     //update_gejala
-    public function vieweditgejala($id){
+    
+    public function vieweditgejala($id)
+    {
 		if($this->input->post('submit')){
       $this->session->set_flashdata('success', 'Berhasil Ubah Gejala');
 			$this->m_admincrud->updategejala($id);
