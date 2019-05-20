@@ -23,7 +23,8 @@
                                                                             }
                                                                             else{
                                                                             foreach ($codegejala as $key) {
-                                                                            $ht = substr($key->kd_gejala, 1) + 1;  
+                                                                            $ht = $key->id;
+                                                                            $ht++;  
                                                                             }
                                                                             ?>
                                                                             <input type="text" name="kode" readonly="readonly" class="form-control" value="<?php echo "G",$ht;?>">
