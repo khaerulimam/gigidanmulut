@@ -23,10 +23,8 @@
                                                                             }
                                                                             else{
                                                                             foreach ($codegejala as $key) {
-                                                                            $ht = substr($key->kd_gejala, 1);
-                                                                            
-                                                                            $ht++;
-                                                                            
+                                                                                $ht = $key->id;
+                                                                                $ht++;
                                                                             }
                                                                           
                                                                             ?>

@@ -18,14 +18,15 @@
                                                                             <label class="">Kode</label>
                                                                         </div>
                                                                         <div class="col-lg-9">
-                                                                             <?php if ($codepenyakit==null){
+                                                                            <?php if ($codepenyakit==null){
                                                                                 ?>
                                                                                  <input type="text" name="kode" readonly="readonly" class="form-control" value="P1">
                                                                                 <?php
                                                                             }
                                                                             else{
                                                                             foreach ($codepenyakit as $key) {
-                                                                            $ht = substr($key->kd_diagnosa, 1) + 1;  
+                                                                            $ht = $key->id;
+                                                                            $ht++; 
                                                                             }
                                                                             ?>
                                                                             <input type="text" name="kode" readonly="readonly" class="form-control" value="<?php echo "P",$ht;?>">
