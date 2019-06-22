@@ -35,7 +35,7 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-12">
-                            <div class="sparkline8-list shadow-reset tab-pane fade in animated zoomInDown custom-inbox-message shadow-reset active">
+                            <div class="sparkline8-list shadow-reset tab-pane custom-inbox-message shadow-reset active">
                                 <div class="sparkline8-hd">
                                     <div class="main-sparkline8-hd">
                                         <center>
@@ -51,7 +51,7 @@
                                             <table id="example" class="table table-striped table-bordered" style="width:100%">
                                 <thead>
                                     <tr>
-                                        <th>No</th>
+                                        
                                         <th>Kode Gejala</th>
                                         <th>Nama Gejala</th>
                                         <th>Keterangan</th>
@@ -60,11 +60,11 @@
                                 </thead>
                                 <tbody>
                                 <?php
-                                     $nomor = 1;
+                                     
                                     foreach ($tampilgejala as $row) {
                                 ?>
                                     <tr>
-                                        <td><?php echo $nomor++;?></td>
+                                       
                                         <td><?php echo $row->kd_gejala;?></td>
                                         <td><?php echo $row->nama_gejala;?></td>
                                         <td><?php echo $row->keterangan;?></td>

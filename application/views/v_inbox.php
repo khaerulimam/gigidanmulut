@@ -4,7 +4,7 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-12">
-                            <div class="sparkline8-list shadow-reset tab-pane fade in animated zoomInDown custom-inbox-message shadow-reset active">
+                            <div class="sparkline8-list shadow-reset tab-pane custom-inbox-message shadow-reset active">
                                 <div class="sparkline8-hd">
                                     <div class="main-sparkline8-hd" >
                                         <p><b>Masukan Gejala Penyakit</b></p>
@@ -28,6 +28,7 @@
                                                                             }
                                                                           
                                                                             ?>
+
                                                                             <input type="text" name="kode" readonly="readonly" class="form-control" value="<?php echo "G",$ht;?>">
                                                                             <?php
                                                                             

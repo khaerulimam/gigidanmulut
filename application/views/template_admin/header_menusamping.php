@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Dashboard v.1.0 | Adminpro - Admin Template</title>
+    <title>Sistem Pakar Diagnosis Penyakit Gigi & Mulut</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- favicon
@@ -131,14 +131,15 @@
                                     <ul class="nav navbar-nav mai-top-nav header-right-menu">
                                         <li class="nav-item">
                                             <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
-                                                <span class="adminpro-icon adminpro-user-rounded header-riht-inf"></span>
+                                                <!-- <span class="adminpro-icon adminpro-user-rounded header-riht-inf"></span> -->
+                                                <img src="http://localhost/gigidanmulut/assets/img/avatar.png" width="15px" height="15px" style="margin-right:4px; margin-bottom:7px;">                               
                                                 <span class="admin-name">Hy admin pakar</span>
-                                                <span class="author-project-icon adminpro-icon adminpro-down-arrow"></span>
+                                                <!-- <span class="author-project-icon adminpro-icon adminpro-down-arrow"></span> -->
                                             </a>
                                             <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated flipInX">
-                                                <li><a href="#"><span class="adminpro-icon adminpro-user-rounded author-log-ic"></span>About</a>
+                                                <li><a href="#" style="margin-left:17px;">About</a>
                                                 </li>
-                                                <li><a href="<?php echo base_url();?>index.php/c_akses/logout"><span class="adminpro-icon adminpro-locked author-log-ic"></span>Log Out</a>
+                                                <li><a href="<?php echo base_url();?>index.php/c_akses/logout" style="margin-left:17px;">Log Out</a>
                                                 </li>
                                             </ul>
                                         </li>
