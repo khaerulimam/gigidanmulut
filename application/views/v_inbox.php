@@ -21,14 +21,17 @@
                                                                                  <input type="text" name="kode" readonly="readonly" class="form-control" value="G1">
                                                                                 <?php
                                                                             }
+                                                    
                                                                             else{
                                                                             foreach ($codegejala as $key) {
                                                                             $ht = $key->id;
-                                                                            $ht++;  
+                                                                            $hl = $key->kd_gejala;
+                                                                            $ht++;
                                                                             }
-                                                                            ?>
-                                                                            <input type="text" name="kode" readonly="readonly" class="form-control" value="<?php echo "G",$ht;?>">
-                                                                            <?php
+                                                                                ?>
+                                                                                <input type="text" name="kode" readonly="readonly" class="form-control" value="<?php echo "G",$ht;?>">
+                                                                                <?php 
+                                                                                
                                                                             }
                                                                             ?>
                                                                          </div>   

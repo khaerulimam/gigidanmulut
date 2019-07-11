@@ -35,7 +35,12 @@ public function halaman_konsultasi()
 // input pasien
 public function inputpasien(){
 	    $this->m_konsultasi->inputpasien($data);
-        redirect(base_url('index.php/c_user/halaman_konsultasi'));
+        redirect(base_url('index.php/c_user/opsi'));
+		}
+
+		public function opsi()
+		{
+			$this->load->view('v_opsi');
 		}
 
 	}
