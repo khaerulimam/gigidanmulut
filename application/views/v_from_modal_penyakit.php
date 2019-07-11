@@ -1,6 +1,7 @@
 <?php $this->load->view('template_admin/header_menusamping'); ?>
            
             <!-- Breadcome start-->
+            <div class="admin-dashone-data-table-area" style = "margin-top:60px;">
             <div class="breadcome-area des-none">
                 <div class="container-fluid">
                     <div class="row">
@@ -32,7 +33,7 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-12">
-                            <div class="sparkline8-list shadow-reset tab-pane fade in animated zoomInDown custom-inbox-message shadow-reset active">
+                            <div class="sparkline8-list shadow-reset tab-pane custom-inbox-message shadow-reset active">
                                 <div class="sparkline8-hd">
                                     <div class="main-sparkline8-hd">
                                         <p><b>Masukan Data Penyakit</b></p>
