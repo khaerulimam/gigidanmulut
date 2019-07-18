@@ -53,7 +53,7 @@ class c_Form extends CI_Controller
 			$this->db->update('tb_admin', $data);  
 			$this->session->set_flashdata('success', 'Berhasil Ubah Password');
            // echo 'berhasil';
-            redirect(base_url('index.php/welcome/change_password'));
+            redirect(base_url('admin/ubahpassword'));
      
             }else{
 				$data['error'] = '<div class="alert alert-danger" style="margin-top: 3px">

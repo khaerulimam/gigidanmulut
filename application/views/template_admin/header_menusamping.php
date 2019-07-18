@@ -74,36 +74,40 @@
                 <div style="margin-top:50px !important;" class="left-custom-menu-adp-wrap">
                     <ul class="nav navbar-nav left-sidebar-menu-pro">
                         <li class="nav-item">
-                            <a href="<?php echo base_url('index.php/welcome');?>"><img src="http://localhost/gigidanmulut/assets/img/home.png" width="17px" height="17px"></i> <span class="mini-dn">Home</span> <span class="indicator-right-menu mini-dn"></span></a>
+                            <a href="<?php echo base_url('admin/index');?>"><img src="http://localhost/gigidanmulut/assets/img/home.png" width="17px" height="17px"></i> <span class="mini-dn">Home</span> <span class="indicator-right-menu mini-dn"></span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?php echo base_url('admin/konsultasi');?>"><img src="http://localhost/gigidanmulut/assets/img/home.png" width="17px" height="17px"></i> <span class="mini-dn">Konsultasi</span> <span class="indicator-right-menu mini-dn"></span></a>
                         </li>
                         <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><img src="http://localhost/gigidanmulut/assets/img/caries.png" width="17px" height="17px"></i> <span class="mini-dn">Gejala</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
                             <div role="menu" class="dropdown-menu left-menu-dropdown animated flipInX">
-                                <a href="<?php echo base_url();?>index.php/welcome/inbox" class="dropdown-item">Input Gejala</a>
-                                <a href="<?php echo base_url();?>index.php/welcome/datagejala" class="dropdown-item">Data Gejala</a>
-                                <a href="<?php echo base_url();?>index.php/welcome/laporangejala" class="dropdown-item">Laporan Gejala</a>
+                                <a href="<?php echo base_url();?>admin/datagejala" class="dropdown-item">Data Gejala</a>
+                                <a href="<?php echo base_url();?>admin/inputgejala" class="dropdown-item">Input Gejala</a>
+                                <a href="<?php echo base_url();?>admin/laporangejala" class="dropdown-item">Laporan Gejala</a>
                                 
                             </div>
                         </li>
                         <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><img src="http://localhost/gigidanmulut/assets/img/disease.png" width="17px" height="17px" style="margin-right:2px;"><span class="mini-dn">Penyakit</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
                             <div role="menu" class="dropdown-menu left-menu-dropdown animated flipInX">
-                                <a href="<?php echo base_url();?>index.php/welcome/accordion" class="dropdown-item">Input Penyakit</a>
-                                <a href="<?php echo base_url();?>index.php/welcome/datapenyakit" class="dropdown-item">Data Penyakit</a>
-                                <a href="<?php echo base_url();?>index.php/welcome/laporanpenyakit" class="dropdown-item">Laporan Penyakit</a>
+                                
+                                <a href="<?php echo base_url();?>admin/datapenyakit" class="dropdown-item">Data Penyakit</a>
+                                <a href="<?php echo base_url();?>admin/inputpenyakit" class="dropdown-item">Input Penyakit</a>
+                                <a href="<?php echo base_url();?>admin/laporanpenyakit" class="dropdown-item">Laporan Penyakit</a>
                                 
                             </div>
                         </li>
                         <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><img src="http://localhost/gigidanmulut/assets/img/star.png" width="17px" height="17px"> <span class="mini-dn">Relasi</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
                             <div role="menu" class="dropdown-menu left-menu-dropdown animated flipInX">
-                                <a href="<?php echo base_url();?>index.php/welcome/inputrelasi" class="dropdown-item">Input Relasi</a>
-                                <a href="<?php echo base_url();?>index.php/welcome/datagabungan" class="dropdown-item">Data Gabungan</a>                            
+                                <a href="<?php echo base_url();?>admin/inputrelasi" class="dropdown-item">Input Relasi</a>
+                                <a href="<?php echo base_url();?>admin/datagabungan" class="dropdown-item">Data Gabungan</a>                            
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a href="<?php echo base_url();?>index.php/welcome/riwayatpasien" ><img src="http://localhost/gigidanmulut/assets/img/riwayat.png" width="17px" height="17px" > <span class="mini-dn">Riwayat Pasien</span> <span class="indicator-right-menu mini-dn"></span></a>
+                            <a href="<?php echo base_url();?>admin/riwayatpasien" ><img src="http://localhost/gigidanmulut/assets/img/riwayat.png" width="17px" height="17px" > <span class="mini-dn">Riwayat Pasien</span> <span class="indicator-right-menu mini-dn"></span></a>
                         </li>
 
                         <li class="nav-item">
-                            <a href="<?php echo base_url();?>index.php/welcome/change_password" ><img src="http://localhost/gigidanmulut/assets/img/password.png" width="17px" height="17px" style="margin-right:4px;"><span class="mini-dn">Ubah Password</span> <span class="indicator-right-menu mini-dn"></span></a>
+                            <a href="<?php echo base_url();?>admin/ubahpassword" ><img src="http://localhost/gigidanmulut/assets/img/password.png" width="17px" height="17px" style="margin-right:4px;"><span class="mini-dn">Ubah Password</span> <span class="indicator-right-menu mini-dn"></span></a>
                         </li>
                     </ul>
                 </div>
@@ -139,7 +143,7 @@
                                             <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated flipInX">
                                                 <li><a href="#" style="margin-left:17px;">About</a>
                                                 </li>
-                                                <li><a href="<?php echo base_url();?>index.php/c_akses/logout" style="margin-left:17px;">Log Out</a>
+                                                <li><a href="<?php echo base_url();?>admin/logout" style="margin-left:17px;">Log Out</a>
                                                 </li>
                                             </ul>
                                         </li>

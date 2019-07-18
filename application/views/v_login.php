@@ -66,9 +66,7 @@
                            <div  class="col-lg-6 col-md-6 col-sm-6 col-xs-12"">
                                <div class="header-top-menu tabl-d-n">
                                    <ul class="nav navbar-nav mai-top-nav">
-                                       <li ><a href="<?php echo base_url(); ?>index.php/c_user" class="nav-link" >Home</a> </li>
-                                       <li ><a href="<?php echo base_url(); ?>index.php/c_user/halaman_konsultasi">Konsultasi</a></li>
-                                       <li ><a href="<?php echo base_url(); ?>index.php/C_akses" class="nav-link">Login Admin Pakar</a></li>
+                                       <li ><a class="nav-link">Login Sistem Pakar</a></li>
                                        
                                    </ul>
                                </div>

@@ -1,5 +1,6 @@
-<?php $this->load->view('template_user/header'); ?>
-               
+<?php $this->load->view('template_admin/header_menusamping'); ?>
+           
+            
         
             <!-- Basic Form Start -->
             <div class="dual-list-box-area mg-b-40" style="margin-top:20px;">
@@ -20,7 +21,7 @@
                                             <form action="<?php echo base_url();?>index.php/c_user/inputpasien" method="post">
                                                                 <div class="form-group-inner">
                                                                     <div class="row">
-                                                                        <div class="col-lg-2">
+                                                                        <div class="col-lg-4">
                                                                             <label class="">Nama Pasien</label>
                                                                         </div>
                                                                         <div class="col-lg-4" style="margin-left:-100px !important;">
@@ -32,7 +33,7 @@
                                                                 </div>
                                                                 <div class="form-group-inner">
                                                                     <div class="row">
-                                                                        <div class="col-lg-2">
+                                                                        <div class="col-lg-4">
                                                                             <label class="">Umur</label>
                                                                         </div>
                                                                         <div class="col-lg-4" style="margin-left:-100px !important;">
@@ -42,7 +43,7 @@
                                                                 </div>
                                                                 <div class="form-group-inner">
                                                                     <div class="row">
-                                                                        <div class="col-lg-2">
+                                                                        <div class="col-lg-4">
                                                                             <label class="">Nomor Telepon</label>
                                                                         </div>
                                                                         <div class="col-lg-4" style="margin-left:-100px !important;">
@@ -53,7 +54,7 @@
 
                                                                 <div class="form-group-inner">
                                                                     <div class="row">
-                                                                        <div class="col-lg-2">
+                                                                        <div class="col-lg-4">
                                                                             <label class="">Jenis Kelamin</label>
                                                                         </div>
                                                                         <div class="col-lg-4" style="margin-left:-100px !important;">
@@ -69,7 +70,7 @@
 
                                                                 <div class="form-group-inner">
                                                                     <div class="row">
-                                                                        <div class="col-lg-2">
+                                                                        <div class="col-lg-4">
                                                                             <label class="">Alamat</label>
                                                                         </div>
                                                                         <div class="col-lg-4" style="margin-left:-100px !important;">
@@ -81,7 +82,7 @@
                                                                 <div class="form-group-inner">
                                                                     <div class="login-btn-inner">
                                                                         <div class="row">
-                                                                            <div class="col-lg-2" style="margin-left:-100px !important;"></div>
+                                                                            <div class="col-lg-4" style="margin-left:-100px !important;"></div>
                                                                             <div class="col-lg-4">
                                                                                 <div class="login-horizental cancel-wp pull-left">
                                                                                     <button class="btn btn-white" type="reset">Reset</button>

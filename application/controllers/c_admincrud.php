@@ -15,7 +15,7 @@ class C_admincrud extends CI_Controller {
     {
         $this->session->set_flashdata('success', 'Berhasil Tambah Gejala');
         $this->m_admincrud->inputgejala($data);
-        redirect(base_url('index.php/welcome/datagejala'));
+        redirect(base_url('admin/datagejala'));
     }
 
     //update_gejala
@@ -25,7 +25,7 @@ class C_admincrud extends CI_Controller {
 		if($this->input->post('submit')){
       $this->session->set_flashdata('success', 'Berhasil Ubah Gejala');
 			$this->m_admincrud->updategejala($id);
-			redirect('welcome/datagejala');
+			redirect('admin/datagejala');
 		}
 		  $data['gejala'] = $this->m_admincrud->get_gejala_id($id);
 		  $this->load->view('v_form_modal_gejala', $data);
@@ -34,7 +34,7 @@ class C_admincrud extends CI_Controller {
     public function delgejala($id){
     $this->session->set_flashdata('success', 'Berhasil Hapus Gejala');
 		$this->m_admincrud->delgejala($id);
-		redirect('welcome/datagejala');
+		redirect('admin/datagejala');
   }
 
     //search_gejala_per_penyakit
@@ -49,7 +49,7 @@ class C_admincrud extends CI_Controller {
     {
         $this->session->set_flashdata('success', 'Berhasil Tambah Penyakit');
         $this->m_admincrud->inputpenyakit($data);
-        redirect(base_url('index.php/welcome/datapenyakit'));
+        redirect(base_url('admin/datapenyakit'));
     }
 
     //update_penyakit
@@ -57,7 +57,7 @@ class C_admincrud extends CI_Controller {
 		if($this->input->post('submit')){
       $this->session->set_flashdata('success', 'Berhasil Ubah Penyakit');
 			$this->m_admincrud->updatepenyakit($id);
-			redirect('welcome/datapenyakit');
+			redirect('admin/datapenyakit');
 		}
 		  $data['penyakit'] = $this->m_admincrud->get_penyakit_id($id);
 		  $this->load->view('v_from_modal_penyakit', $data);
@@ -67,7 +67,7 @@ class C_admincrud extends CI_Controller {
     public function delpenyakit($id){
       $this->session->set_flashdata('success', 'Berhasil Hapus Penyakit');
 		$this->m_admincrud->delpenyakit($id);
-		redirect('welcome/datapenyakit');
+		redirect('admin/datapenyakit');
     }
 
   //relasi
@@ -84,12 +84,12 @@ class C_admincrud extends CI_Controller {
 		$row =	$cek->num_rows();
 		if($row > 0){
       $this->session->set_flashdata('error', 'Data yang anda masukan sudah ada !');
-      redirect('welcome/inputrelasi');
+      redirect('admin/inputrelasi');
       echo "Data yang anda masukan sudah ada";
 		}else{
       $this->session->set_flashdata('success', 'Data berhasil dimasukkan');
       $this->m_admincrud->input_relasi($data);
-      redirect('welcome/datagabungan');
+      redirect('admin/datagabungan');
 		}
   }
 
@@ -99,7 +99,7 @@ class C_admincrud extends CI_Controller {
      
         $this->session->set_flashdata('success', 'Data berhasil diubah');
         $this->m_admincrud->updaterelasi($id);
-        redirect('welcome/datagabungan');
+        redirect('admin/datagabungan');
       
 			
     }
@@ -114,13 +114,13 @@ class C_admincrud extends CI_Controller {
     public function delrelasi($id){
       $this->session->set_flashdata('success', 'Data berhasil dihapus');
       $this->m_admincrud->delrelasi($id);
-      redirect('welcome/datagabungan');
+      redirect('admin/datagabungan');
       }
 
        //delete riwayat pasien
      public function delriwayat_pasien($id){
       $this->session->set_flashdata('success', 'Data berhasil dihapus');
       $this->m_admincrud->delriwayat_pasien($id);
-      redirect('welcome/riwayatpasien');
+      redirect('admin/riwayatpasien');
       }
 }
