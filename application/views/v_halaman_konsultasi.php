@@ -1,4 +1,4 @@
-<?php $this->load->view('template_admin/header_menusamping'); ?>
+<?php $this->load->view('template_user/header'); ?>
            
             
         
