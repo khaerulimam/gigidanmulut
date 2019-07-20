@@ -23,9 +23,28 @@ function inputpasien(){
     redirect(base_url('admin/inputpasien'));
 }
 
+//opsi pertanyaan
 function opsi()
 {
 	$this->load->view('v_opsi');
+}
+
+//penyakit abses
+function abses()
+{
+	$this->load->view('v_abses');
+}
+
+//penyakit kalkulus
+function kalkulus()
+{
+	$this->load->view('v_kalkulus_gigi');
+}
+
+//penyakit karis gigi
+function karies_gigi()
+{
+	$this->load->view('v_karies');
 }
 }
 	
