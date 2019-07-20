@@ -66,8 +66,16 @@
                            <div  class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                <div class="header-top-menu tabl-d-n">
                                    <ul class="nav navbar-nav mai-top-nav">
-                                        <li ><a href="<?php echo base_url(); ?>" class="nav-link">Login Sistem Pakar</a></li>
+                                        <li ><a href="<?php echo base_url(); ?>" class="nav-link">Home</a></li>
+                                        <li ><a href="<?php echo base_url(); ?>" class="nav-link">Abses</a></li>
+                                        <li ><a href="<?php echo base_url(); ?>" class="nav-link">Kalkulus Gigi</a></li>
+                                        <li ><a href="<?php echo base_url(); ?>" class="nav-link">Karies Gigi</a></li>
+                                        <li ><a href="<?php echo base_url(); ?>" class="nav-link">Periodontitis</a></li>
+                                        <li ><a href="<?php echo base_url(); ?>" class="nav-link">Persistensi</a></li>
+                                        <li ><a href="<?php echo base_url(); ?>" class="nav-link">Pulpitis</a></li>
                                         <li ><a href="<?php echo base_url(); ?>index.php/c_user/halaman_konsultasi">Konsultasi</a></li>        
+                                        <li ><a href="<?php echo base_url(); ?>" class="nav-link">Login Sistem Pakar</a></li>
+                                        
                                    </ul>
                                </div>
                            </div>
