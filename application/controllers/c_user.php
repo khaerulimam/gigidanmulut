@@ -26,7 +26,8 @@ function inputpasien(){
 //opsi pertanyaan
 function opsi()
 {
-	$this->load->view('v_opsi');
+	$data['datagejala']= $this->m_konsultasi->getGejala()->result();
+	$this->load->view('v_opsi',$data);
 }
 
 //penyakit abses
