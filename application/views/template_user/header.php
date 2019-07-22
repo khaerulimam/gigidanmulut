@@ -57,23 +57,22 @@
     <div class="wrapper-pro">
        
        <!-- Header top area start-->
-       <div  style="margin-left:none !important;">
+       <div  style=" !important;">
            <div class="header-top-area">
                
                    <div class="container-fluid">
                        <div class="row">
-                         
-                           <div  class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                           <div  class="col-lg-12 col-md-12 col-sm-6 col-xs-12">
                                <div class="header-top-menu tabl-d-n">
                                    <ul class="nav navbar-nav mai-top-nav">
                                         <li ><a href="<?php echo base_url(); ?>" class="nav-link">Home</a></li>
-                                        <li ><a href="<?php echo base_url(); ?>index.php/c_user/abses">Abses</a></li>
-                                        <li ><a href="<?php echo base_url(); ?>index.php/c_user/kalkulus">Kalkulus Gigi</a></li>
-                                        <li ><a href="<?php echo base_url(); ?>index.php/c_user/karies_gigi">Karies Gigi</a></li>
-                                        <li ><a href="<?php echo base_url(); ?>index.php/c_user/periodontitis">Periodontitis</a></li>
+                                        <li ><a href="<?php echo base_url(); ?>index.php/c_user/abses" class="nav-link">Abses</a></li>
+                                        <li ><a href="<?php echo base_url(); ?>index.php/c_user/kalkulus" class="nav-link">Kalkulus Gigi</a></li>
+                                        <li ><a href="<?php echo base_url(); ?>index.php/c_user/karies_gigi" class="nav-link">Karies Gigi</a></li>
+                                        <li ><a href="<?php echo base_url(); ?>index.php/c_user/periodontitis" class="nav-link">Periodontitis</a></li>
                                         <li ><a href="<?php echo base_url(); ?>" class="nav-link">Persistensi</a></li>
                                         <li ><a href="<?php echo base_url(); ?>" class="nav-link">Pulpitis</a></li>
-                                        <li ><a href="<?php echo base_url(); ?>index.php/c_user/halaman_konsultasi">Konsultasi</a></li>        
+                                        <li ><a href="<?php echo base_url(); ?>index.php/c_user/halaman_konsultasi" class="nav-link">Konsultasi</a></li>        
                                         <li ><a href="<?php echo base_url(); ?>" class="nav-link">Login Sistem Pakar</a></li>
                                         
                                    </ul>
