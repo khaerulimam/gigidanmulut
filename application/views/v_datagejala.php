@@ -51,25 +51,27 @@
                                             <table id="example" class="table table-striped table-bordered" style="width:100%">
                                 <thead>
                                     <tr>
-                                        
+                                        <th>No</th>
                                         <th>Kode Gejala</th>
                                         <th>Nama Gejala</th>
-                                        <th>Keterangan</th>
+                                        <th>Bobot Gejala</th>
+                                        <th width="300px">Keterangan</th>
                                         <th>Pilihan</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 <?php
-                                     
+                                    $no = 1;
                                     foreach ($tampilgejala as $row) {
                                 ?>
                                     <tr>
-                                       
+                                        <td><?php echo $no++?></td>
                                         <td><?php echo $row->kd_gejala;?></td>
                                         <td><?php echo $row->nama_gejala;?></td>
+                                        <td><?php echo $row->bobot ?></td>
                                         <td><?php echo $row->keterangan;?></td>
                                         <!-- <td><center><img style="border-radius:100px;width:100px;height:100px" src="<?php echo base_url('assets/img/student/'),$achievement_item['photo']?>"/></center></td> -->
-                                        <td><a href="<?php echo base_url('index.php/c_admincrud/vieweditgejala/'.$row->kd_gejala); ?>"  ><img src="./img/edit.png" height="20px;" width="20px;"/></a>   |   <a href="<?php echo base_url('index.php/c_admincrud/delgejala/'.$row->kd_gejala); ?>">    <img src="./img/delete.png" height="20px;" width="20px;"/></a></td>
+                                        <td><a href="<?php echo base_url('index.php/c_admincrud/vieweditgejala/'.$row->kd_gejala); ?>"  ><img src="<?=base_url()?>assets/img/edit.png" height="20px;" width="20px;"/></a>   |   <a href="<?php echo base_url('index.php/c_admincrud/delgejala/'.$row->kd_gejala); ?>">    <img src="<?=base_url()?>assets/img/delete.png" height="20px;" width="20px;"/></a></td>
                                     </tr>
                                 <?php 
                                 }
