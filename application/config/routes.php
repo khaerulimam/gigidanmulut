@@ -54,7 +54,7 @@ $route['default_controller']    ='c_user';
 $route['admin/login']           ='c_akses';
 $route['admin/logout']          ='c_akses/logout';
 
-$route['admin/inputpasien']     ='c_user/ops';
+$route['admin/inputpasien']     ='c_user/opsi';
 
 $route['admin/index']           ='welcome';
 $route['admin/konsultasi']      ='c_user/halaman_konsultasi';

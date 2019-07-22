@@ -7,7 +7,7 @@ class M_konsultasi extends CI_Model{
     }
     
     //input pasien
-    public function inputpasien()
+    function inputpasien()
     {
         $n = $this->input->post("nama_pasien");
         $u = $this->input->post("umur");
@@ -22,5 +22,8 @@ class M_konsultasi extends CI_Model{
             'alamat' => $a
         );
         $this->db->insert("tb_pasien", $data);
+    }
+    function getGejala(){
+        return $this->db->get('tb_gejala');
     }
 }
