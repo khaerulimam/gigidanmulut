@@ -12,10 +12,13 @@
                         <div class="basic-login-form-ad">
                             <div class="row">
                                 <div class="col-lg-12">
+
+                                </div>
+                                <div class="col-lg-12">
                                     <form action="<?php echo base_url(); ?>konsultasi/proses" method="post">
                                         <p>
                                             <h5>
-                                                <b>
+                                                <!-- <b> -->
                                                     <?php $no = 0;
                                                     foreach ($datagejala as $data) {
                                                         $no++;
@@ -30,16 +33,17 @@
                                                                     </p>
                                                                 </div>
                                                                 <div class="form-group col-md-4 col-lg-4">
+                                                                    <!-- <input type="number" class="form-control" min="0" max="1" placeholder="0 sampai 1"> -->
                                                                     <select class="form-control" name="tingkat[]">
                                                                         <option value="">Pilih Tingkat Keyakinan</option>
-                                                                        <option value="-0.1">Pasti tidak (-0.1)</option>
-                                                                        <option value="-0.8">Hampir tidak Pasti (-0.8)</option>
-                                                                        <option value="-0.6">Kemungkinan Besar tidak (-0.6)</option>
-                                                                        <option value="-0.4">Mungkin Tidak (-0.4)</option>
-                                                                        <option value="0.2">Tidak Tahu (-0.2 - 0.2)</option>
-                                                                        <option value="0.4">Mungkin (0.4)</option>
-                                                                        <option value="0.6">Kemungkinan Besar (0.6)</option>
-                                                                        <option value="0.8">Hampir Pasti (0.8)</option>
+                                                                        <option value="0.2">Pasti Tidak (0,2)</option>
+                                                                        <option value="0.3">Hampir tidak pasti (0,3)</option>
+                                                                        <option value="0.4">Kemungkinan besar tidak (0,4)</option>
+                                                                        <option value="0.5">Mungkin tidak (0,5)</option>
+                                                                        <option value="0.6">Tidak tahu (0,6)</option>
+                                                                        <option value="0.7">Mungkin (0,7)</option>
+                                                                        <option value="0.8">Kemungkinan besar (0,8)</option>
+                                                                        <option value="0.9">Hampir pasti (0,9)</option>
                                                                         <option value="1">Pasti (1)</option>
                                                                     </select>
                                                                 </div>
@@ -48,7 +52,7 @@
                                                             </div>
                                                         </div>
                                                     <?php } ?>
-                                                </b>
+                                                <!-- </b> -->
                                             </h5>
                                         </p>
                                         <div class="form-group-inner">

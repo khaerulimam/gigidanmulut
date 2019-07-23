@@ -43,6 +43,7 @@ class Konsultasi extends CI_Controller
             }
             $i++;
         }
+        
 
 
         // $data = array(
