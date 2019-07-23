@@ -14,14 +14,16 @@ class M_konsultasi extends CI_Model{
         $nt = $this->input->post("nomor_telepon");
         $jk = $this->input->post("jenis_kelamin");
         $a = $this->input->post("alamat");
-		$data = array(
-			'nama_pasien' => $n,
+        $data = array(
+            'nama_pasien' => $n,
             'umur' => $u,
             'no_hp' => $nt,
             'jenis_kelamin' => $jk,
             'alamat' => $a
         );
         $this->db->insert("tb_pasien", $data);
+        $insert = $this->db->insert_id();
+        return $insert;
     }
     function getGejala(){
         return $this->db->get('tb_gejala');

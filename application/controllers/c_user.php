@@ -19,12 +19,12 @@ function halaman_konsultasi()
 }
 // input pasien
 function inputpasien(){
-	$this->m_konsultasi->inputpasien($data);
-    redirect(base_url('admin/inputpasien'));
+	$q=$this->m_konsultasi->inputpasien();
+    redirect(base_url('admin/inputpasien/'.$q));
 }
 
 //opsi pertanyaan
-function opsi()
+function opsi($q)
 {
 	$data['datagejala']= $this->m_konsultasi->getGejala()->result();
 	$this->load->view('v_opsi',$data);
