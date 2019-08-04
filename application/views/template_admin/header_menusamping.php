@@ -83,7 +83,7 @@
                             <div role="menu" class="dropdown-menu left-menu-dropdown animated flipInX">
                                 <a href="<?php echo base_url();?>admin/datagejala" class="dropdown-item">Data Gejala</a>
                                 <a href="<?php echo base_url();?>admin/inputgejala" class="dropdown-item">Input Gejala</a>
-                                <a href="<?php echo base_url();?>admin/laporangejala" class="dropdown-item">Laporan Gejala</a>
+                                <!-- <a href="<?php echo base_url();?>admin/laporangejala" class="dropdown-item">Laporan Gejala</a> -->
                                 
                             </div>
                         </li>
