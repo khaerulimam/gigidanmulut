@@ -32,27 +32,76 @@ class Konsultasi extends CI_Controller
         $gj = [];
         $penyakit = [];
         $a = 0;
-
+        $cfhasil = [];
         $lp = $this->listPenyakit($gejala);
         $gp = $this->getPenyakit($gejala);
 
-        foreach($tingkat as $key => $val){
-            if($val != ""){
+        foreach ($tingkat as $key => $val) {
+            if ($val != "") {
                 $gj[$gejala[$a]] = $val;
             }
             $a++;
         }
-        // die(json_encode($gj));
+        // die(json_encode($gejala));
+        // $i = 0;
         foreach ($gp as $key => $val) {
-            $penyakit[$val['nama_diagnosa']][$val['kd_gejala']]['bobot'] = $val['bobot'];
-            $penyakit[$val['nama_diagnosa']][$val['kd_gejala']]['tingkat'] = $gj[$val['kd_gejala']];
-            $penyakit[$val['nama_diagnosa']][$val['kd_gejala']]['cf'] = $val['bobot'] * $gj[$val['kd_gejala']];
+            $penyakit[$val['nama_diagnosa']][] = array(
+                "bobot" => $val['bobot'],
+                "tingkat" => $gj[$val['kd_gejala']],
+                "cf" => $val['bobot'] * $gj[$val['kd_gejala']]
+            );
+            // $i++;
         }
-
-        foreach($penyakit as $key => $val){
-            // var_dump($val);
+        // $k=0;
+        foreach ($lp as $key => $val) {
+            $j = 0;
+            foreach ($penyakit[$val['nama_diagnosa']] as $key_p => $val_p) {
+                // var_dump($val_p);
+                // echo $val['nama_diagnosa'] . " CF(".$j.")" . "<br>";
+                // echo count($val_p) . "<br>";
+                // echo count($penyakit[$val['nama_diagnosa']])."<br>";
+                if (count($penyakit[$val['nama_diagnosa']]) == 1) {
+                    $cfold = $val_p['cf'] * 100;
+                    echo $cfold  . "<br>";
+                    // $cfhasil[$val['nama_diagnosa']] = $cfold;
+                    // echo $key_p . "<br>";    
+                    // $cfold = $val_p['cf']+$val_p['cf'] * (1-$val_p['cf']);
+                    // $cfhasil = $cfold * $val_p['cf'];
+                    // echo $cfhasil . "<br>";
+                } else if (count($penyakit[$val['nama_diagnosa']]) > 1) {
+                    if ($j == 0) {
+                        // echo $penyakit[$val['nama_diagnosa']][$j+1]['cf'];
+                        // var_dump($val_p);
+                        $a = $j+1;
+                        $cfold = $val_p['cf'] + $penyakit[$val['nama_diagnosa']][$j + 1]['cf'] * (1 - $val_p['cf']);
+                        // $penyakit[$val['nama_diagnosa']]['Perhitungan'][] = array(
+                        //     "CFcombine".$a => $cfold
+                        // );
+                        echo $val_p['cf'] . " + " . $penyakit[$val['nama_diagnosa']][$j + 1]['cf'] . " * " . " 1 - " . $val_p['cf'] . " = ";
+                        echo $cfold . "<br>";
+                        // $penyakit
+                    } else {
+                        if (isset($penyakit[$val['nama_diagnosa']][$j + 1])) {
+                            echo $cfold . " + " . $penyakit[$val['nama_diagnosa']][$j + 1]['cf'] . " * " . "( 1 - " . $cfold . ") = ";
+                            $cfold = $cfold + $penyakit[$val['nama_diagnosa']][$j + 1]['cf'] * (1 - $cfold);
+                            echo $cfold . "<br>";
+                            $a = $j+1;
+                            $cfhasil[$val['nama_diagnosa']] = $cfold;
+                            // $penyakit[$val['nama_diagnosa']]['Perhitungan'][] = array(
+                            //     "CFcombine".$a => $cfold
+                            // );
+                            // $cfnew = 
+                            // $penyakit['nama_diagnosa']
+                        }
+                        // echo $val_p['cf'] . "<br>";
+                    }
+                    // echo $k . "<br>";
+                }
+                // echo "CF(".$j.")" . $val_p['cf']."<br>";
+                $j++;
+            }
         }
-        // die();
+        die();
         die(json_encode($penyakit));
 
         foreach ($gejala as $key) {
