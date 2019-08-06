@@ -42,7 +42,7 @@ class Konsultasi extends CI_Controller
             }
             $a++;
         }
-        // die(json_encode($gejala));
+        // die(json_encode($id_p));
         // $i = 0;
         foreach ($gp as $key => $val) {
             $penyakit[$val['nama_diagnosa']][] = array(
@@ -61,9 +61,10 @@ class Konsultasi extends CI_Controller
                 // echo count($val_p) . "<br>";
                 // echo count($penyakit[$val['nama_diagnosa']])."<br>";
                 if (count($penyakit[$val['nama_diagnosa']]) == 1) {
-                    $cfold = $val_p['cf'] * 100;
-                    echo $cfold  . "<br>";
-                    // $cfhasil[$val['nama_diagnosa']] = $cfold;
+                    $cfold = $val_p['cf'];
+
+                    // echo $cfold  . "<br>";
+                    $cfhasil[$val['nama_diagnosa']] = $cfold;
                     // echo $key_p . "<br>";    
                     // $cfold = $val_p['cf']+$val_p['cf'] * (1-$val_p['cf']);
                     // $cfhasil = $cfold * $val_p['cf'];
@@ -77,14 +78,15 @@ class Konsultasi extends CI_Controller
                         // $penyakit[$val['nama_diagnosa']]['Perhitungan'][] = array(
                         //     "CFcombine".$a => $cfold
                         // );
-                        echo $val_p['cf'] . " + " . $penyakit[$val['nama_diagnosa']][$j + 1]['cf'] . " * " . " 1 - " . $val_p['cf'] . " = ";
-                        echo $cfold . "<br>";
+                        $cfhasil[$val['nama_diagnosa']] = $cfold;
+                        // echo $val_p['cf'] . " + " . $penyakit[$val['nama_diagnosa']][$j + 1]['cf'] . " * " . " 1 - " . $val_p['cf'] . " = ";
+                        // echo $cfold . "<br>";
                         // $penyakit
                     } else {
                         if (isset($penyakit[$val['nama_diagnosa']][$j + 1])) {
-                            echo $cfold . " + " . $penyakit[$val['nama_diagnosa']][$j + 1]['cf'] . " * " . "( 1 - " . $cfold . ") = ";
+                            // echo $cfold . " + " . $penyakit[$val['nama_diagnosa']][$j + 1]['cf'] . " * " . "( 1 - " . $cfold . ") = ";
                             $cfold = $cfold + $penyakit[$val['nama_diagnosa']][$j + 1]['cf'] * (1 - $cfold);
-                            echo $cfold . "<br>";
+                            // echo $cfold . "<br>";
                             $a = $j+1;
                             $cfhasil[$val['nama_diagnosa']] = $cfold;
                             // $penyakit[$val['nama_diagnosa']]['Perhitungan'][] = array(
@@ -101,46 +103,27 @@ class Konsultasi extends CI_Controller
                 $j++;
             }
         }
-        die();
-        die(json_encode($penyakit));
-
-        foreach ($gejala as $key) {
-            // echo $key;
-            $penyakit[] = $this->konsultasi->getKemungkinanPenyakit($key);
-            for ($i = 0; $i < count($penyakit[$a]); $i++) {
-                for ($j = 0; $j < count($gp); $j++) {
-                    $np = $gp[$j]['nama_diagnosa'];
-                    if ($penyakit[$a][$i]['nama_diagnosa'] == $np) {
-                        $idKP[$np][] = $penyakit[$a][$i]['id'] . "<br>";
-                    }
-                }
-            }
-            $a++;
-        }
-
-        for ($h = 0; $h < count($gp); $h++) {
-            $np = $gp[$h]['nama_diagnosa'];
-            echo "<br/>Proses Penyakit " . $h . "." . $np . "<br/>==============<br/>";
-            for ($x = 0; $x < count($idKP); $x++) {
-                $dtKP = $this->konsultasi->getListPenyakit($idKP[$np][$x]);
-                echo "<br/>proses " . $x . "<br/>------------------------------------<br/>";
-                for ($i = 0; $i < count($dtKP); $i++) {
-                    if (count($idKP) == 1) {
-                        echo "Jumlah Gejala = " .
-                            count($idKP[$np]) . "<br/>";
-                    } else {
-                        if ($x == 0) {
-                            echo "Jumlah Gejala = " .
-                                count($idKP[$np]) . "<br/>";
-                        } else { }
-                    }
-                }
+        // die();
+        // die(json_encode($penyakit));
+        $cft = 0;
+        $pt = null;
+        foreach($cfhasil as $key => $val){
+            if($val > $cft){
+                $cft = $val;
+                $pt = array_search($cft, $cfhasil);
             }
         }
-
-
-        die();
-        die(json_encode($penyakit));
+        $dp = $this->m_admincrud->getWhere('nama_diagnosa',$pt);
+        $dp = $this->m_admincrud->getData('tb_penyakit')->row();
+        // die(json_encode($dp));
+        $pasien = $this->m_admincrud->getWhere('id_pasien',$id_p);
+        $pasien = $this->m_admincrud->getData('tb_pasien')->row();
+        $data = array(
+            "pasien" => $pasien,
+            "hasil_seleksi" => $cfhasil,
+            "detail_penyakit" => $dp
+        );
+        $this->load->view('v_hasil_seleksi',$data);
     }
 
     private function listPenyakit($gejala)
