@@ -65,21 +65,21 @@
         <div class="left-sidebar-pro">
             <nav id="sidebar">
                 <div class="sidebar-header">
-                    <a href="#"><img src="img/message/1.jpg" alt="" />
+                    <a href="#"><img style="width : 150px;" src="<?php base_url()?>/gigidanmulut/assets/img/cilacap.png" alt="" />
                     </a>
                     <h3>UPTD</h3>
                     <p>Puskesmas Maos</p>
                     <strong>PM</strong>
                 </div>
-                <div style="margin-top:50px !important;" class="left-custom-menu-adp-wrap">
+                <div style="margin-top:10px !important;" class="left-custom-menu-adp-wrap">
                     <ul class="nav navbar-nav left-sidebar-menu-pro">
                         <li class="nav-item">
-                            <a href="<?php echo base_url('admin/index');?>"><img src="http://localhost/gigidanmulut/assets/img/home.png" width="17px" height="17px"></i> <span class="mini-dn">Home</span> <span class="indicator-right-menu mini-dn"></span></a>
+                            <a href="<?php echo base_url('admin/index');?>"><i class="fa fa-home fa-lg"></i> &nbsp;<span class="mini-dn">Home</span> <span class="indicator-right-menu mini-dn"></span></a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?php echo base_url('admin/konsultasi');?>"><img src="http://localhost/gigidanmulut/assets/img/home.png" width="17px" height="17px"></i> <span class="mini-dn">Konsultasi</span> <span class="indicator-right-menu mini-dn"></span></a>
+                            <a href="<?php echo base_url('admin/konsultasi');?>"><i class="fa fa-user-md fa-lg"></i>&nbsp;<span class="mini-dn">Konsultasi</span> <span class="indicator-right-menu mini-dn"></span></a>
                         </li>
-                        <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><img src="http://localhost/gigidanmulut/assets/img/caries.png" width="17px" height="17px"></i> <span class="mini-dn">Gejala</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
+                        <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fas fa-tooth"></i> <span class="mini-dn">Gejala</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
                             <div role="menu" class="dropdown-menu left-menu-dropdown animated flipInX">
                                 <a href="<?php echo base_url();?>admin/datagejala" class="dropdown-item">Data Gejala</a>
                                 <a href="<?php echo base_url();?>admin/inputgejala" class="dropdown-item">Input Gejala</a>
@@ -87,7 +87,7 @@
                                 
                             </div>
                         </li>
-                        <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><img src="http://localhost/gigidanmulut/assets/img/disease.png" width="17px" height="17px" style="margin-right:2px;"><span class="mini-dn">Penyakit</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
+                        <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fas fa-diagnoses"></i><span class="mini-dn">Penyakit</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
                             <div role="menu" class="dropdown-menu left-menu-dropdown animated flipInX">
                                 
                                 <a href="<?php echo base_url();?>admin/datapenyakit" class="dropdown-item">Data Penyakit</a>
@@ -96,18 +96,18 @@
                                 
                             </div>
                         </li>
-                        <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><img src="http://localhost/gigidanmulut/assets/img/star.png" width="17px" height="17px"> <span class="mini-dn">Relasi</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
+                        <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fas fa-galactic-republic"></i> <span class="mini-dn">Relasi</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
                             <div role="menu" class="dropdown-menu left-menu-dropdown animated flipInX">
                                 <a href="<?php echo base_url();?>admin/inputrelasi" class="dropdown-item">Input Relasi</a>
                                 <a href="<?php echo base_url();?>admin/datagabungan" class="dropdown-item">Data Gabungan</a>                            
                             </div>
                         </li>
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a href="<?php echo base_url();?>admin/riwayatpasien" ><img src="http://localhost/gigidanmulut/assets/img/riwayat.png" width="17px" height="17px" > <span class="mini-dn">Riwayat Pasien</span> <span class="indicator-right-menu mini-dn"></span></a>
-                        </li>
+                        </li> -->
 
                         <li class="nav-item">
-                            <a href="<?php echo base_url();?>admin/ubahpassword" ><img src="http://localhost/gigidanmulut/assets/img/password.png" width="17px" height="17px" style="margin-right:4px;"><span class="mini-dn">Ubah Password</span> <span class="indicator-right-menu mini-dn"></span></a>
+                            <a href="<?php echo base_url();?>admin/ubahpassword" ><i class="fa fa-key"></i><span class="mini-dn">Ubah Password</span> <span class="indicator-right-menu mini-dn"></span></a>
                         </li>
                     </ul>
                 </div>

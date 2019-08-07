@@ -10,15 +10,26 @@
                             <p><b>Hasil Konsultasi</b></p>
                             <div style="padding:0.5px; background-color:#000; margin-bottom:20px;"></div>
                             <p><b>Data Pasien</b></p>
-                            <p>Nama : <?= $pasien->nama_pasien ?></p>
-                            <p>Jenis Kelamin : <?php if ($pasien->jenis_kelamin == "l") {
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12">
+
+                            <p class="col-lg-2 col-md-2">Nama </p><p class="col-lg-10 col-md-10"> <?= $pasien->nama_pasien ?></p>
+                            <p class="col-lg-2 col-md-2">Jenis Kelamin </p>
+                            <p class="col-lg-10 col-md-10"><?php if ($pasien->jenis_kelamin == "l") {
                                                     echo "Laki - Laki";
                                                 } else {
                                                     echo "Perempuan";
-                                                } ?></p>
-                            <p>Umur : <?= $pasien->umur ?></p>
-                            <p>Alamat : <?= $pasien->alamat ?></p>
-                            <p>Data Hasil diagnosa</p>
+                                                } ?>
+                                </p>
+                            <p class="col-lg-2 col-md-2">Umur </p> <p class="col-lg-10 col-md-10"><?= $pasien->umur ?></p>
+                            <p class="col-lg-2 col-md-2">Alamat </p><p class="col-lg-10 col-md-10"> <?= $pasien->alamat ?></p>
+                            <p class="col-lg-2 col-md-2">No Telp</p><p class="col-lg-10 col-md-10"> <?= $pasien->no_hp ?></p>
+
+                                
+                                </div>
+                            </div>
+                            <br>
+                            <h4><b>Data Hasil diagnosa</b></h4>
                             <p><b>Gejala Terpilih</b></p>
                             <table class="table table-bordered">
                                 <thead>

@@ -145,7 +145,7 @@ class Konsultasi extends CI_Controller
             $this->load->view('v_hasil_seleksi', $data);
             // }
         }
-        // die(json_encode($data));
+        // var_dump(json_encode($data));
     }
 
     private function listPenyakit($gejala)

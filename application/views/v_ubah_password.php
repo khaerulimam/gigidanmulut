@@ -36,7 +36,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="sparkline8-list shadow-reset tab-pane custom-inbox-message shadow-reset active">
-                                <div class="sparkline8-hd">
+                                <div class="">
                                     <div class="main-sparkline8-hd">
                                         <p style="font-size:20px;"><b>Ubah Password</b></p>
                                         

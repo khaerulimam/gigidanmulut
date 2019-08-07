@@ -1,7 +1,7 @@
 <?php $this->load->view('template_admin/header_menusamping'); ?>
            
             <!-- Breadcome start-->
-            <div class="breadcome-area des-none">
+            <!-- <div class="admin-dashone-data-table-area">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -28,15 +28,15 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <!-- Breadcome End-->
             <!-- Data table area Start-->
-            <div class="admin-dashone-data-table-area">
+            <div class="admin-dashone-data-table-area" style="margin-top:30px;">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="sparkline8-list shadow-reset tab-pane custom-inbox-message shadow-reset active">
-                                <div class="sparkline8-hd">
+                                <div class="">
                                     <div class="main-sparkline8-hd">
                                         <center>
                                         <h2><b>Laporan Penyakit</b></h2>
@@ -57,8 +57,8 @@
                         <?php
                             foreach ($tampilpenyakit as $row) {
                         ?>
-                            <div class="sparkline8-list shadow-reset tab-pane fade in animated zoomInDown custom-inbox-message shadow-reset active">    
-                                <div class="sparkline8-hd" style="text-align: justify">
+                            <div class="sparkline8-list shadow-reset tab-pane custom-inbox-message shadow-reset active">    
+                                <div class="" style="text-align: justify">
                                    <div class="row" style="margin:10px;">
                                        <div class="col-sm-2">
                                            <b>Kode</b>

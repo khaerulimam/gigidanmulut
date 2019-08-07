@@ -1,7 +1,7 @@
 <?php $this->load->view('template_admin/header_menusamping'); ?>
 
 <!-- Breadcome start-->
-<div class="breadcome-area des-none">
+<!-- <div class="breadcome-area des-none">
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -28,20 +28,20 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <!-- Breadcome End-->
 <!-- Data table area Start-->
-<div class="admin-dashone-data-table-area">
+<div class="admin-dashone-data-table-area" style="margin-top: 30px;">
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
                 <div class="sparkline8-list shadow-reset tab-pane custom-inbox-message shadow-reset active">
-                    <div class="sparkline8-hd">
+                    <div class="">
                         <div class="main-sparkline8-hd">
                             <center>
                                 <p><b>Daftar Semua Peyakit</b></p>
                             </center>
-                            <div style="padding:0.5px; background-color:#000; margin-bottom:20px;"></div>
+                            <!-- <div style="padding:0.5px; background-color:#000; margin-bottom:20px;"></div> -->
                             <div class="table-responsive bootstrap">
                                 <?php if ($this->session->flashdata('success')) : ?>
                                     <div class="alert alert-success wow fadeInLeft" data-wow-duration="2s" role="alert">
@@ -51,7 +51,6 @@
                                 <table id="example" class="table table-striped table-bordered" style="width:100%">
                                     <thead>
                                         <tr>
-
                                             <th>Kode Penyakit</th>
                                             <th>Nama Penyakit</th>
                                             <th>Pilihan</th>
@@ -67,7 +66,7 @@
                                                 <td><?php echo $row->kd_diagnosa; ?></td>
                                                 <td><?php echo $row->nama_diagnosa; ?></td>
                                                 <!-- <td><center><img style="border-radius:100px;width:100px;height:100px" src="<?php echo base_url('assets/img/student/'), $achievement_item['photo'] ?>"/></center></td> -->
-                                                <td><a href="<?php echo base_url('index.php/c_admincrud/vieweditpenyakit/' . $row->kd_diagnosa); ?>"><img src="<?=base_url()?>assets/img/edit.png" height="20px;" width="20px;" /></a> | <a href="<?php echo base_url('index.php/c_admincrud/delpenyakit/' . $row->kd_diagnosa); ?>"><img src="<?=base_url()?>assets/img/delete.png" height="20px;" width="20px;" /></a></td>
+                                                <td><a href="<?php echo base_url('index.php/c_admincrud/vieweditpenyakit/' . $row->kd_diagnosa); ?>"><button class="btn btn-success" type="reset">Ubah</button></a> | <a href="<?php echo base_url('index.php/c_admincrud/delpenyakit/' . $row->kd_diagnosa); ?>"> <button class="btn btn-sm btn-white login-submit-cs" type="submit">Hapus</button></a></td>
                                             </tr>
                                         <?php
                                         }

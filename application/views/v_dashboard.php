@@ -1,20 +1,18 @@
 <?php $this->load->view('template_admin/header_menusamping'); ?>
-           
-        
             <!-- Data table area Start-->
             <div class="admin-dashone-data-table-area" style = "margin-top:60px;">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="sparkline8-list shadow-reset tab-pane custom-inbox-message shadow-reset active">
-                                <div class="sparkline8-hd">
+  
                                     <div class="main-sparkline8-hd">
                                         <center>
-                                        <h2><b>Selamat Datang di Sistem Pakar Diagnosa Penyakit Gigi & Mulut</b></h2>
+                                        <h2 style="margin-bottom: 50px;margin-top :10px;"><b>Selamat Datang di Sistem Pakar Diagnosa Penyakit Gigi & Mulut</b></h2>
                                         </center>
                                     </div>
-                                </div>
-                                <div class="sparkline8-hd" style="text-align: justify">
+                            
+                                <div class="" style="text-align: justify" >
                                     <p>Merupakan sistem berbasis pengetahuan yang dapat melakukan diagnosa dan memberikan solusi atas penyakit gigi dan mulut berdasarkan gejala-gejalanya. Sistem ini terdiri dari bebrapa menu, diantaranya : </p>
                                     <p> <b>
                                         1. Menu User

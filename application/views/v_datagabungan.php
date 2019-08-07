@@ -1,25 +1,18 @@
 <?php $this->load->view('template_admin/header_menusamping'); ?>
 
 <!-- Breadcome start-->
-<div class="breadcome-area des-none">
+<!-- <div class="admin-dashone-data-table-area" style="margin-top: 30px;">
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="breadcome-list map-mg-t-40-gl shadow-reset">
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                            <div class="breadcome-heading">
-                                <form role="search" class="">
-                                    <input type="text" placeholder="Search..." class="form-control">
-                                    <a href=""><i class="fa fa-search"></i></a>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+         
                             <ul class="breadcome-menu">
                                 <li><a href="#">Home</a> <span class="bread-slash">/</span>
                                 </li>
-                                <li><span class="bread-blod">Dashboard</span>
+                                <li><span class="bread-blod">Dashboard/Data Gabungan</span>
                                 </li>
                             </ul>
                         </div>
@@ -28,20 +21,20 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <!-- Breadcome End-->
 <!-- Data table area Start-->
-<div class="admin-dashone-data-table-area">
+<div class="admin-dashone-data-table-area" style="margin-top: 30px;">
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
                 <div class="sparkline8-list shadow-reset tab-pane custom-inbox-message shadow-reset active">
-                    <div class="sparkline8-hd">
+                    <div class="">
                         <div class="main-sparkline8-hd">
                             <center>
                                 <p><b>Data Gabungan</b></p>
                             </center>
-                            <div style="padding:0.5px; background-color:#000; margin-bottom:20px;"></div>
+                           
                             <div class="table-responsive bootstrap">
                                 <?php if ($this->session->flashdata('success')) : ?>
                                     <div class="alert alert-success wow fadeInLeft" data-wow-duration="2s" role="alert">
@@ -74,7 +67,7 @@
                                                 <!-- <td><?php //echo $row->mb ?></td>
                                                 <td><?php //echo $row->md ?></td> -->
                                                 <!-- <td><center><img style="border-radius:100px;width:100px;height:100px" src="<?php echo base_url('assets/img/student/'), $achievement_item['photo'] ?>"/></center></td> -->
-                                                <td><a href="<?php echo base_url('index.php/c_admincrud/vieweditrelasi/' . $row[0]['kd_diagnosa']); ?>"><img src="<?=base_url()?>assets/img/edit.png" height="20px;" width="20px;" /></a> | <a href="<?php echo base_url('index.php/c_admincrud/delrelasi/' . $row[0]['kd_diagnosa']); ?>"><img src="<?=base_url()?>assets/img/delete.png" height="20px;" width="20px;" /></a></td>
+                                                <td><a href="<?php echo base_url('index.php/c_admincrud/vieweditrelasi/' . $row[0]['kd_diagnosa']); ?>"><button class="btn btn-success" type="reset">Ubah</button></a> | <a href="<?php echo base_url('index.php/c_admincrud/delrelasi/' . $row[0]['kd_diagnosa']); ?>"> <button class="btn btn-sm btn-white login-submit-cs" type="submit">Hapus</button></a></td>
                                             </tr>
 
                                         <?php } ?>

@@ -7,8 +7,10 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
+               
                 <div class="sparkline10-list shadow-reset">
                     <div class="sparkline10-graph">
+                        <h4> Pilihlah Pertanyaan Sesuai Dengan Gejala Yang Anda Alami</h4>
                         <div class="basic-login-form-ad">
                             <div class="row">
                                 <div class="col-lg-12">
@@ -40,7 +42,7 @@
                                                                         <option value="0.3">Hampir tidak pasti (0,3)</option>
                                                                         <option value="0.4">Kemungkinan besar tidak (0,4)</option>
                                                                         <option value="0.5">Mungkin tidak (0,5)</option>
-                                                                        <option value="0.6">Tidak tahu (0,6)</option>
+                                                                        <option value="0.6">Kemungkinan kecil(0,6)</option>
                                                                         <option value="0.7">Mungkin (0,7)</option>
                                                                         <option value="0.8">Kemungkinan besar (0,8)</option>
                                                                         <option value="0.9">Hampir pasti (0,9)</option>

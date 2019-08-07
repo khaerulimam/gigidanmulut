@@ -8,14 +8,18 @@ class Welcome extends CI_Controller
 	function __construct()
 	{
 		parent::__construct();
-		if ($this->session->userdata('status') != "login") {
-			redirect(base_url("admin/login"));
-		}
-		$this->load->model('m_admincrud');
+		// if ($this->session->userdata('status') != "login") {
+		// 	redirect(base_url("admin/login"));
+		// }
+		 $this->load->model('m_admincrud');
 	}
 	public function index()
 	{
 		$this->load->view('v_dashboard');
+	}
+	public function home()
+	{
+		$this->load->view('v_homepage');
 	}
 	public function accordion()
 	{

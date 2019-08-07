@@ -46,6 +46,7 @@
     <!-- modernizr JS
 		============================================ -->
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    <script src="https://kit.fontawesome.com/05d86f7405.js"></script>
 </head>
 
 <body class="materialdesign">
