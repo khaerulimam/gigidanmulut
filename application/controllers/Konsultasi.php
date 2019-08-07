@@ -26,15 +26,19 @@ class Konsultasi extends CI_Controller
 
     public function proses()
     {
-        $id_p = $this->input->post('id_pasien');
-        $gejala = $this->input->post('gejala');
-        $tingkat = $this->input->post('tingkat');
-        $gj = [];
-        $penyakit = [];
-        $a = 0;
-        $cfhasil = [];
-        $lp = $this->listPenyakit($gejala);
-        $gp = $this->getPenyakit($gejala);
+        $cetak = $this->input->get('halaman');
+        // if ($cetak == null) {
+        if ($this->input->post('kirim')) {
+            $id_p = $this->input->post('id_pasien');
+            $gejala = $this->input->post('gejala');
+            $tingkat = $this->input->post('tingkat');
+            $gj = [];
+            $penyakit = [];
+            $a = 0;
+            $cfhasil = [];
+            $lp = $this->listPenyakit($gejala);
+            $gp = $this->getPenyakit($gejala);
+            $gejala_p = [];
 
             $tingkat = array_filter($tingkat);
             // die(json_encode($tingkat));
@@ -134,11 +138,11 @@ class Konsultasi extends CI_Controller
                 "gejala_pasien" => $gejala_p
             );
             // if ($cetak != null) {
-                // $view = 'cetak_hasil';
-                // $this->load->view($view, $data);
-                // $this->_exportPDFP($view, $data, 'Bukti_Transaksi_');
+            // $view = 'cetak_hasil';
+            // $this->load->view($view, $data);
+            // $this->_exportPDFP($view, $data, 'Bukti_Transaksi_');
             // } else {
-                $this->load->view('v_hasil_seleksi', $data);
+            $this->load->view('v_hasil_seleksi', $data);
             // }
         }
         // die(json_encode($data));
@@ -163,5 +167,72 @@ class Konsultasi extends CI_Controller
         $lp = $this->m_admincrud->getWhere_in('tb_relasi.kd_gejala', $gejala);
         $lp = $this->m_admincrud->getData('tb_relasi')->result_array();
         return $lp;
+    }
+
+    private function _tgl_indo($tanggal)
+    {
+        $bulan = array(
+            1 => 'Januari',
+            'Februari',
+            'Maret',
+            'April',
+            'Mei',
+            'Juni',
+            'Juli',
+            'Agustus',
+            'September',
+            'Oktober',
+            'November',
+            'Desember',
+        );
+
+        $pecahkan = explode('-', $tanggal);
+        return $pecahkan[0] . '-' . $bulan[(int) $pecahkan[1]] . '-' . $pecahkan[2];
+    }
+
+    private function _exportPDFL($view, $data, $title)
+    {
+
+        $tgl = $this->_tgl_indo(date('d-m-Y'));
+        ini_set('memory_limit', '256M');
+        $this->load->library('pdf');
+        date_default_timezone_set('Asia/Jakarta');
+        $t = date('G:i:s');
+        $this->pdf->set_paper("A4", "landscape");
+        $this->pdf->load_view($view, $data);
+        $this->pdf->render();
+        $canvas = $this->pdf->get_canvas();
+        $font = Font_Metrics::get_font("Courier new", "bold");
+        $d = date('d F Y');
+        $canvas->page_text(25, 540, "___________________________________________________________________________________________________________________________________", $font, 10, array(0, 0, 0));
+        $canvas->page_text(25, 540, "___________________________________________________________________________________________________________________________________", $font, 10, array(0, 0, 0));
+        $canvas->page_text(27, 540, "___________________________________________________________________________________________________________________________________", $font, 10, array(0, 0, 0));
+        $canvas->page_text(27, 540, "___________________________________________________________________________________________________________________________________", $font, 10, array(0, 0, 0));
+        $canvas->page_text(30, 560, "Tanggal Cetak : $d, $t", $font, 10, array(0, 0, 0));
+        $canvas->page_text(700, 560, " Halaman: {PAGE_NUM} dari {PAGE_COUNT}", $font, 10, array(0, 0, 0));
+        $filename = "$title" . $tgl . "_" . $t;
+        $this->pdf->stream($filename . '.pdf', ["Attachment" => 0]);
+    }
+
+    private function _exportPDFP($view, $data, $title)
+    {
+
+        $tgl = $this->_tgl_indo(date('d-m-Y'));
+        ini_set('memory_limit', '256M');
+        $this->load->library('pdf');
+        date_default_timezone_set('Asia/Jakarta');
+
+        $t = date('G:i:s', time() - 3600);
+        $this->pdf->set_paper("A4", "portrait");
+        $this->pdf->load_view($view, $data);
+        $this->pdf->render();
+        $canvas = $this->pdf->get_canvas();
+        $font = Font_Metrics::get_font("Courier new", "bold");
+        $d = date('d F Y');
+        $canvas->page_text(25, 770, "_____________________________________________", $font, 20, array(0, 0, 0));
+        $canvas->page_text(30, 800, "Tanggal Cetak : $d, $t", $font, 10, array(0, 0, 0));
+        $canvas->page_text(455, 800, " Halaman: {PAGE_NUM} dari {PAGE_COUNT}", $font, 10, array(0, 0, 0));
+        $filename = "$title" . $tgl . "_" . $t;
+        $this->pdf->stream($filename . '.pdf', ["Attachment" => 0]);
     }
 }
