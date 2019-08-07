@@ -145,6 +145,11 @@ class M_admincrud extends CI_Model
         return $query;
     }
 
+    public function getDistinct(){
+        $query = $this->db->distinct();
+        return $query;
+    }
+
     public function insert($table, $data)
     {
         return $this->db->insert($table, $data);
@@ -164,6 +169,11 @@ class M_admincrud extends CI_Model
     function getWhere($col, $kon)
     {
         $query = $this->db->where($col, $kon);
+        return $query;
+    }
+
+    function getWhere_in($col,$kon){
+        $query = $this->db->where_in($col,$kon);
         return $query;
     }
 
