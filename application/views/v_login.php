@@ -1,7 +1,7 @@
 <?php $this->load->view('template_user/header'); ?>
 
             <!-- login Start-->
-            <div class="login-form-area mg-t-30 mg-b-40">
+            <div class="login-form-area mg-t-30 mg-b-40" style="margin-top: -30px; !important">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-4"></div>

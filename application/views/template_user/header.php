@@ -43,10 +43,13 @@
     <!-- responsive CSS
 		============================================ -->
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/responsive.css">
+
     <!-- modernizr JS
-		============================================ -->
-    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
-    <script src="https://kit.fontawesome.com/05d86f7405.js"></script>
+    ============================================ -->
+    <link rel="stylesheet" href="<?php echo base_url()?>assets/font-awesome/css/fontawesome.css">
+
+    <script type="text/javascript" src="<?php echo base_url()?>assets/js/vendor/modernizr-2.8.3.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url()?>assets/font-awesome/js/fontawesome.js"></script>
 </head>
 
 <body class="materialdesign">
@@ -64,17 +67,22 @@
                    <div class="container-fluid">
                        <div class="row">
                            <div  class="col-lg-12 col-md-12 col-sm-6 col-xs-12">
-                               <div class="header-top-menu tabl-d-n">
-                                   <ul class="nav navbar-nav mai-top-nav">
-                                        <li ><a href="<?php echo base_url(); ?>" class="nav-link">Home</a></li>
-                                        <li ><a href="<?php echo base_url(); ?>index.php/c_user/abses" class="nav-link">Abses</a></li>
+                               <div class="header-top-menu tabl-d-n row justify-content-end">
+                                 <ul class="col-md-10 col-lg-10">
+
+                                 </ul>
+                                   <ul class="nav navbar-nav mai-top-nav col-md-2 col-lg-2 justify-content-end" >
+                                  
+                                     <li style="margin-left:100px;"><a href="<?php echo base_url(); ?>" class="nav-link">Home</a></li>
+                      
+                                        <!-- <li ><a href="<?php echo base_url(); ?>index.php/c_user/abses" class="nav-link">Abses</a></li>
                                         <li ><a href="<?php echo base_url(); ?>index.php/c_user/kalkulus" class="nav-link">Kalkulus Gigi</a></li>
                                         <li ><a href="<?php echo base_url(); ?>index.php/c_user/karies_gigi" class="nav-link">Karies Gigi</a></li>
                                         <li ><a href="<?php echo base_url(); ?>index.php/c_user/periodontitis" class="nav-link">Periodontitis</a></li>
                                         <li ><a href="<?php echo base_url(); ?>" class="nav-link">Persistensi</a></li>
                                         <li ><a href="<?php echo base_url(); ?>" class="nav-link">Pulpitis</a></li>
                                         <li ><a href="<?php echo base_url(); ?>index.php/c_user/halaman_konsultasi" class="nav-link">Konsultasi</a></li>        
-                                        <li ><a href="<?php echo base_url(); ?>" class="nav-link">Login Sistem Pakar</a></li>
+                                        <li ><a href="<?php echo base_url(); ?>" class="nav-link">Login Sistem Pakar</a></li> -->
                                         
                                    </ul>
                                </div>

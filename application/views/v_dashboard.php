@@ -19,7 +19,7 @@
                                     </b>
                                     </p>
                                     <p>
-                                        Digunakan untuk melakukan diagnosa penyakit Gigi dan Mulut. Diberikan pertanyaan-pertanyaan oleh sistem yang harus dijawab oleh pasien dan sistem akan merekam data tersebut, kemudian sistem akan menyimpulkan penyakit yang diderita berdasarkan pertanyaan-pertanyaan yang dijawab diatas.
+                                        Digunakan untuk memberikan informasi kepada pasien terkait macam-macam penyakit gigi dan mulut disertai dengan solusi penangannya.
                                         </p>
                                         
                                     <p> <b>
@@ -27,7 +27,7 @@
                                     </b>
                                     </p>
                                     <p>
-                                        Digunakan untuk merubah pengetahuan, yaitu menambah penyakit, gejala-gejala penyakit, dan basis aturan. Untuk mengolah data terlebih dahulu login sebagai admin.
+                                    Digunakan untuk melakukan diagnosa penyakit Gigi dan Mulut. Diberikan pertanyaan-pertanyaan oleh sistem yang harus dijawab oleh pasien dan sistem akan merekam data tersebut, kemudian sistem akan menyimpulkan penyakit yang diderita berdasarkan pertanyaan-pertanyaan yang dijawab diatas. Digunakan untuk merubah pengetahuan, yaitu menambah penyakit, gejala-gejala penyakit, dan basis aturan. Untuk mengolah data terlebih dahulu login sebagai admin.
                                     </p>
                                 </div>
                             </div>

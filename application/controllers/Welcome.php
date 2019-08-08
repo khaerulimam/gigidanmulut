@@ -17,10 +17,7 @@ class Welcome extends CI_Controller
 	{
 		$this->load->view('v_dashboard');
 	}
-	public function home()
-	{
-		$this->load->view('v_homepage');
-	}
+
 	public function accordion()
 	{
 		$data['codepenyakit'] = $this->m_admincrud->get_codepenyakit();

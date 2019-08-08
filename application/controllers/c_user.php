@@ -10,8 +10,13 @@ function __construct()
 } 
 function index()
 {
+	$this->load->view('v_homepage');
+	
+}	
+public function login()
+{
 	$this->load->view('v_login');
-}		
+}	
 // konsultasi
 function halaman_konsultasi()
 {
