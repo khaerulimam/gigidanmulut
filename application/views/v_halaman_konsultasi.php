@@ -10,6 +10,7 @@
                         <div class="basic-login-form-ad">
                             <div class="row">
                                 <div class="col-lg-12">
+                                    <?=$this->session->flashdata('pesan')?>
                                     <p>
                                         <h3>
                                             <p>Silahkan isi identitas anda untuk melakukan kosultasi</p>
@@ -30,7 +31,7 @@
                                             <div class="row">
                                                 <div class="col-lg-4" >
                                                     <label for="umur" class="">Umur</label>
-                                                    <input id="umur"" type="text" name="umur" class="form-control">
+                                                    <input id="umur" type="text" name="umur" class="form-control">
                                                 </div>
                                             </div>
                                         </div>

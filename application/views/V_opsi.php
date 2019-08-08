@@ -10,6 +10,7 @@
                
                 <div class="sparkline10-list shadow-reset">
                     <div class="sparkline10-graph">
+                        <?=$this->session->flashdata('pesan')?>
                         <h4> Pilihlah Pertanyaan Sesuai Dengan Gejala Yang Anda Alami</h4>
                         <div class="basic-login-form-ad">
                             <div class="row">
@@ -31,21 +32,17 @@
                                                                     <p>
                                                                         <?php echo $no . " . " ?>
                                                                         <input type="checkbox" name="gejala[]" value="<?=$data->kd_gejala?>" class="form-check-input" id="exampleCheck1">
-                                                                        <label class="form-check-label" for="exampleCheck1">Apakah <?= $data->nama_gejala  ?> ?</label>
+                                                                        Apakah <?= $data->nama_gejala  ?> ?
                                                                     </p>
                                                                 </div>
                                                                 <div class="form-group col-md-4 col-lg-4">
                                                                     <!-- <input type="number" class="form-control" min="0" max="1" placeholder="0 sampai 1"> -->
                                                                     <select class="form-control" name="tingkat[]">
                                                                         <option value="">Pilih Tingkat Keyakinan</option>
-                                                                        <option value="0.2">Pasti Tidak (0,2)</option>
-                                                                        <option value="0.3">Hampir tidak pasti (0,3)</option>
-                                                                        <option value="0.4">Kemungkinan besar tidak (0,4)</option>
-                                                                        <option value="0.5">Mungkin tidak (0,5)</option>
-                                                                        <option value="0.6">Kemungkinan kecil(0,6)</option>
-                                                                        <option value="0.7">Mungkin (0,7)</option>
-                                                                        <option value="0.8">Kemungkinan besar (0,8)</option>
-                                                                        <option value="0.9">Hampir pasti (0,9)</option>
+                                                                        <option value="0.2">Kemungkinan kecil(0,2)</option>
+                                                                        <option value="0.4">Mungkin (0,4)</option>
+                                                                        <option value="0.6">Kemungkinan besar (0,6)</option>
+                                                                        <option value="0.8">Hampir pasti (0,8)</option>
                                                                         <option value="1">Pasti (1)</option>
                                                                     </select>
                                                                 </div>
@@ -63,7 +60,7 @@
                                                     <div class="col-lg-2" style="margin-left:-220px !important;"></div>
                                                     <div class="col-lg-4">
                                                         <div class="login-horizental cancel-wp pull-left">
-                                                            <input name="kirim" class="btn btn-white" type="submit" value="Simpan">
+                                                            <input name="kirim" class="btn btn-white" type="submit" value="Hasil">
                                                         </div>
                                                     </div>
                                                 </div>

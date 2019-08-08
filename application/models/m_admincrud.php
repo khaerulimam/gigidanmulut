@@ -155,6 +155,10 @@ class M_admincrud extends CI_Model
         return $this->db->insert($table, $data);
     }
 
+    function getInsertId(){
+        return $this->db->insert_id();
+    }
+
     public function update($where, $table, $data)
     {
         $this->db->where($where);

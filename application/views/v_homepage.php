@@ -36,7 +36,7 @@
                 <div class="col-lg-12">
                     <nav class="navbar navbar-expand-lg navbar-light">
                         <a class="navbar-brand" href="index.html"> 
-                            <img src="<?php base_url()?>/gigidanmulut/assets/img/logo_.png" style="width: 100px;" alt="logo"> 
+                            <img src="<?php base_url()?>assets/img/logo_.png" style="width: 100px;" alt="logo"> 
                             <!-- <h4> Diagnosa Penyakit Gigi & Mulut</h4> -->
                         </a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -109,21 +109,21 @@
                 <div class="col-lg-3 col-sm-12">
                     <div class="single_feature">
                         <div class="single_feature_part">
-                            <span class="single_feature_icon"><img src="<?php base_url()?>/gigi/gigidanmulut/assets/new/img/icon/feature_1.svg" alt=""></span>
+                            <span class="single_feature_icon"><img src="<?php base_url()?>assets/new/img/icon/feature_1.svg" alt=""></span>
                             <h4>Persistensi</h4>
                             <p>Keadaan dimana gigi sulung belum tanggal walaupun waktu tanggalnya sudah tiba. Keadaan ini sering dijumpai pada anak usia 6-12 tahun.</p>
                         </div>
                     </div>
                     <div class="single_feature">
                         <div class="single_feature_part">
-                            <span class="single_feature_icon"><img src="<?php base_url()?>/gigi/gigidanmulut/assets/new/img/icon/feature_1.svg" alt=""></span>
+                            <span class="single_feature_icon"><img src="<?php base_url()?>assets/new/img/icon/feature_1.svg" alt=""></span>
                             <h4>Kalkulus Gigi</h4>
                             <p>Kumpulan plak yang mengalami kalsifikasi dan melekat erat pada permukaan gigi serta objek solid lainnya di dalam mulut, sehingga gigi menjadi kasar dan terasa tebal.</p>
                         </div>
                     </div>
                     <div class="single_feature">
                         <div class="single_feature_part">
-                            <span class="single_feature_icon"><img src="<?php base_url()?>/gigi/gigidanmulut/assets/new/img/icon/feature_1.svg" alt=""></span>
+                            <span class="single_feature_icon"><img src="<?php base_url()?>assets/new/img/icon/feature_1.svg" alt=""></span>
                             <h4>Pulpitis</h4>
                             <p>Kerusakan pulpa yang parah akibat pengambilan dentin yang luas selama prosedur operatif atau terganggunya aliran darah pulpa akibat trauma atau penggerakan gigi dalam perawatan ortodonsia dapat pula menyebabkan pulpitis ireversibel.</p>
                         </div>
@@ -132,27 +132,27 @@
                 <div class="col-lg-4 col-sm-12">
                     
                         <div class="single_feature_img">
-                            <img src="<?php base_url()?>/gigi/gigidanmulut/assets/new/img/service.png" alt="">
+                            <img src="<?php base_url()?>assets/new/img/service.png" alt="">
                         </div>
                 </div>
                 <div class="col-lg-3 col-sm-12">
                 <div class="single_feature">
                         <div class="single_feature_part">
-                            <span class="single_feature_icon"><img src="<?php base_url()?>/gigi/gigidanmulut/assets/new/img/icon/feature_1.svg" alt=""></span>
+                            <span class="single_feature_icon"><img src="<?php base_url()?>assets/new/img/icon/feature_1.svg" alt=""></span>
                             <h4>Abses</h4>
                             <p>Akumulasi pus yang terlokalisasi dalam sebuah rongga yang disebabkan oleh kerusakan jaringan akibat infeksi atau benda asing.</p>
                         </div>
                     </div>
                     <div class="single_feature">
                         <div class="single_feature_part">
-                            <span class="single_feature_icon"><img src="<?php base_url()?>/gigi/gigidanmulut/assets/new/img/icon/feature_1.svg" alt=""></span>
+                            <span class="single_feature_icon"><img src="<?php base_url()?>assets/new/img/icon/feature_1.svg" alt=""></span>
                             <h4>Karies Gigi</h4>
                             <p>Penyakit jaringan keras gigi yang bersifat kronik progresif dan disebabkan oleh aktifitas jasad renik dalam karbohidrat yang dapat dirugikan, ditandai dengan deminerilisasi jaringan keras dan diikuti kerusakan zat organiknya.</p>
                         </div>
                     </div>
                     <div class="single_feature">
                         <div class="single_feature_part">
-                            <span class="single_feature_icon"><img src="<?php base_url()?>/gigi/gigidanmulut/assets/new/img/icon/feature_1.svg" alt=""></span>
+                            <span class="single_feature_icon"><img src="<?php base_url()?>assets/new/img/icon/feature_1.svg" alt=""></span>
                             <h4>Periodontitis</h4>
                             <p>Penyakit multifaktorial yang menyebabkan infeksi dan peradangan jaringan pendukung gigi, biasanya menyebabkan hilangnya tulang dan ligamen periodontal  merupakan penyebab kehilangan gigi pada orang dewasa dan edentulousness. </p>
                         </div>

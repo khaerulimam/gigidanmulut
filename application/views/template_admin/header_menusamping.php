@@ -141,7 +141,7 @@
                                                 <!-- <span class="author-project-icon adminpro-icon adminpro-down-arrow"></span> -->
                                             </a>
                                             <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated flipInX">
-                                                <li><a href="#" style="margin-left:17px;">About</a>
+                                                <!-- <li><a href="#" style="margin-left:17px;">About</a> -->
                                                 </li>
                                                 <li><a href="<?php echo base_url();?>admin/logout" style="margin-left:17px;">Log Out</a>
                                                 </li>

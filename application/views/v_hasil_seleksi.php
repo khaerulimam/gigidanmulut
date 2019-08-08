@@ -12,20 +12,21 @@
                             <p><b>Data Pasien</b></p>
                             <div class="row">
                                 <div class="col-lg-12 col-md-12">
-
-                            <p class="col-lg-2 col-md-2">Nama </p><p class="col-lg-10 col-md-10"> <?= $pasien->nama_pasien ?></p>
-                            <p class="col-lg-2 col-md-2">Jenis Kelamin </p>
-                            <p class="col-lg-10 col-md-10"><?php if ($pasien->jenis_kelamin == "l") {
-                                                    echo "Laki - Laki";
-                                                } else {
-                                                    echo "Perempuan";
-                                                } ?>
-                                </p>
-                            <p class="col-lg-2 col-md-2">Umur </p> <p class="col-lg-10 col-md-10"><?= $pasien->umur ?></p>
-                            <p class="col-lg-2 col-md-2">Alamat </p><p class="col-lg-10 col-md-10"> <?= $pasien->alamat ?></p>
-                            <p class="col-lg-2 col-md-2">No Telp</p><p class="col-lg-10 col-md-10"> <?= $pasien->no_hp ?></p>
-
-                                
+                                    <p class="col-lg-2 col-md-2">Nama </p>
+                                    <p class="col-lg-10 col-md-10"> <?= $pasien->nama_pasien ?></p>
+                                    <p class="col-lg-2 col-md-2">Jenis Kelamin </p>
+                                    <p class="col-lg-10 col-md-10"><?php if ($pasien->jenis_kelamin == "l") {
+                                                                        echo "Laki - Laki";
+                                                                    } else {
+                                                                        echo "Perempuan";
+                                                                    } ?>
+                                    </p>
+                                    <p class="col-lg-2 col-md-2">Umur </p>
+                                    <p class="col-lg-10 col-md-10"><?= $pasien->umur ?></p>
+                                    <p class="col-lg-2 col-md-2">Alamat </p>
+                                    <p class="col-lg-10 col-md-10"> <?= $pasien->alamat ?></p>
+                                    <p class="col-lg-2 col-md-2">No Telp</p>
+                                    <p class="col-lg-10 col-md-10"> <?= $pasien->no_hp ?></p>
                                 </div>
                             </div>
                             <br>
@@ -40,14 +41,14 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php 
+                                    <?php
                                     $no = 1;
-                                    foreach($gejala_pasien as $key => $val){ ?>
-                                    <tr>
-                                        <th scope="row"><?=$no++?></th>
-                                        <td><?=$val->kd_gejala?></td>
-                                        <td><?=$val->nama_gejala?></td>
-                                    </tr>
+                                    foreach ($gejala_pasien as $key => $val) { ?>
+                                        <tr>
+                                            <th scope="row"><?= $no++ ?></th>
+                                            <td><?= $val->kd_gejala ?></td>
+                                            <td><?= $val->nama_gejala ?></td>
+                                        </tr>
                                     <?php } ?>
                                 </tbody>
                             </table>
@@ -61,7 +62,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php 
+                                    <?php
                                     $no = 1;
                                     $cfhasil = 0;
                                     $p = null;
@@ -70,11 +71,11 @@
                                             $cfhasil = $val;
                                             $p = array_search($cfhasil, $hasil_seleksi);
                                         } ?>
-                                    <tr>
-                                        <th scope="row"><?=$no++?></th>
-                                        <td><?=$key?></td>
-                                        <td><?=$val?></td>
-                                    </tr>
+                                        <tr>
+                                            <th scope="row"><?= $no++ ?></th>
+                                            <td><?= $key ?></td>
+                                            <td><?= $val ?></td>
+                                        </tr>
                                     <?php } ?>
                                 </tbody>
                             </table>
@@ -83,7 +84,7 @@
                             <p><b>Solusi</b></p>
                             <p><?= $detail_penyakit->solusi ?></p>
                             <br>
-                            <a href="<?=base_url('konsultasi/proses?halaman=cetak')?>" class="btn btn-info">Cetak Hasil</a>
+                            <a href="<?= base_url('konsultasi/cetak_hasil?id=' . $pasien->id_pasien) ?>" target=_blank class="btn btn-info">Cetak Hasil</a>
                         </div>
                     </div>
                 </div>
