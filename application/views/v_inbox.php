@@ -50,7 +50,7 @@
                                        
                                         <div class="col-lg-9">
                                         <label class="">Bobot</label>
-                                            <input name="bobot" type="number" class="form-control" required>
+                                            <input name="bobot" max="1" step="0.01" type="number" class="form-control" required>
                                         </div>
                                     </div>
                                 </div>
