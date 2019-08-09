@@ -11,15 +11,16 @@
                                     <div class="row">
                                             <div class="col-lg-12">
                                             <div class="logo">
-                                                <a href="#"><img src="img/logo/logo.png" alt="" />
+                                                <a href="#"><img src="<?= base_url()?>assets/img/cilacap.png" alt="" style="width:50%;" >
                                                 </a>
                                             </div>
+                                            <center><h1>Sistem Pakar Diagnosa Penyakit Gigi dan Mulut</h1></center>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-lg-12">
                                             <div class="login-title">
-                                                <h1><b>Login</b> </h1>
+                                                <h1><b>Login Admin Pakar</b> </h1>
                                                 <?php if(isset($error)){echo $error;}; ?>
                                                 <p>Silahkan login menggunakan username dan password anda</p>
                                             </div>

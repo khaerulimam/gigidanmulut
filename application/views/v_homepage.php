@@ -5,8 +5,8 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>medical</title>
-    <link rel="icon" href="<?php base_url()?>/gigidanmulut/assets/new/img/favicon.png">
+    <title>Sistem Pakar</title>
+    <link rel="icon" href="<?php base_url()?>/gigidanmulut/assets/new/img/logo_.png">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="<?php base_url()?>/gigidanmulut/assets//new/css/bootstrap.min.css">
     <!-- animate CSS -->
