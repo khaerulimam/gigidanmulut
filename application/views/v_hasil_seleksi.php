@@ -80,7 +80,7 @@
                                 </tbody>
                             </table>
                             <p><b>Kesimpulan</b></p>
-                            <p>Dari hasil perhitungan tersebut maka didapatkan nilai terbesar adalah <b><?= $p ?></b> dengan nilai <b><?= $cfhasil * 100 ?>%</b></p>
+                            <p>Dari hasil perhitungan tersebut maka dipastikan anda terkena penyakit <b><?=$p ?></b> dengan nilai <b><?= $cfhasil * 100 ?>%</b></p>
                             <p><b>Solusi</b></p>
                             <p><?= $detail_penyakit->solusi ?></p>
                             <br>

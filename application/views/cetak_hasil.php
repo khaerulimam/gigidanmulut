@@ -109,13 +109,13 @@
             </tbody>
         </table>
         <p><b>Kesimpulan</b></p>
-        <p>Dari hasil perhitungan tersebut maka didapatkan nilai terbesar adalah <b><?= $detail_penyakit->kd_diagnosa ?></b> dengan nilai <b><?= $nilai_tertinggi * 100 ?>%</b></p>
+        <p>Dari hasil perhitungan tersebut maka dipastikan anda terkena penyakit <b><?=$detail_penyakit->nama_diagnosa ?></b> dengan nilai <b><?= $nilai_tertinggi * 100 ?>%</b></p>
         <p><b>Solusi</b></p>
         <p><?= $detail_penyakit->solusi ?></p>
     </div>
 
     <script>
-         window.print();
+        // window.print();
     </script>
 </body>
 
