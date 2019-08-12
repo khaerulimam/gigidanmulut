@@ -37,7 +37,7 @@ function inputpasien(){
 		$this->load->view('v_halaman_konsultasi');
 	}else{
 		$q=$this->m_konsultasi->inputpasien();
-		redirect(base_url('admin/inputpasien/'.$q));
+		redirect(base_url('admin/konsultasi/'.$q."?gejala=G5"));
 	}
 }
 
