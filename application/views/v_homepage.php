@@ -6,26 +6,26 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Sistem Pakar</title>
-    <link rel="icon" href="<?php base_url()?>/gigidanmulut/assets/new/img/logo_.png">
+    <link rel="icon" href="<?php base_url() ?>/gigidanmulut/assets/new/img/logo_.png">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="<?php base_url()?>/gigidanmulut/assets//new/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?php base_url() ?>/gigidanmulut/assets//new/css/bootstrap.min.css">
     <!-- animate CSS -->
-    <link rel="stylesheet" href="<?php base_url()?>/gigidanmulut/assets/new/css/animate.css">
+    <link rel="stylesheet" href="<?php base_url() ?>/gigidanmulut/assets/new/css/animate.css">
     <!-- owl carousel CSS -->
-    <link rel="stylesheet" href="<?php base_url()?>/gigidanmulut/assets/new/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="<?php base_url() ?>/gigidanmulut/assets/new/css/owl.carousel.min.css">
     <!-- themify CSS -->
-    <link rel="stylesheet" href="<?php base_url()?>/gigidanmulut/assets/new/css/themify-icons.css">
+    <link rel="stylesheet" href="<?php base_url() ?>/gigidanmulut/assets/new/css/themify-icons.css">
     <!-- flaticon CSS -->
-    <link rel="stylesheet" href="<?php base_url()?>/gigidanmulut/assets/new/css/flaticon.css">
+    <link rel="stylesheet" href="<?php base_url() ?>/gigidanmulut/assets/new/css/flaticon.css">
     <!-- magnific popup CSS -->
-    <link rel="stylesheet" href="<?php base_url()?>/gigi/gigidanmulut/assets/new/css/magnific-popup.css">
+    <link rel="stylesheet" href="<?php base_url() ?>/gigi/gigidanmulut/assets/new/css/magnific-popup.css">
     <!-- nice select CSS -->
-    <link rel="stylesheet" href="<?php base_url()?>/gigi/gigidanmulut/assets/new/css/nice-select.css">
+    <link rel="stylesheet" href="<?php base_url() ?>/gigi/gigidanmulut/assets/new/css/nice-select.css">
     <!-- swiper CSS -->
-    <link rel="stylesheet" href="<?php base_url()?>/gigi/gigidanmulut/assets/new/css/slick.css">
+    <link rel="stylesheet" href="<?php base_url() ?>/gigi/gigidanmulut/assets/new/css/slick.css">
     <!-- style CSS -->
-    <link rel="stylesheet" href="<?php base_url()?>/gigidanmulut/assets/new/css/style.css">
-    <link rel="stylesheet" href="<?php base_url()?>/gigidanmulut/assets/font-awesome/fontawesome.css">
+    <link rel="stylesheet" href="<?php base_url() ?>/gigidanmulut/assets/new/css/style.css">
+    <link rel="stylesheet" href="<?php base_url() ?>/gigidanmulut/assets/font-awesome/fontawesome.css">
 </head>
 
 <body>
@@ -34,24 +34,27 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-12">
-                    <nav class="navbar navbar-expand-lg navbar-light">
-                        <a class="navbar-brand" href="index.html"> 
-                            <img src="<?php base_url()?>assets/img/logo_.png" style="width: 100px;" alt="logo"> 
-                            <!-- <h4> Diagnosa Penyakit Gigi & Mulut</h4> -->
-                        </a>
-                        <button class="navbar-toggler" type="button" data-toggle="collapse"
-                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
+                    <div class="row">
+                        <div class="col-lg-12">
+                        <a href="<?=base_url('admin/login')?>" style="float:right; margin-top:10px;background-color: #86E0EB; color: #ffffff" class="btn btn-md">Login Pakar</a>
+                            <nav class="navbar navbar-expand-lg navbar-light">
+                                <a class="navbar-brand" href="index.html">
+                                    <img src="<?php base_url() ?>assets/img/logo_.png" style="width: 100px;" alt="logo">
+                                    <!-- <h4> Diagnosa Penyakit Gigi & Mulut</h4> -->
+                                </a>
+                                <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
 
-                        <div class="collapse navbar-collapse main-menu-item justify-content-center"
-                            id="navbarSupportedContent">
-                         
+                                <div class="collapse navbar-collapse main-menu-item justify-content-center" id="navbarSupportedContent">
+                                </div> -->
+
+                                <br><br>
+                            </nav>
+                            <!-- </div> -->
+                            <!-- <div class="col-lg-2"> -->
                         </div>
-                      
-                        <br><br>
-                    </nav>
+                    </div>
                 </div>
             </div>
         </div>
@@ -71,8 +74,8 @@
                 <div class="col-md-6 col-lg-5">
                     <div class="about_us_text">
                         <h2>Sistem Pakar Diagnosa Penyakit Gigi & Mulut</h2>
-                        <p>Merupakan sistem berbasis pengetahuan yang dapat melakukan diagnosa
-                             dan memberikan solusi atas penyakit gigi dan mulut berdasarkan gejala-gejalanya</p>
+                        <!-- <p>Merupakan sistem berbasis pengetahuan yang dapat melakukan diagnosa
+                            dan memberikan solusi atas penyakit gigi dan mulut berdasarkan gejala-gejalanya</p> -->
                         <!-- <a class="btn_2 " href="#">learn more</a> -->
                         <!-- <div class="banner_item">
                             <div class="single_item">
@@ -96,7 +99,7 @@
     <!-- about us part end-->
 
     <!-- feature_part start-->
-    <section class="feature_part " style="margin-top: 30px;">
+    <section class="feature_part " style="margin-top: 60px;">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-xl-8">
@@ -321,18 +324,26 @@ pasien yaitu ngilu pada saat minum minuman dingin, panas, manis dan asam. Perawa
                 <div class="row align-items-center">
                     <p class="footer-text m-0 col-lg-8 col-md-12">
                         Copyright &copy;
-                    <script>document.write(new Date().getFullYear());</script> 
-                        Template dibuat  oleh
-                    <a href="https://colorlib.com" target="_blank">Colorlib</a>
-               
-                    <a href="<?php base_url()?>admin/login" >&nbsp;
-                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
-width="15" height="15"
-viewBox="0 0 172 172"
-style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#ffffff"><g id="surface1"><path d="M46.30769,0c-10.95673,0 -19.84615,8.88942 -19.84615,19.84615v33.07692h13.23077v-33.07692c0,-3.64363 2.97176,-6.61538 6.61538,-6.61538h92.61538c3.64363,0 6.61538,2.97176 6.61538,6.61538v132.30769c0,3.64363 -2.97176,6.61538 -6.61538,6.61538h-92.61538c-3.64363,0 -6.61538,-2.97176 -6.61538,-6.61538v-33.07692h-13.23077v33.07692c0,10.95673 8.88942,19.84615 19.84615,19.84615h92.61538c10.95673,0 19.84615,-8.88942 19.84615,-19.84615v-132.30769c0,-10.95673 -8.88942,-19.84615 -19.84615,-19.84615zM56.23077,42.79327c-1.65385,0.49099 -3.30769,2.17067 -3.30769,6.61538v16.74519h-39.69231c-3.64363,0 -6.61538,2.97176 -6.61538,6.61538v26.46154c0,3.64363 2.97176,6.61538 6.61538,6.61538h39.69231v16.53846c0,8.47596 6.61538,6.61538 6.61538,6.61538l49.61538,-43l-49.61538,-43c0,0 -1.65385,-0.69772 -3.30769,-0.20673z"></path></g></g></g></svg>               
-                    </a>
-                </p>
-                    
+                        <script>
+                            document.write(new Date().getFullYear());
+                        </script>
+                        Template dibuat oleh
+                        <a href="https://colorlib.com" target="_blank">Colorlib</a>
+
+                        <!-- <a href="<?php base_url() ?>admin/login">&nbsp;
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="15" height="15" viewBox="0 0 172 172" style=" fill:#000000;">
+                                <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+                                    <path d="M0,172v-172h172v172z" fill="none"></path>
+                                    <g fill="#ffffff">
+                                        <g id="surface1">
+                                            <path d="M46.30769,0c-10.95673,0 -19.84615,8.88942 -19.84615,19.84615v33.07692h13.23077v-33.07692c0,-3.64363 2.97176,-6.61538 6.61538,-6.61538h92.61538c3.64363,0 6.61538,2.97176 6.61538,6.61538v132.30769c0,3.64363 -2.97176,6.61538 -6.61538,6.61538h-92.61538c-3.64363,0 -6.61538,-2.97176 -6.61538,-6.61538v-33.07692h-13.23077v33.07692c0,10.95673 8.88942,19.84615 19.84615,19.84615h92.61538c10.95673,0 19.84615,-8.88942 19.84615,-19.84615v-132.30769c0,-10.95673 -8.88942,-19.84615 -19.84615,-19.84615zM56.23077,42.79327c-1.65385,0.49099 -3.30769,2.17067 -3.30769,6.61538v16.74519h-39.69231c-3.64363,0 -6.61538,2.97176 -6.61538,6.61538v26.46154c0,3.64363 2.97176,6.61538 6.61538,6.61538h39.69231v16.53846c0,8.47596 6.61538,6.61538 6.61538,6.61538l49.61538,-43l-49.61538,-43c0,0 -1.65385,-0.69772 -3.30769,-0.20673z"></path>
+                                        </g>
+                                    </g>
+                                </g>
+                            </svg>
+                        </a> -->
+                    </p>
+
                 </div>
             </div>
         </div>
