@@ -13,33 +13,34 @@ class Konsultasi extends CI_Controller
         $this->load->model('m_konsultasi', 'konsultasi');
     }
 
-    // public function index($id)
-    // {
-    //     $pasien = $this->m_admincrud->getWhere('id_pasien', $id);
-    //     $pasien = $this->m_admincrud->getData('tb_pasien')->row();
-    //     $gejala = $this->m_admincrud->getData('tb_gejala')->result();
-    //     $data['datagejala'] = $gejala;
-    //     $data['pasien'] = $pasien;
-    //     // die(json_encode($data));
-    //     $this->load->view('v_opsi', $data);
-    // }
     public function index($id)
     {
-        $g = $this->input->get('gejala');
-        if ($g == null) {
-            $gejala = $this->m_admincrud->getWhere('kd_gejala', 'G5');
-            $gejala = $this->m_admincrud->getData('tb_gejala')->row();
-        } else {
-            $gejala = $this->m_admincrud->getWhere('kd_gejala', $g);
-            $gejala = $this->m_admincrud->getData('tb_gejala')->row();
-        }
-        $data = array(
-            "id_pasien" => $id,
-            "gejala" => $gejala
-        );
-        // die(json_encode($this->session->userdata('gejala')));
-        $this->load->view('v_konsultasi', $data);
+        $pasien = $this->m_admincrud->getWhere('id_pasien', $id);
+        $pasien = $this->m_admincrud->getData('tb_pasien')->row();
+        $gejala = $this->m_admincrud->getData('tb_gejala')->result();
+        $data['datagejala'] = $gejala;
+        $data['pasien'] = $pasien;
+        // die(json_encode($data));
+        $this->load->view('v_opsi', $data);
     }
+
+    // public function index($id)
+    // {
+    //     $g = $this->input->get('gejala');
+    //     if ($g == null) {
+    //         $gejala = $this->m_admincrud->getWhere('kd_gejala', 'G5');
+    //         $gejala = $this->m_admincrud->getData('tb_gejala')->row();
+    //     } else {
+    //         $gejala = $this->m_admincrud->getWhere('kd_gejala', $g);
+    //         $gejala = $this->m_admincrud->getData('tb_gejala')->row();
+    //     }
+    //     $data = array(
+    //         "id_pasien" => $id,
+    //         "gejala" => $gejala
+    //     );
+    //     // die(json_encode($this->session->userdata('gejala')));
+    //     $this->load->view('v_konsultasi', $data);
+    // }
 
     public function proses_pertanyaan($id)
     {

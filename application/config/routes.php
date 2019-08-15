@@ -54,7 +54,7 @@ $route['default_controller']    ='c_user';
 $route['admin/login']           ='c_akses';
 $route['admin/logout']          ='c_akses/logout';
 
-// $route['admin/inputpasien/(:num)']     ='konsultasi/index/$1';
+$route['admin/inputpasien/(:num)']     ='konsultasi/index/$1';
 $route['admin/konsultasi/(:num)'] = 'konsultasi/index/$1';
 // $route['admin/konsu']
 $route['admin/index']           ='welcome';
