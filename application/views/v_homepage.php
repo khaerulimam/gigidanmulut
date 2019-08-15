@@ -18,14 +18,16 @@
     <!-- flaticon CSS -->
     <link rel="stylesheet" href="<?php base_url() ?>/gigidanmulut/assets/new/css/flaticon.css">
     <!-- magnific popup CSS -->
-    <link rel="stylesheet" href="<?php base_url() ?>/gigi/gigidanmulut/assets/new/css/magnific-popup.css">
+    <link rel="stylesheet" href="<?php base_url() ?>/gigidanmulut/assets/new/css/magnific-popup.css">
     <!-- nice select CSS -->
-    <link rel="stylesheet" href="<?php base_url() ?>/gigi/gigidanmulut/assets/new/css/nice-select.css">
+    <link rel="stylesheet" href="<?php base_url() ?>/gigidanmulut/assets/new/css/nice-select.css">
     <!-- swiper CSS -->
-    <link rel="stylesheet" href="<?php base_url() ?>/gigi/gigidanmulut/assets/new/css/slick.css">
+    <link rel="stylesheet" href="<?php base_url() ?>/gigidanmulut/assets/new/css/slick.css">
     <!-- style CSS -->
     <link rel="stylesheet" href="<?php base_url() ?>/gigidanmulut/assets/new/css/style.css">
-    <link rel="stylesheet" href="<?php base_url() ?>/gigidanmulut/assets/font-awesome/fontawesome.css">
+    <link rel="stylesheet" href="<?php base_url() ?>/gigidanmulut/assets/new/css/font-awesome.min.css">
+    <!-- Custom styles for this template -->
+    <!-- <link href="<?php base_url() ?>/gigidanmulut/assets/new/css/scrolling-nav.css" rel="stylesheet"> -->
 </head>
 
 <body>
@@ -36,7 +38,7 @@
                 <div class="col-lg-12">
                     <div class="row">
                         <div class="col-lg-12">
-                        <a href="<?=base_url('admin/login')?>" style="float:right; margin-top:10px;background-color: #86E0EB; color: #ffffff" class="btn btn-md">Login Pakar</a>
+                            <a href="<?= base_url('admin/login') ?>" style="float:right; margin-top:10px;background-color: #86E0EB; color: #ffffff" class="btn btn-md">Login Pakar</a>
                             <nav class="navbar navbar-expand-lg navbar-light">
                                 <a class="navbar-brand" href="index.html">
                                     <img src="<?php base_url() ?>assets/img/logo_.png" style="width: 100px;" alt="logo">
@@ -72,22 +74,28 @@
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-5">
-                    <div class="about_us_text">
+                    <div class="about_us_text" style="margin-bottom:200px">
                         <h2>Sistem Pakar Diagnosa Penyakit Gigi & Mulut</h2>
+                        <a class="js-scroll-trigger" href="#macam">
+                            <h3>Macam-Macam Penyakit Gigi</h3>
+                        </a>
+                        <a class="js-scroll-trigger" href="#penanganan">
+                            <h3>Penanganan</h3>
+                        </a>
                         <!-- <p>Merupakan sistem berbasis pengetahuan yang dapat melakukan diagnosa
                             dan memberikan solusi atas penyakit gigi dan mulut berdasarkan gejala-gejalanya</p> -->
                         <!-- <a class="btn_2 " href="#">learn more</a> -->
                         <!-- <div class="banner_item">
                             <div class="single_item">
-                                <img src="<?php base_url()?>/gigi/gigidanmulut/assets/new/img/icon/banner_1.svg" alt="">
+                                <img src="<?php base_url() ?>/assets/new/img/icon/banner_1.svg" alt="">
                                 <h5>Emergency</h5>
                             </div>
                             <div class="single_item">
-                                <img src="<?php base_url()?>/gigi/gigidanmulut/assets/new/img/icon/banner_2.svg" alt="">
+                                <img src="<?php base_url() ?>/assets/new/img/icon/banner_2.svg" alt="">
                                 <h5>Appointment</h5>
                             </div>
                             <div class="single_item">
-                                <img src="<?php base_url()?>/gigi/gigidanmulut/assets/new/img/icon/banner_3.svg" alt="">
+                                <img src="<?php base_url() ?>/assets/new/img/icon/banner_3.svg" alt="">
                                 <h5>Qualfied</h5>
                             </div>
                         </div> -->
@@ -99,7 +107,7 @@
     <!-- about us part end-->
 
     <!-- feature_part start-->
-    <section class="feature_part " style="margin-top: 60px;">
+    <section class="feature_part" id="macam" style="margin-top: 1px;">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-xl-8">
@@ -168,7 +176,7 @@
 
 
     <!--::doctor_part start::-->
-    <section class="doctor_part section_padding">
+    <section id="penanganan" class="doctor_part section_padding">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-xl-8">
@@ -351,22 +359,26 @@ pasien yaitu ngilu pada saat minum minuman dingin, panas, manis dan asam. Perawa
 
     <!-- jquery plugins here-->
 
-    <script src="<?php base_url()?>/gigi/gigidanmulut/assets/new/js/jquery-1.12.1.min.js"></script>
+    <script src="<?php base_url() ?>/gigidanmulut/assets/new/js/jquery-1.12.1.min.js"></script>
     <!-- popper js -->
-    <script src="<?php base_url()?>/gigi/gigidanmulut/assets/new/js/popper.min.js"></script>
+    <script src="<?php base_url() ?>/gigidanmulut/assets/new/js/popper.min.js"></script>
     <!-- bootstrap js -->
-    <script src="<?php base_url()?>/gigi/gigidanmulut/assets/new/js/bootstrap.min.js"></script>
+    <script src="<?php base_url() ?>/gigidanmulut/assets/new/js/bootstrap.min.js"></script>
     <!-- owl carousel js -->
-    <script src="<?php base_url()?>/gigi/gigidanmulut/assets/new/js/owl.carousel.min.js"></script>
-    <script src="<?php base_url()?>/gigi/gigidanmulut/assets/new/js/jquery.nice-select.min.js"></script>
+    <script src="<?php base_url() ?>/gigidanmulut/assets/new/js/owl.carousel.min.js"></script>
+    <script src="<?php base_url() ?>/gigidanmulut/assets/new/js/jquery.nice-select.min.js"></script>
     <!-- contact js -->
-    <script src="<?php base_url()?>/gigi/gigidanmulut/assets/new/js/jquery.ajaxchimp.min.js"></script>
-    <script src="<?php base_url()?>/gigi/gigidanmulut/assets/new/js/jquery.form.js"></script>
-    <script src="<?php base_url()?>/gigi/gigidanmulut/assets/new/js/jquery.validate.min.js"></script>
-    <script src="<?php base_url()?>/gigi/gigidanmulut/assets/new/js/mail-script.js"></script>
-    <script src="<?php base_url()?>/gigi/gigidanmulut/assets/new/js/contact.js"></script>
+    <!-- Plugin JavaScript -->
+    <script src="<?php base_url() ?>/gigidanmulut/assets/new/js/jquery.easing.min.js"></script>
+    <script src="<?php base_url() ?>/gigidanmulut/assets/new/js/jquery.ajaxchimp.min.js"></script>
+    <script src="<?php base_url() ?>/gigidanmulut/assets/new/js/jquery.form.js"></script>
+    <script src="<?php base_url() ?>/gigidanmulut/assets/new/js/jquery.validate.min.js"></script>
+    <script src="<?php base_url() ?>/gigidanmulut/assets/new/js/mail-script.js"></script>
+    <script src="<?php base_url() ?>/gigidanmulut/assets/new/js/contact.js"></script>
     <!-- custom js -->
-    <script src="<?php base_url()?>/gigi/gigidanmulut/assets/new/js/custom.js"></script>
+    <script src="<?php base_url() ?>/gigidanmulut/assets/new/js/custom.js"></script>
+    <!-- Custom JavaScript for this theme -->
+    <script src="<?php base_url() ?>/gigidanmulut/assets/new/js/scrolling-nav.js"></script>
 </body>
 
 </html>
