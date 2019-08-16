@@ -23,7 +23,7 @@
                                                 
                                                 <div class="col-lg-4" >
                                                 <label for="nama" class="">Nama Pasien</label>
-                                                    <input id="nama" type="text" name="nama_pasien" onkeypress="return event.charCode > 57" class="form-control" value="">
+                                                    <input id="nama" type="text" name="nama_pasien" onkeypress="return event.charCode > 31 && event.charCode < 48 || event.charCode > 57" class="form-control" value="">
                                                 </div>
                                             </div>
                                         </div>
@@ -31,7 +31,7 @@
                                             <div class="row">
                                                 <div class="col-lg-4" >
                                                     <label for="umur" class="">Umur</label>
-                                                    <input id="umur" type="umur" name="umur" onkeypress="return event.charCode >= 48 && event.charCode <= 57" class="form-control">
+                                                    <input id="umur" type="number" name="umur" onkeypress="return event.charCode >= 48 && event.charCode <= 57" class="form-control">
                                                 </div>
                                             </div>
                                         </div>
@@ -40,7 +40,7 @@
                                         
                                                 <div class="col-lg-4">
                                                     <label for="telp" class="">Nomor Telepon</label>
-                                                    <input id="telp" type="number" name="nomor_telepon" onkeypress="return event.charCode >= 48 && event.charCode <= 57" class="form-control">
+                                                    <input id="telp" type="text" name="nomor_telepon" onkeypress="return event.charCode >= 48 && event.charCode <= 57" class="form-control">
                                                 </div>
                                             </div>
                                         </div>
