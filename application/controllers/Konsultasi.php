@@ -285,6 +285,17 @@ class Konsultasi extends CI_Controller
         return $lp;
     }
 
+    private function lp($gejala)
+    {
+        $lp = $this->m_admincrud->select('tb_penyakit.kd_diagnosa');
+        $lp = $this->m_admincrud->getDistinct();
+        $lp = $this->m_admincrud->getJoin('tb_gejala', 'tb_relasi.kd_gejala = tb_gejala.kd_gejala', 'inner');
+        $lp = $this->m_admincrud->getJoin('tb_penyakit', 'tb_penyakit.kd_diagnosa = tb_relasi.kd_diagnosa', 'inner');
+        $lp = $this->m_admincrud->getWhere_in('tb_relasi.kd_gejala', $gejala);
+        $lp = $this->m_admincrud->getData('tb_relasi')->result_array();
+        return $lp;
+    }
+
 
     //function forward chaining pendeteksi detail penyakit
     private function getPenyakit($gejala)
@@ -412,7 +423,7 @@ class Konsultasi extends CI_Controller
                 // die(json_encode($this->session->userdata('gejala')));
                 // redirect('admin/konsultasi/' . $id . "?gejala=G9");
             } else {
-                die(json_encode($this->session->userdata('gejala')));
+                // die(json_encode($this->session->userdata('gejala')));
                 $i = 0;
                 foreach ($this->session->userdata('gejala') as $key => $val) {
                     // echo $val['gejala'];
@@ -462,6 +473,7 @@ class Konsultasi extends CI_Controller
                 // die(json_encode($this->session->userdata('gejala')));
                 // redirect('admin/konsultasi/' . $id . "?gejala=G3");
             } else {
+                $i = 0;
                 foreach ($this->session->userdata('gejala') as $key => $val) {
                     // echo $val['gejala'];
                     // echo $i . "<br>";
@@ -498,8 +510,17 @@ class Konsultasi extends CI_Controller
                 // die(json_encode($this->session->userdata('gejala')));
                 redirect('admin/konsultasi/' . $id . "?gejala=G11");
             } else {
-                echo "Tidak ada penyakit terdeteksi";
-                // redirect('admin/konsultasi/' . $id . "?gejala=G15");
+                $pasien = $this->m_admincrud->getWhere('id_pasien', $id);
+                $pasien = $this->m_admincrud->getData('tb_pasien')->row();
+                $data = array(
+                    "pasien" => $pasien,
+                    "hasil_seleksi" => "Tidak terdapat keluhan apapun, Maka gigi anda sehat dan baik baik saja",
+                );
+                $this->session->set_flashdata('pesan', $data);
+                // die(json_encode($this->session->flashdata('pesan')['hasil_seleksi']));
+                redirect('admin/konsultasi/' . $id . "?gejala=G10");
+                // $this->load->view('v_hasil_seleksi', $data);
+                // echo "Tidak ada penyakit terdeteksi";
             }
         } else if ($g == "G15") {
             if ($j == "ya") {
@@ -795,7 +816,16 @@ class Konsultasi extends CI_Controller
                 // $this->perhitungan($id, $gejala, $tingkat);
                 redirect('admin/konsultasi/' . $id . "?gejala=G7");
             } else {
-                echo "ini notice";
+                $pasien = $this->m_admincrud->getWhere('id_pasien', $id);
+                $pasien = $this->m_admincrud->getData('tb_pasien')->row();
+                $data = array(
+                    "pasien" => $pasien,
+                    "hasil_seleksi" => "Gejala anda adalah gigi berlubang, gejala tersebut belum memenuhi kriteria untuk menentukan diagnosa penyakit, Silahkan konsultasi kembali",
+                );
+                $this->session->set_flashdata('pesan', $data);
+                // die(json_encode($this->session->flashdata('pesan')['hasil_seleksi']));
+                redirect('admin/konsultasi/' . $id . "?gejala=G6");
+                // echo "ini notice";
                 // $gejala = [];
                 // $tingkat = [];
                 // $i = 0;
@@ -927,9 +957,10 @@ class Konsultasi extends CI_Controller
                 "nilai" => $val
             );
         }
-        // die(json_encode($dtkp));
         $dp = $this->m_admincrud->getWhere('nama_diagnosa', $pt);
         $dp = $this->m_admincrud->getData('tb_penyakit')->row();
+        // die(json_encode($dtkp));
+
         // die(json_encode($dp));
         foreach ($dtkp as $key => $val) {
             $data = array(
@@ -942,10 +973,40 @@ class Konsultasi extends CI_Controller
             // die(json_encode($data));
         }
         // $pen = $this->m_admincrud->insert()
+        $pen = $this->test($gejala);
+        $penr = null;
+        $jml = 0;
+        // die(json_encode($gejala_p));
+        
 
-        // die(json_encode($dtk));
+        // die(json_encode($pen));
 
+        foreach($pen as $key => $val){
+            if(empty($val)){
+                $jml += count(empty($val));
+            }
+        }
+        // die(json_encode($jml));
+        foreach($pen as $key => $val){
+            if(empty($val)){
+                // echo $jml;
+                // echo count(sizeof($val));
+                if($jml > 1){
+                    // echo $pt;
+                    $penr = $dp->kd_diagnosa;
+                }else{
+                    // echo $key;
+                    $penr = $key;
+                }
+            }
+        }
+
+        $dp = $this->m_admincrud->getWhere('kd_diagnosa', $penr);
+        $dp = $this->m_admincrud->getData('tb_penyakit')->row();
+        // die(json_encode($dp));
+        // $penr = $this->m_admincrud->getWhere('kd_diagnosa')
         $data = array(
+            "penyakit_real" => $dp->nama_diagnosa,
             "pasien" => $pasien,
             "hasil_seleksi" => $cfhasil,
             "detail_penyakit" => $dp,
@@ -960,4 +1021,34 @@ class Konsultasi extends CI_Controller
         $this->load->view('v_hasil_seleksi', $data);
         $this->session->unset_userdata('gejala');
     }
+
+    private function test($gejala)
+    {
+        // die(json_encode($gejala));
+        // $array1 = array("G1", "G2", "G3", "G4",  "G5");
+        // $array2 = array("kd_gejala" => "G2","kd_gejala" =>  "G3","kd_gejala" =>  "G4");
+        $lp = $this->lp($gejala);
+        $gej = array();
+        $result = array();
+        $j=0;
+        foreach ($lp as $key => $val) {
+            $p = $this->m_admincrud->select('kd_gejala');
+            $p = $this->m_admincrud->getWhere('kd_diagnosa',$val['kd_diagnosa']);
+            $p = $this->m_admincrud->getData('tb_relasi')->result();
+            foreach($p as $keya => $value){
+                $gej[$val['kd_diagnosa']][] = $value->kd_gejala;
+            }
+            $j++;
+        }
+        // die();
+        $i=0;
+        foreach($gej as $key => $val){
+            $result[$key] = array_diff($val, $gejala);
+            $i++;
+        }
+        // die();
+        // die(json_encode($result));
+        return $result;
+    }
+
 }

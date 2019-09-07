@@ -42,14 +42,20 @@
                                 </thead>
                                 <tbody>
                                     <?php
-                                    $no = 1;
-                                    foreach ($gejala_pasien as $key => $val) { ?>
-                                        <tr>
-                                            <th scope="row"><?= $no++ ?></th>
-                                            <td><?= $val->kd_gejala ?></td>
-                                            <td><?= $val->nama_gejala ?></td>
-                                        </tr>
-                                    <?php } ?>
+                                    // if (isset($gejala)) {
+                                        $no = 1;
+                                        foreach ($gejala_pasien as $key => $val) { ?>
+                                            <tr>
+                                                <th scope="row"><?= $no++ ?></th>
+                                                <td><?= $val->kd_gejala ?></td>
+                                                <td><?= $val->nama_gejala ?></td>
+                                            </tr>
+                                        <?php }
+                                        // } else { ?>
+                                        <!-- <tr>
+                                            <td colspan="3">Tidak ada gejala yang diderita</td>
+                                        </tr> -->
+                                    <!-- <?php //} ?> -->
                                 </tbody>
                             </table>
                             <p><b>Hasil Analisa</b></p>
@@ -66,21 +72,27 @@
                                     $no = 1;
                                     $cfhasil = 0;
                                     $p = null;
-                                    foreach ($hasil_seleksi as $key => $val) {
-                                        if ($val > $cfhasil) {
-                                            $cfhasil = $val;
-                                            $p = array_search($cfhasil, $hasil_seleksi);
-                                        } ?>
-                                        <tr>
-                                            <th scope="row"><?= $no++ ?></th>
-                                            <td><?= $key ?></td>
-                                            <td><?= $val ?></td>
-                                        </tr>
-                                    <?php } ?>
+                                    // if ($hasil_seleksi == array()) {
+                                        foreach ($hasil_seleksi as $key => $val) {
+                                            if ($val > $cfhasil) {
+                                                $cfhasil = $val;
+                                                $p = array_search($cfhasil, $hasil_seleksi);
+                                            } ?>
+                                            <tr>
+                                                <th scope="row"><?= $no++ ?></th>
+                                                <td><?= $key ?></td>
+                                                <td><?= $val ?></td>
+                                            </tr>
+                                    <?php }
+                                    // }else{ ?>
+                                        <!-- <tr>
+                                            <td colspan="3"><?=$hasil_seleksi?></td>
+                                        </tr> -->
+                                    <!-- <?php //} ?> -->
                                 </tbody>
                             </table>
                             <p><b>Kesimpulan</b></p>
-                            <p>Dari hasil perhitungan tersebut maka dipastikan anda terkena penyakit <b><?=$p ?></b> dengan nilai <b><?= $cfhasil * 100 ?>%</b></p>
+                            <p>Dari hasil perhitungan tersebut maka dipastikan anda terkena penyakit <b><?= $penyakit_real ?></b> dengan nilai <b><?= $cfhasil * 100 ?>%</b></p>
                             <p><b>Solusi</b></p>
                             <p><?= $detail_penyakit->solusi ?></p>
                             <br>

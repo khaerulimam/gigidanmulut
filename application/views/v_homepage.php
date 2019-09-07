@@ -40,10 +40,15 @@
                         <div class="col-lg-12">
                             <a href="<?= base_url('admin/login') ?>" style="float:right; margin-top:10px;background-color: #86E0EB; color: #ffffff" class="btn btn-md">Login Pakar</a>
                             <nav class="navbar navbar-expand-lg navbar-light">
-                                <a class="navbar-brand" href="index.html">
-                                    <img src="<?php base_url() ?>assets/img/logo_.png" style="width: 100px;" alt="logo">
+                                <a class="navbar-brand js-scroll-trigger" href="#home">
+                                    <img src="<?php base_url() ?>assets/img/cilacap.png" style="width: 100px;" alt="logo">
                                     <!-- <h4> Diagnosa Penyakit Gigi & Mulut</h4> -->
+                                    <span>
+                                        UPTD
+                                        PUSKESMAS MAOS
+                                    </span>
                                 </a>
+
                                 <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                                     <span class="navbar-toggler-icon"></span>
                                 </button>
@@ -65,12 +70,12 @@
 
 
     <!-- about us part start-->
-    <section class="about_us padding_top">
+    <section class="about_us padding_top" id="home">
         <div class="container">
             <div class="row justify-content-between align-items-center">
                 <div class="col-md-6 col-lg-6">
                     <div class="about_us_img">
-                        <img style="width:65%; margin-left: 100px; margin-bottom: 140px;" src="<?php base_url()?>/gigidanmulut/assets/img/gigi.png" alt="">
+                        <img style="width:65%; margin-left: 100px; margin-bottom: 140px;" src="<?php base_url() ?>/gigidanmulut/assets/img/gigi.png" alt="">
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-5">

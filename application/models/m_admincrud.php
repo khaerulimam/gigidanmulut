@@ -209,7 +209,7 @@ class M_admincrud extends CI_Model
     //tampil_relasi_datagabungan
     public function tampil_relasi()
     {
-        $this->db->select('tb_relasi.id,tb_relasi.kd_diagnosa,tb_penyakit.nama_diagnosa,tb_relasi.kd_gejala,tb_gejala.nama_gejala,tb_relasi.mb,tb_relasi.md');
+        $this->db->select('tb_relasi.id,tb_relasi.kd_diagnosa,tb_penyakit.nama_diagnosa,tb_relasi.kd_gejala,tb_gejala.nama_gejala');
         $this->db->from('tb_relasi');
         $this->db->join('tb_penyakit', 'tb_relasi.kd_diagnosa = tb_penyakit.kd_diagnosa');
         $this->db->join('tb_gejala', 'tb_relasi.kd_gejala = tb_gejala.kd_gejala');

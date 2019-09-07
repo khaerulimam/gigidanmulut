@@ -32,7 +32,7 @@
                     <div class="">
                         <div class="main-sparkline8-hd">
                             <center>
-                                <p><b>Data Gabungan</b></p>
+                                <p><b>Data Relasi</b></p>
                             </center>
                            
                             <div class="table-responsive bootstrap">

@@ -99,7 +99,7 @@
                         <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><img src="http://localhost/gigidanmulut/assets/img/star.png" width="17px" height="17px">&nbsp;&nbsp;<span class="mini-dn">Relasi</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
                             <div role="menu" class="dropdown-menu left-menu-dropdown animated flipInX">
                                 <a href="<?php echo base_url();?>admin/inputrelasi" class="dropdown-item">Input Relasi</a>
-                                <a href="<?php echo base_url();?>admin/datagabungan" class="dropdown-item">Data Gabungan</a>                            
+                                <a href="<?php echo base_url();?>admin/datagabungan" class="dropdown-item">Data Relasi</a>                            
                             </div>
                         </li>
                         <!-- <li class="nav-item">
