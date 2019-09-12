@@ -8,7 +8,7 @@
   
                                     <div class="main-sparkline8-hd">
                                         <center>
-                                        <h2 style="margin-bottom: 50px;margin-top :10px;"><b>Selamat Datang di Sistem Pakar Diagnosa Penyakit Gigi & Mulut</b></h2>
+                                        <h2 style="margin-bottom: 50px;margin-top :10px;"><b>Selamat Datang di Admin Sistem Pakar Diagnosa Penyakit Gigi & Mulut</b></h2>
                                         </center>
                                     </div>
                             

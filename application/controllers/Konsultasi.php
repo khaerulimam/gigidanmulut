@@ -24,204 +24,204 @@ class Konsultasi extends CI_Controller
     //     $this->load->view('v_opsi', $data);
     // }
 
-    public function proses()
-    {
-        // if ($cetak == null) {
-        if ($this->input->post('kirim')) {
-            $id_p = $this->input->post('id_pasien');
-            $gejala = $this->input->post('gejala');
-            $tingkat = $this->input->post('tingkat');
-            $gj = [];
-            $penyakit = [];
-            $tingkat = array_filter($tingkat);
-            // }
-            // die();
-            // die(json_encode($gejala));
-            if ($gejala != null) {
-                if (count($gejala) <= 1) {
-                    $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-dismissable">
-                                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                                                <p>Silahkan Pilih gejala kembali</p></div>');
-                    redirect('admin/inputpasien/' . $id_p);
-                } else {
-                    if (count($gejala) == count($tingkat)) {
-                        $p = $this->m_admincrud->getData('tb_relasi')->result_array();
-                        // foreach($gejala as $key => $val){
-                        if (in_array($gejala, $p)) {
-                            $a = 0;
-                            $cfhasil = [];
-                            $lp = $this->listPenyakit($gejala);
-                            $gp = $this->getPenyakit($gejala);
-                            $gejala_p = [];
-                            // die(json_encode($lp));
-                            $pasien = $this->m_admincrud->getWhere('id_pasien', $id_p);
-                            $pasien = $this->m_admincrud->getData('tb_pasien')->row();
-                            $dtk = array(
-                                "id_pasien" => $pasien->id_pasien,
-                                "tanggal" => date("Y-m-d"),
-                            );
-                            $kon = $this->m_admincrud->insert('tb_konsultasi', $dtk);
-                            $id_kon = $this->m_admincrud->getInsertId();
-                            foreach ($tingkat as $key => $val) {
-                                // if ($val != "") {
-                                $gj[$gejala[$a]] = $val;
-                                // echo $gejala[$a]. " = ".$val."<br>";
-                                $gejala_p[$a] = $this->m_admincrud->getWhere('kd_gejala', $gejala[$a]);
-                                $gejala_p[$a] = $this->m_admincrud->getData('tb_gejala')->row();
-                                $data = array(
-                                    "id_konsultasi" => $id_kon,
-                                    "kd_gejala" => $gejala[$a],
-                                    "tingkat" => $val
-                                );
-                                $this->m_admincrud->insert('tb_konsultasi_gejala', $data);
-                                unset($data);
-                                // die(json_encode($data));
-                                // }
-                                // echo $a . "<br>";
-                                $a++;
-                            }
-                            // die();
-                            // die(json_encode($gejala_p));
-                            // die(json_encode($id_p));
-                            // $i = 0;
-                            foreach ($gp as $key => $val) {
-                                $penyakit[$val['nama_diagnosa']][] = array(
-                                    "bobot" => $val['bobot'],
-                                    "tingkat" => $gj[$val['kd_gejala']],
-                                    "cf" => $val['bobot'] * $gj[$val['kd_gejala']]
-                                );
-                                // $i++;
-                            }
-                            // $k=0;
-                            foreach ($lp as $key => $val) {
-                                $j = 0;
-                                foreach ($penyakit[$val['nama_diagnosa']] as $key_p => $val_p) {
-                                    // var_dump($val_p);
-                                    // echo $val['nama_diagnosa'] . " CF(".$j.")" . "<br>";
-                                    // echo count($val_p) . "<br>";
-                                    // echo count($penyakit[$val['nama_diagnosa']])."<br>";
-                                    if (count($penyakit[$val['nama_diagnosa']]) == 1) {
-                                        $cfold = $val_p['cf'];
+    // public function proses()
+    // {
+    //     // if ($cetak == null) {
+    //     if ($this->input->post('kirim')) {
+    //         $id_p = $this->input->post('id_pasien');
+    //         $gejala = $this->input->post('gejala');
+    //         $tingkat = $this->input->post('tingkat');
+    //         $gj = [];
+    //         $penyakit = [];
+    //         $tingkat = array_filter($tingkat);
+    //         // }
+    //         // die();
+    //         // die(json_encode($gejala));
+    //         if ($gejala != null) {
+    //             if (count($gejala) <= 1) {
+    //                 $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-dismissable">
+    //                                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    //                                             <p>Silahkan Pilih gejala kembali</p></div>');
+    //                 redirect('admin/inputpasien/' . $id_p);
+    //             } else {
+    //                 if (count($gejala) == count($tingkat)) {
+    //                     $p = $this->m_admincrud->getData('tb_relasi')->result_array();
+    //                     // foreach($gejala as $key => $val){
+    //                     if (in_array($gejala, $p)) {
+    //                         $a = 0;
+    //                         $cfhasil = [];
+    //                         $lp = $this->listPenyakit($gejala);
+    //                         $gp = $this->getPenyakit($gejala);
+    //                         $gejala_p = [];
+    //                         // die(json_encode($lp));
+    //                         $pasien = $this->m_admincrud->getWhere('id_pasien', $id_p);
+    //                         $pasien = $this->m_admincrud->getData('tb_pasien')->row();
+    //                         $dtk = array(
+    //                             "id_pasien" => $pasien->id_pasien,
+    //                             "tanggal" => date("Y-m-d"),
+    //                         );
+    //                         $kon = $this->m_admincrud->insert('tb_konsultasi', $dtk);
+    //                         $id_kon = $this->m_admincrud->getInsertId();
+    //                         foreach ($tingkat as $key => $val) {
+    //                             // if ($val != "") {
+    //                             $gj[$gejala[$a]] = $val;
+    //                             // echo $gejala[$a]. " = ".$val."<br>";
+    //                             $gejala_p[$a] = $this->m_admincrud->getWhere('kd_gejala', $gejala[$a]);
+    //                             $gejala_p[$a] = $this->m_admincrud->getData('tb_gejala')->row();
+    //                             $data = array(
+    //                                 "id_konsultasi" => $id_kon,
+    //                                 "kd_gejala" => $gejala[$a],
+    //                                 "tingkat" => $val
+    //                             );
+    //                             $this->m_admincrud->insert('tb_konsultasi_gejala', $data);
+    //                             unset($data);
+    //                             // die(json_encode($data));
+    //                             // }
+    //                             // echo $a . "<br>";
+    //                             $a++;
+    //                         }
+    //                         // die();
+    //                         // die(json_encode($gejala_p));
+    //                         // die(json_encode($id_p));
+    //                         // $i = 0;
+    //                         foreach ($gp as $key => $val) {
+    //                             $penyakit[$val['nama_diagnosa']][] = array(
+    //                                 "bobot" => $val['bobot'],
+    //                                 "tingkat" => $gj[$val['kd_gejala']],
+    //                                 "cf" => $val['bobot'] * $gj[$val['kd_gejala']]
+    //                             );
+    //                             // $i++;
+    //                         }
+    //                         // $k=0;
+    //                         foreach ($lp as $key => $val) {
+    //                             $j = 0;
+    //                             foreach ($penyakit[$val['nama_diagnosa']] as $key_p => $val_p) {
+    //                                 // var_dump($val_p);
+    //                                 // echo $val['nama_diagnosa'] . " CF(".$j.")" . "<br>";
+    //                                 // echo count($val_p) . "<br>";
+    //                                 // echo count($penyakit[$val['nama_diagnosa']])."<br>";
+    //                                 if (count($penyakit[$val['nama_diagnosa']]) == 1) {
+    //                                     $cfold = $val_p['cf'];
 
-                                        // echo $cfold  . "<br>";
-                                        $cfhasil[$val['nama_diagnosa']] = $cfold;
-                                        // echo $key_p . "<br>";    
-                                        // $cfold = $val_p['cf']+$val_p['cf'] * (1-$val_p['cf']);
-                                        // $cfhasil = $cfold * $val_p['cf'];
-                                        // echo $cfold . "<br>";
-                                    } else if (count($penyakit[$val['nama_diagnosa']]) > 1) {
-                                        if ($j == 0) {
-                                            // echo $penyakit[$val['nama_diagnosa']][$j+1]['cf'];
-                                            // var_dump($val_p);
-                                            $a = $j + 1;
-                                            $cfold = $val_p['cf'] + $penyakit[$val['nama_diagnosa']][$j + 1]['cf'] * (1 - $val_p['cf']);
-                                            // $penyakit[$val['nama_diagnosa']]['Perhitungan'][] = array(
-                                            //     "CFcombine".$a => $cfold
-                                            // );
-                                            $cfhasil[$val['nama_diagnosa']] = $cfold;
-                                            // echo $val_p['cf'] . " + " . $penyakit[$val['nama_diagnosa']][$j + 1]['cf'] . " * " . " 1 - " . $val_p['cf'] . " = ";
-                                            // echo $cfold . "<br>";
-                                            // $penyakit
-                                        } else {
-                                            if (isset($penyakit[$val['nama_diagnosa']][$j + 1])) {
-                                                // echo $cfold . " + " . $penyakit[$val['nama_diagnosa']][$j + 1]['cf'] . " * " . "( 1 - " . $cfold . ") = ";
-                                                $cfold = $cfold + $penyakit[$val['nama_diagnosa']][$j + 1]['cf'] * (1 - $cfold);
-                                                // echo $cfold . "<br>";
-                                                $a = $j + 1;
-                                                $cfhasil[$val['nama_diagnosa']] = $cfold;
-                                                // $penyakit[$val['nama_diagnosa']]['Perhitungan'][] = array(
-                                                //     "CFcombine".$a => $cfold
-                                                // );
-                                                // $cfnew = 
-                                                // $penyakit['nama_diagnosa']
-                                            }
-                                            // echo $val_p['cf'] . "<br>";
-                                        }
-                                        // echo $k . "<br>";
-                                    }
-                                    // echo "CF(".$j.")" . $val_p['cf']."<br>";
-                                    $j++;
-                                }
-                            }
-                            // echo "test";
-                            // die();
-                            // die(json_encode($gejala));
-                            $dtkp = [];
-                            $cft = 0;
-                            $pt = null;
-                            foreach ($cfhasil as $key => $val) {
-                                if ($val > $cft) {
-                                    $cft = $val;
-                                    $pt = array_search($cft, $cfhasil);
-                                }
-                                $kd_p = $this->m_admincrud->select('kd_diagnosa');
-                                $kd_p = $this->m_admincrud->getWhere('nama_diagnosa', $key);
-                                $kd_p = $this->m_admincrud->getData('tb_penyakit')->row();
-                                $dtkp[] = array(
-                                    "kd_diagnosa" => $kd_p->kd_diagnosa,
-                                    "nilai" => $val
-                                );
-                            }
-                            // die(json_encode($dtkp));
-                            $dp = $this->m_admincrud->getWhere('nama_diagnosa', $pt);
-                            $dp = $this->m_admincrud->getData('tb_penyakit')->row();
-                            // die(json_encode($dp));
-                            foreach ($dtkp as $key => $val) {
-                                $data = array(
-                                    "id_konsultasi" => $id_kon,
-                                    "kd_diagnosa" => $val['kd_diagnosa'],
-                                    "nilai" => $val['nilai']
-                                );
-                                $this->m_admincrud->insert('tb_konsultasi_penyakit', $data);
-                                unset($data);
-                                // die(json_encode($data));
-                            }
-                            // $pen = $this->m_admincrud->insert()
+    //                                     // echo $cfold  . "<br>";
+    //                                     $cfhasil[$val['nama_diagnosa']] = $cfold;
+    //                                     // echo $key_p . "<br>";    
+    //                                     // $cfold = $val_p['cf']+$val_p['cf'] * (1-$val_p['cf']);
+    //                                     // $cfhasil = $cfold * $val_p['cf'];
+    //                                     // echo $cfold . "<br>";
+    //                                 } else if (count($penyakit[$val['nama_diagnosa']]) > 1) {
+    //                                     if ($j == 0) {
+    //                                         // echo $penyakit[$val['nama_diagnosa']][$j+1]['cf'];
+    //                                         // var_dump($val_p);
+    //                                         $a = $j + 1;
+    //                                         $cfold = $val_p['cf'] + $penyakit[$val['nama_diagnosa']][$j + 1]['cf'] * (1 - $val_p['cf']);
+    //                                         // $penyakit[$val['nama_diagnosa']]['Perhitungan'][] = array(
+    //                                         //     "CFcombine".$a => $cfold
+    //                                         // );
+    //                                         $cfhasil[$val['nama_diagnosa']] = $cfold;
+    //                                         // echo $val_p['cf'] . " + " . $penyakit[$val['nama_diagnosa']][$j + 1]['cf'] . " * " . " 1 - " . $val_p['cf'] . " = ";
+    //                                         // echo $cfold . "<br>";
+    //                                         // $penyakit
+    //                                     } else {
+    //                                         if (isset($penyakit[$val['nama_diagnosa']][$j + 1])) {
+    //                                             // echo $cfold . " + " . $penyakit[$val['nama_diagnosa']][$j + 1]['cf'] . " * " . "( 1 - " . $cfold . ") = ";
+    //                                             $cfold = $cfold + $penyakit[$val['nama_diagnosa']][$j + 1]['cf'] * (1 - $cfold);
+    //                                             // echo $cfold . "<br>";
+    //                                             $a = $j + 1;
+    //                                             $cfhasil[$val['nama_diagnosa']] = $cfold;
+    //                                             // $penyakit[$val['nama_diagnosa']]['Perhitungan'][] = array(
+    //                                             //     "CFcombine".$a => $cfold
+    //                                             // );
+    //                                             // $cfnew = 
+    //                                             // $penyakit['nama_diagnosa']
+    //                                         }
+    //                                         // echo $val_p['cf'] . "<br>";
+    //                                     }
+    //                                     // echo $k . "<br>";
+    //                                 }
+    //                                 // echo "CF(".$j.")" . $val_p['cf']."<br>";
+    //                                 $j++;
+    //                             }
+    //                         }
+    //                         // echo "test";
+    //                         // die();
+    //                         // die(json_encode($gejala));
+    //                         $dtkp = [];
+    //                         $cft = 0;
+    //                         $pt = null;
+    //                         foreach ($cfhasil as $key => $val) {
+    //                             if ($val > $cft) {
+    //                                 $cft = $val;
+    //                                 $pt = array_search($cft, $cfhasil);
+    //                             }
+    //                             $kd_p = $this->m_admincrud->select('kd_diagnosa');
+    //                             $kd_p = $this->m_admincrud->getWhere('nama_diagnosa', $key);
+    //                             $kd_p = $this->m_admincrud->getData('tb_penyakit')->row();
+    //                             $dtkp[] = array(
+    //                                 "kd_diagnosa" => $kd_p->kd_diagnosa,
+    //                                 "nilai" => $val
+    //                             );
+    //                         }
+    //                         // die(json_encode($dtkp));
+    //                         $dp = $this->m_admincrud->getWhere('nama_diagnosa', $pt);
+    //                         $dp = $this->m_admincrud->getData('tb_penyakit')->row();
+    //                         // die(json_encode($dp));
+    //                         foreach ($dtkp as $key => $val) {
+    //                             $data = array(
+    //                                 "id_konsultasi" => $id_kon,
+    //                                 "kd_diagnosa" => $val['kd_diagnosa'],
+    //                                 "nilai" => $val['nilai']
+    //                             );
+    //                             $this->m_admincrud->insert('tb_konsultasi_penyakit', $data);
+    //                             unset($data);
+    //                             // die(json_encode($data));
+    //                         }
+    //                         // $pen = $this->m_admincrud->insert()
 
-                            // die(json_encode($dtk));
+    //                         // die(json_encode($dtk));
 
-                            $data = array(
-                                "pasien" => $pasien,
-                                "hasil_seleksi" => $cfhasil,
-                                "detail_penyakit" => $dp,
-                                "gejala_pasien" => $gejala_p
-                            );
+    //                         $data = array(
+    //                             "pasien" => $pasien,
+    //                             "hasil_seleksi" => $cfhasil,
+    //                             "detail_penyakit" => $dp,
+    //                             "gejala_pasien" => $gejala_p
+    //                         );
 
-                            // if ($cetak != null) {
-                            // $view = 'cetak_hasil';
-                            // $this->load->view($view, $data);
-                            // $this->_exportPDFP($view, $data, 'Bukti_Transaksi_');
-                            // } else {
-                            $this->load->view('v_hasil_seleksi', $data);
-                            // }
-                        } else {
-                            $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-dismissable">
-                                                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                                                            <p>Gejala belum memenuhi kriteria penyakit yang ada. Silahkan dicek kembali</p></div>');
-                            // $data['datagejala'] = $this->konsultasi->getGejala()->result();
-                            // $this->load->view('v_opsi', $data);
-                            redirect('admin/inputpasien/' . $id_p);
-                        }
-                    } else {
-                        $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-dismissable">
-                                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                                            <p>Tingkat keyakinan ada yang belum diisi. Silahkan dicek kembali</p></div>');
-                        // $data['datagejala'] = $this->konsultasi->getGejala()->result();
-                        // $this->load->view('v_opsi', $data);
-                        redirect('admin/inputpasien/' . $id_p);
-                    }
-                }
-            } else {
-                $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-dismissable">
-                                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                                            <p>Data Konsultasi belum diisi</p></div>');
-                // $data['datagejala'] = $this->konsultasi->getGejala()->result();
-                // $this->load->view('v_opsi', $data);
-                redirect('admin/inputpasien/' . $id_p);
-            }
-        }
-        // var_dump(json_encode($data));
-    }
+    //                         // if ($cetak != null) {
+    //                         // $view = 'cetak_hasil';
+    //                         // $this->load->view($view, $data);
+    //                         // $this->_exportPDFP($view, $data, 'Bukti_Transaksi_');
+    //                         // } else {
+    //                         $this->load->view('v_hasil_seleksi', $data);
+    //                         // }
+    //                     } else {
+    //                         $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-dismissable">
+    //                                                         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    //                                                         <p>Gejala belum memenuhi kriteria penyakit yang ada. Silahkan dicek kembali</p></div>');
+    //                         // $data['datagejala'] = $this->konsultasi->getGejala()->result();
+    //                         // $this->load->view('v_opsi', $data);
+    //                         redirect('admin/inputpasien/' . $id_p);
+    //                     }
+    //                 } else {
+    //                     $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-dismissable">
+    //                                         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    //                                         <p>Tingkat keyakinan ada yang belum diisi. Silahkan dicek kembali</p></div>');
+    //                     // $data['datagejala'] = $this->konsultasi->getGejala()->result();
+    //                     // $this->load->view('v_opsi', $data);
+    //                     redirect('admin/inputpasien/' . $id_p);
+    //                 }
+    //             }
+    //         } else {
+    //             $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-dismissable">
+    //                                         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    //                                         <p>Data Konsultasi belum diisi</p></div>');
+    //             // $data['datagejala'] = $this->konsultasi->getGejala()->result();
+    //             // $this->load->view('v_opsi', $data);
+    //             redirect('admin/inputpasien/' . $id_p);
+    //         }
+    //     }
+    //     // var_dump(json_encode($data));
+    // }
 
     public function cetak_hasil()
     {
@@ -274,12 +274,13 @@ class Konsultasi extends CI_Controller
 
 
     //function forward chaining pendeteksi list penyakit
-    private function listPenyakit($gejala)
+    private function listPenyakit($pen, $gejala)
     {
         $lp = $this->m_admincrud->select('tb_penyakit.nama_diagnosa');
         $lp = $this->m_admincrud->getDistinct();
         $lp = $this->m_admincrud->getJoin('tb_gejala', 'tb_relasi.kd_gejala = tb_gejala.kd_gejala', 'inner');
         $lp = $this->m_admincrud->getJoin('tb_penyakit', 'tb_penyakit.kd_diagnosa = tb_relasi.kd_diagnosa', 'inner');
+        $lp = $this->m_admincrud->getWhere_in('tb_relasi.kd_diagnosa', $pen);
         $lp = $this->m_admincrud->getWhere_in('tb_relasi.kd_gejala', $gejala);
         $lp = $this->m_admincrud->getData('tb_relasi')->result_array();
         return $lp;
@@ -300,9 +301,20 @@ class Konsultasi extends CI_Controller
     //function forward chaining pendeteksi detail penyakit
     private function getPenyakit($gejala)
     {
-        $lp = $this->m_admincrud->select('tb_penyakit.nama_diagnosa,tb_gejala.kd_gejala,tb_gejala.bobot');
+        $lp = $this->m_admincrud->select('tb_penyakit.kd_diagnosa,tb_penyakit.nama_diagnosa,tb_gejala.kd_gejala,tb_gejala.bobot');
         $lp = $this->m_admincrud->getJoin('tb_gejala', 'tb_relasi.kd_gejala = tb_gejala.kd_gejala', 'inner');
         $lp = $this->m_admincrud->getJoin('tb_penyakit', 'tb_penyakit.kd_diagnosa = tb_relasi.kd_diagnosa', 'inner');
+        $lp = $this->m_admincrud->getWhere_in('tb_relasi.kd_gejala', $gejala);
+        $lp = $this->m_admincrud->getData('tb_relasi')->result_array();
+        return $lp;
+    }
+
+    private function getRealPenyakit($pen, $gejala)
+    {
+        $lp = $this->m_admincrud->select('tb_penyakit.kd_diagnosa,tb_penyakit.nama_diagnosa,tb_gejala.kd_gejala,tb_gejala.bobot');
+        $lp = $this->m_admincrud->getJoin('tb_gejala', 'tb_relasi.kd_gejala = tb_gejala.kd_gejala', 'inner');
+        $lp = $this->m_admincrud->getJoin('tb_penyakit', 'tb_penyakit.kd_diagnosa = tb_relasi.kd_diagnosa', 'inner');
+        $lp = $this->m_admincrud->getWhere_in('tb_relasi.kd_diagnosa', $pen);
         $lp = $this->m_admincrud->getWhere_in('tb_relasi.kd_gejala', $gejala);
         $lp = $this->m_admincrud->getData('tb_relasi')->result_array();
         return $lp;
@@ -578,7 +590,7 @@ class Konsultasi extends CI_Controller
                     $tingkat[$i] = $val['tingkat'];
                     $i++;
                 }
-                // die(json_encode($this->session->userdata('gejala')));
+                // die(json_encode($gejala));
                 $this->perhitungan($id, $gejala, $tingkat);
                 // redirect('admin/konsultasi/' . $id . "?gejala=G13");
             }
@@ -739,9 +751,9 @@ class Konsultasi extends CI_Controller
                 $gj = $this->session->userdata('gejala');
                 $gj[$g] = $data;
                 $this->session->set_userdata('gejala', $gj);
-                $gejala = [];
-                $tingkat = [];
-                $i = 0;
+                // $gejala = [];
+                // $tingkat = [];
+                // $i = 0;
                 // foreach ($this->session->userdata('gejala') as $key => $val) {
                 //     // echo $val['gejala'];
                 //     // echo $i . "<br>";
@@ -823,6 +835,7 @@ class Konsultasi extends CI_Controller
                     "hasil_seleksi" => "Gejala anda adalah gigi berlubang, gejala tersebut belum memenuhi kriteria untuk menentukan diagnosa penyakit, Silahkan konsultasi kembali",
                 );
                 $this->session->set_flashdata('pesan', $data);
+                $this->session->unset_userdata('gejala');
                 // die(json_encode($this->session->flashdata('pesan')['hasil_seleksi']));
                 redirect('admin/konsultasi/' . $id . "?gejala=G6");
                 // echo "ini notice";
@@ -845,8 +858,76 @@ class Konsultasi extends CI_Controller
         // if (count($gejala) == count($tingkat)) {
         $a = 0;
         $cfhasil = [];
-        $lp = $this->listPenyakit($gejala);
+        // $lp = $this->listPenyakit($gejala);
         $gp = $this->getPenyakit($gejala);
+        $gpp = array();
+        $pen = array();
+        $query = array();
+        // $aa = 0;
+        if (count($gp) >= 1) {
+            foreach ($gp as $key => $val) {
+                $q = $this->m_admincrud->select('kd_gejala');
+                $q = $this->m_admincrud->getWhere('kd_diagnosa', $val['kd_diagnosa']);
+                $q = $this->m_admincrud->getData('tb_relasi')->result_array();
+                foreach ($q as $keyy => $valu) {
+                    $gpp[$val['kd_diagnosa']][] = $valu['kd_gejala'];
+                    // $gpp[$val['kd_diagnosa']][] = array_unique($gpp[$val['kd_diagnosa']]);
+                }
+                // $query[$val['kd_diagnosa']] = $q;
+                // $aa++;
+                // unset($q);
+            }
+            // $query = array_unique($gpp['P1'], SORT_REGULAR);
+            // die(json_encode($query));
+            // die();
+            // $app = array_unique($gpp);
+            // die(json_encode($gpp));
+            foreach ($gpp as $keyay => $value) {
+                // $query = array_unique($value);
+                $diff[$keyay] = array_diff(array_unique($value), $gejala);
+                // die(json_encode(count($diff)));
+                if (empty($diff[$keyay])) {
+                    // echo "yeay";
+                    $pen[] = $keyay;
+                    // die(json_encode($diff));
+                } else if (count($diff) >= 1) {
+                    if (isset($diff['P1']) && count(array_unique($diff['P1'])) <= 1) {
+                        $pen[] = "P1";
+                        // die(json_encode($diff));
+                        // var_dump(count(array_unique($diff['P1'])));
+                    } else if (isset($diff['P2']) && count(array_unique($diff['P2'])) >= 1) {
+                        $pen[] = "P2";
+                    } else if (isset($diff['P3']) && count(array_unique($diff['P3'])) >= 1) {
+                        $pen[] = "P3";
+                    } else if (isset($diff['P4']) && count(array_unique($diff['P4'])) == 1) {
+                        $pen[] = "P4";
+                        // die(json_encode(count(array_unique($diff['P4']))));
+                    } else if (isset($diff['P5']) && count(array_unique($diff['P5'])) >= 1) {
+                        $pen[] = "P5";
+                    } else if (isset($diff['P6']) && count(array_unique($diff['P6'])) >= 3) {
+                        $pen[] = "P6";
+                    }
+                }
+                // unset($diff);
+                // if($diff == null){
+                // var_dump(count($diff));
+                // echo "<br>";
+                // $pen[] = $keyay;
+                //     // var_dump($pen);
+                //     // echo $pen[];
+                //     // echo $keyay."<br>";
+                // }
+            }
+        }
+        // var_dump(empty($pen));
+        // die();
+        // die(json_encode($pen));
+        $lp = $this->listPenyakit($pen, $gejala);
+
+        $gp = $this->getRealPenyakit($pen, $gejala);
+
+
+
         $gejala_p = [];
         // die(json_encode($gp));
         $pasien = $this->m_admincrud->getWhere('id_pasien', $id_p);
@@ -973,35 +1054,45 @@ class Konsultasi extends CI_Controller
             // die(json_encode($data));
         }
         // $pen = $this->m_admincrud->insert()
-        $pen = $this->test($gejala);
+        // $pen = $this->test($gejala);
         $penr = null;
         $jml = 0;
-        // die(json_encode($gejala_p));
-        
+        // // die(json_encode($gejala_p));
 
-        // die(json_encode($pen));
 
-        foreach($pen as $key => $val){
-            if(empty($val)){
-                $jml += count(empty($val));
+        // // die(json_encode($pen));
+
+        // foreach ($pen as $key => $val) {
+        //     if (empty($val)) {
+        //         $jml += count(empty($val));
+        //     }
+        // }
+        // // die(json_encode($jml));
+        // foreach ($pen as $key => $val) {
+        //     if (empty($val)) {
+        //         // echo $jml;
+        //         // echo count(sizeof($val));
+        //         if ($jml > 1) {
+        //             // echo $pt;
+        //             $penr = $dp->kd_diagnosa;
+        //         } else {
+        //             // echo $key;
+        //             $penr = $key;
+        //         }
+        //     }
+        // }
+
+        foreach ($cfhasil as $key => $val) {
+            if ($val > $jml) {
+                $jml = $val;
+                $penr = $key;
+                // echo $penr;
             }
         }
-        // die(json_encode($jml));
-        foreach($pen as $key => $val){
-            if(empty($val)){
-                // echo $jml;
-                // echo count(sizeof($val));
-                if($jml > 1){
-                    // echo $pt;
-                    $penr = $dp->kd_diagnosa;
-                }else{
-                    // echo $key;
-                    $penr = $key;
-                }
-            }
-        }
 
-        $dp = $this->m_admincrud->getWhere('kd_diagnosa', $penr);
+        // die();
+
+        $dp = $this->m_admincrud->getWhere('nama_diagnosa', $penr);
         $dp = $this->m_admincrud->getData('tb_penyakit')->row();
         // die(json_encode($dp));
         // $penr = $this->m_admincrud->getWhere('kd_diagnosa')
@@ -1012,6 +1103,8 @@ class Konsultasi extends CI_Controller
             "detail_penyakit" => $dp,
             "gejala_pasien" => $gejala_p
         );
+
+
         // die(json_encode($data));
         // if ($cetak != null) {
         // $view = 'cetak_hasil';
@@ -1030,19 +1123,19 @@ class Konsultasi extends CI_Controller
         $lp = $this->lp($gejala);
         $gej = array();
         $result = array();
-        $j=0;
+        $j = 0;
         foreach ($lp as $key => $val) {
             $p = $this->m_admincrud->select('kd_gejala');
-            $p = $this->m_admincrud->getWhere('kd_diagnosa',$val['kd_diagnosa']);
+            $p = $this->m_admincrud->getWhere('kd_diagnosa', $val['kd_diagnosa']);
             $p = $this->m_admincrud->getData('tb_relasi')->result();
-            foreach($p as $keya => $value){
+            foreach ($p as $keya => $value) {
                 $gej[$val['kd_diagnosa']][] = $value->kd_gejala;
             }
             $j++;
         }
         // die();
-        $i=0;
-        foreach($gej as $key => $val){
+        $i = 0;
+        foreach ($gej as $key => $val) {
             $result[$key] = array_diff($val, $gejala);
             $i++;
         }
@@ -1050,5 +1143,4 @@ class Konsultasi extends CI_Controller
         // die(json_encode($result));
         return $result;
     }
-
 }
