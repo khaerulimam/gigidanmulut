@@ -105,10 +105,10 @@
                 </button>
             </div>
             <div class="modal-body">
-                <?=$this->session->flashdata('pesan')['hasil_seleksi']?>
+                <?= $this->session->flashdata('pesan')['hasil_seleksi'] ?>
             </div>
             <div class="modal-footer">
-                <a href="<?=base_url()?>admin/konsultasi/<?=$this->session->flashdata('pesan')['pasien']->id_pasien?>" class="btn btn-secondary">Konsultasi</a>
+                <a href="<?= base_url() ?>admin/konsultasi/<?= $this->session->flashdata('pesan')['pasien']->id_pasien ?>" class="btn btn-secondary">Konsultasi</a>
                 <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
             </div>
         </div>
@@ -126,7 +126,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <select class="form-control" name="tingkat">
+                    <select class="form-control" name="tingkat" id="select" required>
                         <option value="">Pilih Tingkat Keyakinan</option>
                         <option value="0.2">Kemungkinan kecil(0,2)</option>
                         <option value="0.4">Mungkin (0,4)</option>
@@ -153,3 +153,8 @@
         });
     </script>
 <?php } ?>
+<script>
+    $('#select').on('hide.bs.select', function() {
+        $(this).trigger("focusout");
+    });
+</script>
