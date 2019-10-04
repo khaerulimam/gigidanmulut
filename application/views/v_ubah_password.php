@@ -100,4 +100,5 @@
                     </div>
                 </div>
             </div>
+            <div style="margin-bottom:180px"></div>
 <?php $this->load->view('template_admin/footer') ?>
