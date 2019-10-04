@@ -5,7 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Sistem Pakar</title>
+    <title>Sistem Pakar Diagnosis Penyakit Gigi dan Mulut</title>
     <link rel="icon" href="<?php base_url() ?>/gigidanmulut/assets/new/img/logo_.png">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="<?php base_url() ?>/gigidanmulut/assets//new/css/bootstrap.min.css">
@@ -80,7 +80,7 @@
                 </div>
                 <div class="col-md-6 col-lg-5">
                     <div class="about_us_text" style="margin-bottom:200px">
-                        <h2>Sistem Pakar Diagnosa Penyakit Gigi & Mulut</h2>
+                        <h2>Sistem Pakar Diagnosis Penyakit Gigi & Mulut</h2>
                         <a class="js-scroll-trigger" href="#macam">
                             <h3>Macam-Macam Penyakit Gigi</h3>
                         </a>

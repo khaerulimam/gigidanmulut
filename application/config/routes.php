@@ -49,16 +49,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-$route['default_controller']    ='c_user';
+$route['default_controller']    ='c_user/index';
 
-$route['admin/login']           ='c_akses';
+$route['admin/login']           ='c_akses/index';
 $route['admin/logout']          ='c_akses/logout';
 
 $route['admin/inputpasien/(:num)']     ='konsultasi/index/$1';
-$route['admin/konsultasi/(:num)'] = 'konsultasi/index/$1';
-// $route['admin/konsu']
-$route['admin/index']           ='welcome';
-$route['admin/konsultasi']      ='c_user/halaman_konsultasi';
+$route['admin/konsultasi/(:num)'] = 'konsultasi/index/$1'; // halaman pertanyaan
+$route['admin/index']           ='welcome/index';
+$route['admin/konsultasi']      ='c_user/halaman_konsultasi';  // halaman form pasien
 $route['admin/datagejala']      ='welcome/datagejala';
 $route['admin/inputgejala']     ='welcome/inbox';
 $route['admin/laporangejala']   ='welcome/laporangejala';
@@ -66,7 +65,7 @@ $route['admin/datapenyakit']    ='welcome/datapenyakit';
 $route['admin/inputpenyakit']   ='welcome/accordion';
 $route['admin/laporanpenyakit'] ='welcome/laporanpenyakit';
 $route['admin/inputrelasi']     ='welcome/inputrelasi';
-$route['admin/datagabungan']    ='welcome/datagabungan';
+$route['admin/datarelasi']      ='welcome/datagabungan';
 $route['admin/riwayatpasien']   ='welcome/riwayatpasien';
 $route['admin/ubahpassword']    ='welcome/change_password';
 

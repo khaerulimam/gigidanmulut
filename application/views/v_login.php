@@ -14,7 +14,7 @@
                                                 <a href="#"><img src="<?= base_url()?>assets/img/cilacap.png" alt="" style="width:50%;" >
                                                 </a>
                                             </div>
-                                            <center><h1>Sistem Pakar Diagnosa Penyakit Gigi dan Mulut</h1></center>
+                                            <center><h1>Sistem Pakar Diagnosis Penyakit Gigi dan Mulut</h1></center>
                                         </div>
                                     </div>
                                     <div class="row">
