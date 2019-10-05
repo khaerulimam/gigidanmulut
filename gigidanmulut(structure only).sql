@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 05 Okt 2019 pada 03.06
+-- Generation Time: 05 Okt 2019 pada 03.17
 -- Versi Server: 10.1.25-MariaDB
 -- PHP Version: 7.1.7
 
@@ -34,13 +34,6 @@ CREATE TABLE `tb_admin` (
   `password` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data untuk tabel `tb_admin`
---
-
-INSERT INTO `tb_admin` (`id`, `username`, `password`) VALUES
-(1, 'puskesmasmaos', '0192023a7bbd73250516f069df18b500');
-
 -- --------------------------------------------------------
 
 --
@@ -54,25 +47,6 @@ CREATE TABLE `tb_gejala` (
   `keterangan` text NOT NULL,
   `bobot` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `tb_gejala`
---
-
-INSERT INTO `tb_gejala` (`id`, `kd_gejala`, `nama_gejala`, `keterangan`, `bobot`) VALUES
-(1, 'G1', 'Gusi Turun', 'Ditandai dengan adanya penurunan gusi pada bagian rongga gigi pasie.', 0.8),
-(2, 'G2', 'Gigi Goyang ', 'Ditandai dengan keadaan gigi yang terasa goyang pada saat pasien mengunyah makanan atau pada saat pasien menyentuh gigi tersebut.', 0.4),
-(3, 'G3', 'Terdapat karang gigi', 'Ditandai dengan terdapatnya karang gigi pada gigi tersebut', 0.8),
-(4, 'G4', 'Gigi berlubang', 'loren ipsum dolor sit amet loren ipsum dolor sit amet loren ipsum dolor sit amet loren ipsum dolor sit amet loren ipsum dolor sit amet loren ipsum dolor sit amet ', 0.7),
-(5, 'G5', 'Gigi ngilu saat minum-minuman dingin', 'Ditandai dengan adanya rasa ngilu oleh pasien pada saat pasien mengkonsumsi minuman-minuman dingin.', 0.8),
-(6, 'G6', 'Gigi berwarna hitam', 'Ditandai dengan terdaptnya gigi yang berwarna hitam yang dialami oleh si pasien.', 0.6),
-(7, 'G7', 'Sakit Gigi', 'Ditandai dengan adanya keluhan sakit pada gigi yang dialami oleh si pasien.\r\n', 0.7),
-(8, 'G8', 'Gusi Bengkak', 'Ditandai dengan adanya pembengkakan gusi pada bagian rongga gigi si pasien.\r\n', 0.8),
-(9, 'G9', 'Gusi keluar nanah', 'Ditandai dengan adanya nanah yang keluar dari gusi pada bagian gigi tertentu yang dialami oleh pasien.\r\n', 1),
-(10, 'G10', 'Gigi susu goyang', 'loren ipsum dolor sit amet loren ipsum dolor sit amet loren ipsum dolor sit amet loren ipsum dolor sit amet', 0.8),
-(11, 'G11', 'Gigi permanen tumbuh', 'loren ipsum dolor sit amet loren ipsum dolor sit amet loren ipsum dolor sit amet loren ipsum dolor sit amet loren ipsum dolor sit amet loren ipsum dolor sit amet loren ipsum dolor sit amet ', 0.6),
-(12, 'G12', 'Gigi berjejal', 'loren ipsum dolor sit amet loren ipsum dolor sit amet loren ipsum dolor sit amet loren ipsum dolor sit amet loren ipsum dolor sit amet ', 0.5),
-(13, 'G13', 'Bau Mulut', 'lloasdasd', 0.72);
 
 -- --------------------------------------------------------
 
@@ -139,18 +113,6 @@ CREATE TABLE `tb_penyakit` (
   `solusi` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data untuk tabel `tb_penyakit`
---
-
-INSERT INTO `tb_penyakit` (`id`, `kd_diagnosa`, `nama_diagnosa`, `keterangan`, `solusi`) VALUES
-(1, 'P1', 'Abses', 'Abses adalah akumulasi pus yang terlokalisasi dalam sebuah rongga yang disebabkan oleh kerusakan jaringan akibat infeksi atau benda asing. Keadaan ini merupakan reaksi pertahanan jaringan untuk mencegah penyebaran infeksi ke bagian tubuh yang lain\r\n', 'Solusi pengobatan untuk pasien yang terkena penyakit abses adalah pemberian obat antinyeri, pemberian obat antibiotik, dilakukan insisi dan dreinase, dan pencabutan gigi.\r\n'),
-(2, 'P2', 'Kalkulus Gigi', '\r\nKalkulus merupakan kumpulan plak yang mengalami kalsifikasi dan melekat erat pada permukaan gigi serta objek solid lainnya di dalam mulut, sehingga gigi menjadi kasar dan terasa tebal. Faktor penyebab terjadinya kalkulus yaitu disebabkan oleh adanya pengendapan sisa makanan dengan air ludah serta kuman-kuman maka terjadilah proses pengapuran yang lama kelamaan menjadi keras. Komponen pembentukkan kalkulus antara lain terdiri dari bahan-bahan mineral seperti kalsium dan fosfor dimana kandungan tersebut juga terkandung pada air sumur gali.\r\n', 'Solusi pengobatan yang dilkukan untuk pasien yang terkena kalkulus gigi adalah dengan melakukan pembersihan karang gigi atau scaling dengan menggunakan ultrasonic scaller.\r\n'),
-(3, 'P3', 'Karies Gigi', 'Karies gigi adalah suatu penyakit jaringan keras gigi yang bersifat kronik progresif dan disebabkan oleh aktifitas jasad renik dalam karbohidrat yang dapat dirugikan, ditandai dengan deminerilisasi jaringan keras dan diikuti kerusakan zat organiknya ', 'Solusi pengobatan untuk pasien yang terkena karies gigi adalah dilakukannya penambalan gigi dan perawatan pada saluran akar.\r\n'),
-(4, 'P4', 'Periodontitis', 'Periodontitis adalah penyakit multifaktorial yang menyebabkan infeksi dan peradangan jaringan pendukung gigi, biasanya menyebabkan hilangnya tulang dan ligamen periodontal dan bisanya merupakan penyebab kehilangan gigi pada orang dewasa dan edentulousness. Periodontitis merupakan suatu infeksi campuran dari mikroorganisme seperti Porphyromonas gingivalis, Prevotella intermedia, Bacteroides forsythus, Actinobacillus actinomytemcomitans, dan mikroorganisme Gram-positif, misalnya Peptostreptococcus micros dan Streptococcus intermedius ', 'Solusi untuk penyakit Periodontitis adalah Pemberian obat antibiotik, dilakukan scaling, splinting, dan pencabutan gigi.\r\n'),
-(5, 'P5', 'Persistensi', 'Persistemsi gigi sulung adalah suatu keadaan dimana gigi \r\nsulung belum tanggal walaupun waktu tanggalnya sudah tiba. Keadaan ini sering dijumpai pada anak usia 6-12 tahun. Persistensi gigi sulung tidak mempunyai penyebab tunggal tetapi merupakan gangguan yang disebabkan multifactor. Akar gigi sulung secara normal akan diresorbsi sempurna sehingga gigi sulung menjadi goyang dan akhirnya tanggal beberapa saat sebelum gigi permanen pengganti erupsi, akan tetapi sering dijumpai adanya kasus gigi persistensi disebabkan oleh berbagai faktor penyebab. ', 'Solusi untuk pengobatan pada pasien yang terkena penyakit persistensi adalah dilakukan pencabutan gigi.'),
-(6, 'P6', 'Pulpitis', 'Pulpitis seringkali merupakan akibat atau perkembangan dari pulpitis reversibel. Kerusakan pulpa yang parah akibat pengambilan dentin yang luas selama prosedur operatif atau terganggunya aliran darah pulpa akibat trauma atau penggerakan gigi dalam perawatan ortodonsia dapat pula menyebabkan pulpitis ireversibel. Pulpitis ireversibel tidak akan bisa pulih walau penyebabnya dihilangkan. Cepat atau lambat pulpa akan menjadi nekrosis. ', 'Solusi pengobatan untuk pasien yang terkena penyakit Pulpitis ini adalah pemberian obat antibiotik, pemberian obat antinyeri, perawatan pada saluran akar, dilakukan penambalan gigi, dan solusi terakhir adalah pencabutan gigi.\r\n');
-
 -- --------------------------------------------------------
 
 --
@@ -162,30 +124,6 @@ CREATE TABLE `tb_relasi` (
   `kd_diagnosa` varchar(20) NOT NULL,
   `kd_gejala` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `tb_relasi`
---
-
-INSERT INTO `tb_relasi` (`id`, `kd_diagnosa`, `kd_gejala`) VALUES
-(14, 'P4', 'G3'),
-(15, 'P4', 'G2'),
-(16, 'P4', 'G1'),
-(21, 'P2', 'G3'),
-(26, 'P5', 'G12'),
-(30, 'P3', 'G4'),
-(31, 'P3', 'G6'),
-(32, 'P3', 'G5'),
-(55, 'P1', 'G4'),
-(56, 'P1', 'G6'),
-(57, 'P1', 'G7'),
-(61, 'P6', 'G4'),
-(64, 'P5', 'G11'),
-(65, 'P5', 'G10'),
-(66, 'P1', 'G8'),
-(67, 'P1', 'G9'),
-(68, 'P6', 'G6'),
-(69, 'P6', 'G7');
 
 -- --------------------------------------------------------
 
