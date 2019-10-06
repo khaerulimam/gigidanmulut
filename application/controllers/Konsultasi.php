@@ -490,18 +490,20 @@ class Konsultasi extends CI_Controller
         $gejala_p = [];
         $pasien = $this->m_admincrud->getWhere('id_pasien', $id_p);
         $pasien = $this->m_admincrud->getData('tb_pasien')->row();
-        $dtk = array(
-            "id_pasien" => $pasien->id_pasien,
-            "tanggal" => date("Y-m-d"),
-        );
-        $kon = $this->m_admincrud->insert('tb_konsultasi', $dtk);   //input ke table konsultasi
-        $id_kon = $this->m_admincrud->getInsertId();
+        // $dtk = array(
+        //     "id_pasien" => $pasien->id_pasien,
+        //     "tanggal" => date("Y-m-d"),
+        // );
+        // $kon = $this->m_admincrud->insert('tb_konsultasi', $dtk);   //input ke table konsultasi
+        // $id_kon = $this->m_admincrud->getInsertId();
+        $id_kon = $this->m_admincrud->getWhere('id_pasien',$id_p);
+        $id_kon = $this->m_admincrud->getData('tb_konsultasi')->row();
         foreach ($tingkat as $key => $val) {
             $gj[$gejala[$a]] = $val;
             $gejala_p[$a] = $this->m_admincrud->getWhere('kd_gejala', $gejala[$a]);
             $gejala_p[$a] = $this->m_admincrud->getData('tb_gejala')->row();
             $data = array(
-                "id_konsultasi" => $id_kon,
+                "id_konsultasi" => $id_kon->id,
                 "kd_gejala" => $gejala[$a],
                 "tingkat" => $val
             );
@@ -562,7 +564,7 @@ class Konsultasi extends CI_Controller
         $dp = $this->m_admincrud->getData('tb_penyakit')->row();
         foreach ($dtkp as $key => $val) {
             $data = array(
-                "id_konsultasi" => $id_kon,
+                "id_konsultasi" => $id_kon->id,
                 "kd_diagnosa" => $val['kd_diagnosa'],
                 "nilai" => $val['nilai']
             );

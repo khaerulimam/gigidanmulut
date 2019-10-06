@@ -10,6 +10,7 @@ class M_konsultasi extends CI_Model
     //input pasien
     function inputpasien()
     {
+        $rm = $this->input->post("rm");
         $n = $this->input->post("nama_pasien");
         $u = $this->input->post("umur");
         $nt = $this->input->post("nomor_telepon");
@@ -24,6 +25,13 @@ class M_konsultasi extends CI_Model
         );
         $this->db->insert("tb_pasien", $data);
         $insert = $this->db->insert_id();
+        $dtk = array(
+            "rekam_medis" => $rm,
+            "id_pasien" => $insert,
+            "tanggal" => date("Y-m-d"),
+        );
+        $this->db->insert("tb_konsultasi",$dtk);
+        $this->session->set_userdata(array("rm" => $rm));
         return $insert;
     }
 
