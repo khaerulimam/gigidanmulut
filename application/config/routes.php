@@ -56,6 +56,8 @@ $route['admin/logout']          ='c_akses/logout';
 
 $route['admin/inputpasien/(:num)']     ='konsultasi/index/$1';
 $route['admin/konsultasi/(:num)'] = 'konsultasi/index/$1'; // halaman pertanyaan
+$route['admin/konsultasi/daftar'] = 'c_user/tambah_pasien';
+$route['admin/riwayat']         = 'konsultasi/riwayat';
 $route['admin/index']           ='welcome/index';
 $route['admin/konsultasi']      ='c_user/halaman_konsultasi';  // halaman form pasien
 $route['admin/datagejala']      ='welcome/datagejala';
