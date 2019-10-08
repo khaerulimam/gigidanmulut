@@ -20,12 +20,13 @@ class Konsultasi extends CI_Controller
             * pada button cetak hasil
         */
     {
+        $rm = $this->input->get('rm');
         $id_p = $this->input->get('id');
         $tgl = date("Y-m-d");
         $pasien = $this->m_admincrud->getWhere('id_pasien', $id_p);
         $pasien = $this->m_admincrud->getData('tb_pasien')->row();
         $kon = $this->m_admincrud->getWhere('id_pasien', $id_p);
-        $kon = $this->m_admincrud->getWhere('tanggal', $tgl);
+        $kon = $this->m_admincrud->getWhere('rekam_medis', $rm);
         $kon = $this->m_admincrud->getData('tb_konsultasi')->row();
         // die(json_encode($kon));
         $gejala = $this->m_admincrud->select('tb_gejala.kd_gejala,tb_gejala.nama_gejala');
@@ -52,9 +53,12 @@ class Konsultasi extends CI_Controller
         // die(json_encode($pt));
         $dp = $this->m_admincrud->getWhere('nama_diagnosa', $pt);
         $dp = $this->m_admincrud->getData('tb_penyakit')->row();
-
+		$lines = str_split($kon->rekam_medis,"2");
+		$lines = implode("-",$lines);
         $data = array(
             "pasien" => $pasien,
+            "rm" => $lines,
+            "konsultasi" => $kon,
             "hasil_seleksi" => $penyakit,
             "detail_penyakit" => $dp,
             "nilai_tertinggi" => $cft,
@@ -496,7 +500,9 @@ class Konsultasi extends CI_Controller
         // );
         // $kon = $this->m_admincrud->insert('tb_konsultasi', $dtk);   //input ke table konsultasi
         // $id_kon = $this->m_admincrud->getInsertId();
-        $id_kon = $this->m_admincrud->getWhere('id_pasien',$id_p);
+        $rm = $this->session->userdata("rm");
+        // die(json_encode($rm));
+        $id_kon = $this->m_admincrud->getWhere('rekam_medis',$rm);
         $id_kon = $this->m_admincrud->getData('tb_konsultasi')->row();
         foreach ($tingkat as $key => $val) {
             $gj[$gejala[$a]] = $val;

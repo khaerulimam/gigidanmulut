@@ -102,6 +102,9 @@
                                 <a href="<?php echo base_url();?>admin/datarelasi" class="dropdown-item">Data Relasi</a>                            
                             </div>
                         </li>
+                        <li class="nav-item">
+                            <a href="<?php echo base_url(); ?>admin/riwayat"><i class="fa fa-history"></i>&nbsp;&nbsp;<span class="mini-dn">Riwayat Konsultasi</span> <span class="indicator-right-menu mini-dn"></span></a>
+                        </li>
                         <!-- <li class="nav-item">
                             <a href="<?php echo base_url();?>admin/riwayatpasien" ><img src="http://localhost/gigidanmulut/assets/img/riwayat.png" width="17px" height="17px" > <span class="mini-dn">Riwayat Pasien</span> <span class="indicator-right-menu mini-dn"></span></a>
                         </li> -->

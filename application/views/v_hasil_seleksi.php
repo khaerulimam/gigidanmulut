@@ -9,11 +9,17 @@
                         <div class="main-sparkline8-hd">
                             <p><b>Hasil Konsultasi</b></p>
                             <div style="padding:0.5px; background-color:#000; margin-bottom:20px;"></div>
-                            <p><b>Data Pasien</b></p>
                             <div class="row">
                                 <div class="col-lg-12 col-md-12">
-                                    <p class="col-lg-2 col-md-2">Nama </p>
-                                    <p class="col-lg-10 col-md-10"> <?= $pasien->nama_pasien ?></p>
+                                    <p class="col-lg-6 col-md-6"><b>Data Pasien</b></p>
+                                    <p class="col-lg-6 col-md-6" style="text-align:right"><b>Nomor Rekam Medis</b></p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12">
+                                    <p class="col-lg-2 col-md-2">Nama Pasien</p>
+                                    <p class="col-lg-5 col-md-5"> <?= $pasien->nama_pasien ?></p>
+                                    <p class="col-lg-5 col-md-5" style="text-align: right"> <b><?= $rm ?></b></p>
                                     <p class="col-lg-2 col-md-2">Jenis Kelamin </p>
                                     <p class="col-lg-10 col-md-10"><?php if ($pasien->jenis_kelamin == "l") {
                                                                         echo "Laki - Laki";
@@ -21,8 +27,10 @@
                                                                         echo "Perempuan";
                                                                     } ?>
                                     </p>
-                                    <p class="col-lg-2 col-md-2">Umur </p>
-                                    <p class="col-lg-10 col-md-10"><?= $pasien->umur ?></p>
+                                    <p class="col-lg-2 col-md-2">Tanggal Lahir / Umur </p>
+                                    <p class="col-lg-10 col-md-10"><?= date("d-m-Y", strtotime($pasien->tgl_lahir)) ." / " . $pasien->umur ?></p>
+                                    <p class="col-lg-2 col-md-2">Nama Kepala Keluarga</p>
+                                    <p class="col-lg-10 col-md-10"> <?= $pasien->nama_kk ?></p>
                                     <p class="col-lg-2 col-md-2">Alamat </p>
                                     <p class="col-lg-10 col-md-10"> <?= $pasien->alamat ?></p>
                                     <p class="col-lg-2 col-md-2">No Telp</p>
@@ -96,7 +104,7 @@
                             <p><b>Solusi</b></p>
                             <p><?= $detail_penyakit->solusi ?></p>
                             <br>
-                            <a href="<?= base_url('konsultasi/cetak_hasil?id=' . $pasien->id_pasien) ?>" target=_blank class="btn btn-info">Cetak Hasil</a>
+                            <a href="<?= base_url('konsultasi/cetak_hasil?id=' . $pasien->id_pasien. '&rm='.$konsultasi->rekam_medis) ?>" target=_blank class="btn btn-info">Cetak Hasil</a>
                         </div>
                     </div>
                 </div>

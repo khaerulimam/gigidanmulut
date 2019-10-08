@@ -43,9 +43,11 @@
         <p><b>Hasil Konsultasi</b></p>
         <div style="padding:0.5px; background-color:#000; margin-bottom:20px;"></div>
         <p style="margin-top:10px"><b>Data Pasien</b></p>
+        <p style="text-align:right;margin-top:0px"><b>Nomor Rekam Medis</b></p>
+        <p style="text-align:right;margin-top:0px"><b><?=$rm?></b></p>
         <table class="table">
             <tr>
-                <td style="width:100px">Nama </td>
+                <td style="width:100px">Nama Pasien</td>
                 <td>: <?= $pasien->nama_pasien ?></td>
             </tr>
             <tr>
@@ -56,6 +58,14 @@
                         echo ": Perempuan";
                     } ?>
                 </td>
+            </tr>
+            <tr>
+                <td width="30px">Tanggal Lahir / Umur</td>
+                <td>: <?= date("d-m-Y", strtotime($pasien->tgl_lahir)) ?> / <?= $pasien->umur ?> tahun</td>
+            </tr>
+            <tr>
+                <td style="width:100px">Nama Kepala Keluarga</td>
+                <td>: <?= $pasien->nama_kk ?></td>
             </tr>
             <tr>
                 <td width="30px">Alamat </td>

@@ -11,7 +11,7 @@
                         <div class="basic-login-form-ad">
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <?= $this->session->flashdata('pesan') ?>
+                                    <?php //$this->session->flashdata('pesan') ?>
                                     <p>
                                         <h3>
                                             <p>Konsultasi Pasien</p>
@@ -51,4 +51,31 @@
 </div>
 <!-- Basic Form End-->
 <div style="margin-bottom:290px"></div>
+<!-- modal notice -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Hasil Pencarian</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <?= $this->session->flashdata('pesan')['rekam_medis'] ?>
+            </div>
+            <div class="modal-footer">
+                <!-- <a href="<?= base_url() ?>admin/konsultasi/<?= $this->session->flashdata('pesan')['pasien']->id_pasien ?>" class="btn btn-secondary">Konsultasi</a> -->
+                <!-- <button type="button" class="btn btn-primary">OK</button> -->
+            </div>
+        </div>
+    </div>
+</div>
 <?php $this->load->view('template_user/footer'); ?>
+<?php if ($this->session->flashdata('pesan') != null) { ?>
+    <script type="text/javascript">
+        $(window).load(function() {
+            $('#myModal').modal('show');
+        });
+    </script>
+<?php } ?>

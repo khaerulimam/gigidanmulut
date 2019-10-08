@@ -16,9 +16,13 @@ class M_konsultasi extends CI_Model
         $nt = $this->input->post("nomor_telepon");
         $jk = $this->input->post("jenis_kelamin");
         $a = $this->input->post("alamat");
+        $nmkk = $this->input->post("nama_kk");
+        $tgl = $this->input->post("tgl");
         $data = array(
             'nama_pasien' => $n,
             'umur' => $u,
+            "nama_kk" => $nmkk,
+            "tgl_lahir" => $tgl,
             'no_hp' => $nt,
             'jenis_kelamin' => $jk,
             'alamat' => $a
@@ -33,6 +37,37 @@ class M_konsultasi extends CI_Model
         $this->db->insert("tb_konsultasi",$dtk);
         $this->session->set_userdata(array("rm" => $rm));
         return $insert;
+    }
+
+    function update_pasien($id){
+        $rm = $this->input->post("rm");
+        $n = $this->input->post("nama_pasien");
+        $u = $this->input->post("umur");
+        $nt = $this->input->post("nomor_telepon");
+        $jk = $this->input->post("jenis_kelamin");
+        $a = $this->input->post("alamat");
+        $nmkk = $this->input->post("nama_kk");
+        $tgl = $this->input->post("tgl");
+        $data = array(
+            'nama_pasien' => $n,
+            'umur' => $u,
+            "nama_kk" => $nmkk,
+            "tgl_lahir" => $tgl,
+            'no_hp' => $nt,
+            'jenis_kelamin' => $jk,
+            'alamat' => $a
+        );
+        $this->db->where('id_pasien',$id);
+        $this->db->update("tb_pasien", $data);
+        // $insert = $this->db->insert_id();
+        $dtk = array(
+            "rekam_medis" => $rm,
+            "id_pasien" => $id,
+            "tanggal" => date("Y-m-d"),
+        );
+        $this->db->insert("tb_konsultasi",$dtk);
+        $this->session->set_userdata(array("rm" => $rm));
+        return $id;
     }
 
     function getGejala()
