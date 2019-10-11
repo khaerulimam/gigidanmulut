@@ -20,7 +20,7 @@
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <div class="basic-login-inner">
                                     <div class="alert alert-info" role="alert">
-                                        <p style="text-align: center; font-size: 25px;"><strong>Apakah anda mengalami gejala <?= $gejala->nama_gejala ?> ?</strong></p>
+                                        <p style="text-align: center; font-size: 25px;"><strong>Apakah pasien mengalami gejala <?= strtolower($gejala->nama_gejala) ?> ?</strong></p>
                                     </div>
                                     <form style="margin-top:100px" action="<?php echo base_url(); ?>konsultasi/proses_pertanyaan/<?= $id_pasien ?>?gejala=<?= $gejala->kd_gejala ?>" method="post">
                                         <div class="form-group-inner">
@@ -128,7 +128,7 @@
                 <div class="modal-body">
                     <select class="form-control" name="tingkat" id="select" required>
                         <option value="">Pilih Tingkat Keyakinan</option>
-                        <option value="0.2">Kemungkinan kecil(0,2)</option>
+                        <option value="0.2">Kemungkinan kecil (0,2)</option>
                         <option value="0.4">Mungkin (0,4)</option>
                         <option value="0.6">Kemungkinan besar (0,6)</option>
                         <option value="0.8">Hampir pasti (0,8)</option>
