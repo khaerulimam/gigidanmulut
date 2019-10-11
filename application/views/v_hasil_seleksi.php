@@ -28,13 +28,15 @@
                                                                     } ?>
                                     </p>
                                     <p class="col-lg-2 col-md-2">Tanggal Lahir / Umur </p>
-                                    <p class="col-lg-10 col-md-10"><?= date("d-m-Y", strtotime($pasien->tgl_lahir)) ." / " . $pasien->umur ?></p>
+                                    <p class="col-lg-10 col-md-10"><?= date("d-m-Y", strtotime($pasien->tgl_lahir)) ." / " . $pasien->umur ?> Tahun</p>
                                     <p class="col-lg-2 col-md-2">Nama Kepala Keluarga</p>
                                     <p class="col-lg-10 col-md-10"> <?= $pasien->nama_kk ?></p>
                                     <p class="col-lg-2 col-md-2">Alamat </p>
                                     <p class="col-lg-10 col-md-10"> <?= $pasien->alamat ?></p>
                                     <p class="col-lg-2 col-md-2">No Telp</p>
                                     <p class="col-lg-10 col-md-10"> <?= $pasien->no_hp ?></p>
+                                    <p class="col-lg-2 col-md-2">Waktu Pemeriksaan</p>
+                                    <p class="col-lg-10 col-md-10"> <?= date("d-m-Y H:i:s",strtotime($konsultasi->tanggal)) ?></p>
                                 </div>
                             </div>
                             <br>

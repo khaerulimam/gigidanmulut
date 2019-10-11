@@ -32,7 +32,7 @@ class M_konsultasi extends CI_Model
         $dtk = array(
             "rekam_medis" => $rm,
             "id_pasien" => $insert,
-            "tanggal" => date("Y-m-d"),
+            "tanggal" => date("Y-m-d H:i:s"),
         );
         $this->db->insert("tb_konsultasi",$dtk);
         $this->session->set_userdata(array("rm" => $rm));
@@ -63,7 +63,7 @@ class M_konsultasi extends CI_Model
         $dtk = array(
             "rekam_medis" => $rm,
             "id_pasien" => $id,
-            "tanggal" => date("Y-m-d"),
+            "tanggal" => date("Y-m-d H:i:s"),
         );
         $this->db->insert("tb_konsultasi",$dtk);
         $this->session->set_userdata(array("rm" => $rm));

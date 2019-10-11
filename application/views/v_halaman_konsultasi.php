@@ -22,7 +22,7 @@
                                             <div class="row">
                                                 <div class="col-lg-4">
                                                     <label for="rm" class="">Nomor Rekam Medis</label>
-                                                    <input id="rm" type="text" name="rm" onkeypress="return event.charCode >= 48 && event.charCode <= 57" class="form-control" value="">
+                                                    <input id="rm" type="text" maxlength="6" name="rm" onkeypress="return event.charCode >= 48 && event.charCode <= 57" class="form-control" value="">
                                                 </div>
                                                 <div class="login-btn-inner" style="margin-top:5px;">
                                                     <div class="row">

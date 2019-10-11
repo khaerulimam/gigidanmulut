@@ -589,15 +589,34 @@ class Konsultasi extends CI_Controller
 
         $dp = $this->m_admincrud->getWhere('nama_diagnosa', $penr);
         $dp = $this->m_admincrud->getData('tb_penyakit')->row();
+        $kon = $this->m_admincrud->getWhere('id_pasien', $id_p);
+        $kon = $this->m_admincrud->getWhere('rekam_medis',$rm);
+        // $kon = $this->m_admincrud->getWhere('tanggal', $tgl);
+        $kon = $this->m_admincrud->getData('tb_konsultasi')->row();
+        $lines = str_split($kon->rekam_medis,"2");
+		$lines = implode("-",$lines);
         $data = array(
             "penyakit_real" => $dp->nama_diagnosa,   //nama penyakit hasil akhir 
             "pasien" => $pasien,     //detail pasien
+            "rm" => $lines,
+            "konsultasi" => $kon,
             "hasil_seleksi" => $cfhasil,  //hasil seleksi (prosentase hasil)
             "detail_penyakit" => $dp,   //detail penyakit, solusi 
             "gejala_pasien" => $gejala_p   //gejala yang diinputkan
         );
         $this->load->view('v_hasil_seleksi', $data); //manggil view hasil seleksi disertai dengan data
         $this->session->unset_userdata('gejala');
+    }
+
+    public function riwayat(){
+        $rw = $this->m_admincrud->getWhere('tb_konsultasi.rekam_medis !=','0');
+        $rw = $this->m_admincrud->getJoin('tb_pasien','tb_pasien.id_pasien = tb_konsultasi.id_pasien','inner');
+        $rw = $this->m_admincrud->getData('tb_konsultasi')->result_array();
+        // die(json_encode($rw));
+        $data = array(
+            "riwayat" => $rw
+        );
+        $this->load->view('v_riwayat',$data);
     }
 
 }

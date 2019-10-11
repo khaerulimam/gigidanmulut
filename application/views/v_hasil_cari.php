@@ -7,7 +7,7 @@
                 <div class="sparkline8-list shadow-reset tab-pane custom-inbox-message shadow-reset active">
                     <div class="sparkline80-hd">
                         <div class="main-sparkline8-hd">
-                            <p><b>Hasil Konsultasi tanggal <?= $tglk ?></b></p>
+                            <p><b>Hasil Konsultasi tanggal <?= date("d-m-Y", strtotime($tglk)) ?></b></p>
                             <div style="padding:0.5px; background-color:#000; margin-bottom:20px;"></div>
                             <div class="row">
                                 <div class="col-lg-12 col-md-12">
@@ -17,7 +17,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-lg-12 col-md-12">
-                                    <p class="col-lg-2 col-md-2">Nama </p>
+                                <p class="col-lg-2 col-md-2">Nama Pasien</p>
                                     <p class="col-lg-5 col-md-5"> <?= $pasien->nama_pasien ?></p>
                                     <p class="col-lg-5 col-md-5" style="text-align: right"> <b><?= $rm ?></b></p>
                                     <p class="col-lg-2 col-md-2">Jenis Kelamin </p>
@@ -27,12 +27,16 @@
                                                                         echo "Perempuan";
                                                                     } ?>
                                     </p>
-                                    <p class="col-lg-2 col-md-2">Umur </p>
-                                    <p class="col-lg-10 col-md-10"><?= $pasien->umur ?></p>
+                                    <p class="col-lg-2 col-md-2">Tanggal Lahir / Umur </p>
+                                    <p class="col-lg-10 col-md-10"><?= date("d-m-Y", strtotime($pasien->tgl_lahir)) ." / " . $pasien->umur ?> Tahun</p>
+                                    <p class="col-lg-2 col-md-2">Nama Kepala Keluarga</p>
+                                    <p class="col-lg-10 col-md-10"> <?= $pasien->nama_kk ?></p>
                                     <p class="col-lg-2 col-md-2">Alamat </p>
                                     <p class="col-lg-10 col-md-10"> <?= $pasien->alamat ?></p>
                                     <p class="col-lg-2 col-md-2">No Telp</p>
                                     <p class="col-lg-10 col-md-10"> <?= $pasien->no_hp ?></p>
+                                    <p class="col-lg-2 col-md-2">Waktu Pemeriksaan</p>
+                                    <p class="col-lg-10 col-md-10"> <?= date("d-m-Y H:i:s",strtotime($konsultasi->tanggal)) ?></p>
                                 </div>
                             </div>
                             <br>

@@ -75,6 +75,10 @@
                 <td width="30px">No Telphone </td>
                 <td>: <?=$pasien->no_hp?></td>
             </tr>
+            <tr>
+                <td width="30px">Waktu Pemeriksaan </td>
+                <td>: <?=date("d-m-Y H:i:s",strtotime($konsultasi->tanggal))?></td>
+            </tr>
         </table>
         <p>Data Hasil diagnosa</p>
         <p><b>Gejala Terpilih</b></p>
