@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 08 Okt 2019 pada 09.16
+-- Generation Time: 11 Okt 2019 pada 06.11
 -- Versi Server: 10.1.25-MariaDB
 -- PHP Version: 7.1.7
 
@@ -84,7 +84,7 @@ CREATE TABLE `tb_konsultasi` (
   `id` int(11) NOT NULL,
   `rekam_medis` varchar(20) NOT NULL,
   `id_pasien` int(20) NOT NULL,
-  `tanggal` date NOT NULL
+  `tanggal` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -92,9 +92,7 @@ CREATE TABLE `tb_konsultasi` (
 --
 
 INSERT INTO `tb_konsultasi` (`id`, `rekam_medis`, `id_pasien`, `tanggal`) VALUES
-(1, '123458', 1, '2019-10-08'),
-(8, '123459', 1, '2019-10-08'),
-(9, '123460', 2, '2019-10-08');
+(1, '123458', 5, '2019-10-10 23:10:57');
 
 -- --------------------------------------------------------
 
@@ -113,16 +111,7 @@ CREATE TABLE `tb_konsultasi_gejala` (
 --
 
 INSERT INTO `tb_konsultasi_gejala` (`id_konsultasi`, `kd_gejala`, `tingkat`) VALUES
-(1, 'G3', 0.6),
-(1, 'G4', 0.6),
-(1, 'G6', 0.6),
-(1, 'G7', 0.4),
-(8, 'G3', 0.6),
-(8, 'G2', 0.8),
-(8, 'G1', 0.4),
-(9, 'G1', 0.4),
-(9, 'G10', 0.6),
-(9, 'G12', 0.8);
+(1, 'G3', 0.6);
 
 -- --------------------------------------------------------
 
@@ -141,12 +130,7 @@ CREATE TABLE `tb_konsultasi_penyakit` (
 --
 
 INSERT INTO `tb_konsultasi_penyakit` (`id_konsultasi`, `kd_diagnosa`, `nilai`) VALUES
-(1, 'P2', 0.48),
-(1, 'P3', 0.6288),
-(1, 'P6', 0.732736),
-(8, 'P2', 0.48),
-(8, 'P4', 0.759552),
-(9, 'P5', 0.688);
+(1, 'P2', 0.48);
 
 -- --------------------------------------------------------
 
@@ -170,8 +154,11 @@ CREATE TABLE `tb_pasien` (
 --
 
 INSERT INTO `tb_pasien` (`id_pasien`, `nama_pasien`, `umur`, `no_hp`, `jenis_kelamin`, `alamat`, `nama_kk`, `tgl_lahir`) VALUES
-(1, 'Zaenur', '21', '081578988248', 'l', 'Jl. Letjen Pol Sumarto Watumas Purwanegara Purwokerto, Banyumas', 'Zaenur', '2019-10-08'),
-(2, 'Zaenur', '21', '081578988248', 'l', 'Jl. Letjen Pol Sumarto Watumas Purwanegara Purwokerto, Banyumas', 'Zaenur', '2000-05-15');
+(1, 'Zaenur', '21', '081578988248', 'l', 'Jl. Letjen Pol Sumarto Watumas Purwanegara Purwokerto, Banyumas', 'Zaenur', '2019-10-06'),
+(2, 'Zaenur', '21', '081578988248', 'l', 'Jl. Letjen Pol Sumarto Watumas Purwanegara Purwokerto, Banyumas', 'Zaenur', '2000-05-15'),
+(3, 'Zaenur', '21', '081578988248', 'l', 'Jl. Letjen Pol Sumarto Watumas Purwanegara Purwokerto, Banyumas', 'Zaenur', '2019-10-01'),
+(4, 'Zaenur', '21', '081578988248', 'l', 'Jl. Letjen Pol Sumarto Watumas Purwanegara Purwokerto, Banyumas', 'Zaenur', '1998-05-04'),
+(5, 'Zaenur', '21', '081578988248', 'l', 'Jl. Letjen Pol Sumarto Watumas Purwanegara Purwokerto, Banyumas', 'Zaenur', '2019-10-06');
 
 -- --------------------------------------------------------
 
@@ -335,12 +322,12 @@ ALTER TABLE `tb_gejala`
 -- AUTO_INCREMENT for table `tb_konsultasi`
 --
 ALTER TABLE `tb_konsultasi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `tb_pasien`
 --
 ALTER TABLE `tb_pasien`
-  MODIFY `id_pasien` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_pasien` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `tb_penyakit`
 --
