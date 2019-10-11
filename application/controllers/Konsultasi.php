@@ -11,6 +11,7 @@ class Konsultasi extends CI_Controller
         }
         $this->load->model('m_admincrud');
         $this->load->model('m_konsultasi', 'konsultasi');
+        date_default_timezone_set('Asia/Jakarta');
     }
 
     public function cetak_hasil()

@@ -11,6 +11,7 @@ class c_user extends CI_Controller
 		$this->load->model('m_konsultasi');
 		$this->load->model('m_admincrud');
 		$this->load->library('form_validation');
+		date_default_timezone_set('Asia/Jakarta');
 	}
 	function index()
 	{
@@ -159,6 +160,8 @@ class c_user extends CI_Controller
 			"gejala_pasien" => $gejala   //gejala yang diinputkan
 		);
 		// die(json_encode($data));
+		// die(date("d-m-y g:i a"));
+		// die(json_encode(date('d-F-Y H:i:s')));
 		$view = 'v_hasil_cari';
 		$this->load->view($view, $data);
 	}
